@@ -171,7 +171,18 @@ Der wichtigste Punkt: **Serialisierung garantiert nicht, dass der Typ passt**, s
 Ein Feld, das als String statt Zahl kommt, oder ein umbenanntes Property fallen beim Deserialisieren nicht auf, wenn der Client es
 ignoriert oder tolerant abbildet. Deshalb vergleicht der Snapshot die rohe JSON-Antwort und nicht nur das deserialisierte Objekt.
 
+**Endpoint-Validierung:** Das SDK prüft zuerst, ob der Endpoint den erwarteten Typ und Status liefert. Die Reihenfolge:
+
+1. `[ProducesResponseType]` am Endpoint, falls vorhanden.
+2. Sonst der Status-Code aus der erwarteten Response.
+3. Sonst die Assert-Methode: ein Erfolgs-Assert gegen einen Fehlerstatus (oder umgekehrt) schlägt fehl.
+
+Non-generische Methoden (`AssertPostAsync`) erwarten `204 NoContent`, generische (`AssertPostAsync<T>`) eine typisierte Response.
+Mit `ignoreResponse: true` wird nur geprüft, ob der Endpoint existiert und den richtigen Typ liefert. Mit `skipEndpointValidation: true`
+schaltet man die Metadaten-Prüfung ab, etwa für externe APIs oder eigene Response-Typen.
+
 Beide Schreibweisen (klassisch und Fluent) laufen durch dieselbe Pipeline, siehe `src/MyCodingZone.WebApi.Test/SNAPSHOT_TESTING.md`.
+Die Doku des Pakets: [AspNetCore.Simple.MsTest.Sdk](https://www.nuget.org/packages/AspNetCore.Simple.MsTest.Sdk).
 
 ## Repository-Struktur
 
