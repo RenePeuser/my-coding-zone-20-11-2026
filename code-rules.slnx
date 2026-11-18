@@ -1,4 +1,7 @@
 <Solution>
+  <Folder Name="/00 CI-CD/">
+    <File Path=".github/workflows/build-and-test.yml" />
+  </Folder>
   <Folder Name="/01 How To/">
     <Project Path="src/MyCodingZone.HowTo/MyCodingZone.HowTo.csproj" />
   </Folder>
@@ -31,9 +34,6 @@
   <Folder Name="/Nuget/">
     <File Path="Directory.Packages.props" />
     <File Path="NuGet.Config" />
-  </Folder>
-  <Folder Name="/CI-CD/">
-    <File Path=".github/workflows/build-and-test.yml" />
   </Folder>
   <Folder Name="/SolutionItems/">
     <File Path=".editorconfig" />
