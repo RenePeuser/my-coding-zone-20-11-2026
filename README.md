@@ -9,7 +9,7 @@ Ein AI Agent kennt eure ungeschriebenen Regeln genauso wenig wie ein neuer Entwi
 Dieses Repository zeigt, wie aus einer einmal entdeckten Fehlerquelle eine **ausführbare Regel** wird, die jeden neuen Verstoß deterministisch erkennt –
 vom ersten Parsen der Solution bis zur Code Rule Engine, die dieselben Regeln in jedem Repository ausführt.
 
-## Die Story in fünf Stufen
+## Die Story in sechs Stufen
 
 | Stufe | Projekt | Was sie zeigt |
 |---|---|---|
@@ -18,6 +18,7 @@ vom ersten Parsen der Solution bis zur Code Rule Engine, die dieselben Regeln in
 | **03 Roslyn Analyzer** | `src/MyCodingZone.Analyzer` (+ `.Test`) | Roslyn Analyzer: Feedback direkt in IDE und Build – Async (`MCZ_ASYNC_*`), Minimal-API-Konventionen (`MCZ_MAPI_*`), Inline-Regeln (`MCZ_INLINE_*`) |
 | **04 Roslyn CodeFixes** | `src/MyCodingZone.CodeFixes` (+ `.Test`) | Code Fixes zu den Analyzern: der Verstoß wird per Quick Action repariert, z. B. fehlendes `.WithTags(...)` ergänzen oder `return new X(...)` in eine lokale Variable ziehen |
 | **05 Code Rule Engine** | `src/MyCodingZone.CodeRules` (+ `.Test`) | Dieselben Regeln wie Stufe 2 auf der [Siemens Code Rule Engine](https://www.nuget.org/packages/Siemens.AspNet.CodeRules.MSTest): eine Setup-Klasse, ein Test pro Regel wird generiert, Rule Pack, `RuleTester` |
+| **06 API-Tests** | `src/MyCodingZone.WebApi` (+ `.Test`) | Beispiel-API mit Siemens Error Handler, Snapshot-Tests mit AspNetCore.Simple.MsTest.Sdk: typisierte Request-/Response-Validierung, Endpoint-Validierung |
 
 Stufe 2 und Stufe 5 enthalten **dieselben zehn Regeln** mit denselben IDs. Der direkte Vergleich zeigt, was die Engine abnimmt:
 
@@ -128,7 +129,9 @@ Ein Guard-Test schlägt fehl, wenn eine registrierte Regel keinen Test bekommen 
 Die Engine achtet auf die Qualität der Findings: `Current` muss exakt der Quelltext an `Where` sein, weil ein Fix genau diesen Bereich durch `ShouldBe` ersetzt.
 Beim Portieren hat `RuleTester` genau solche Ungenauigkeiten der Stufe-2-Regeln aufgedeckt (z. B. `SERVICES_RULE_003` meldete die Klasse statt des Parameters).
 
-## Die Beispiel-API: Siemens Enterprise Error Handler
+## Stufe 6 im Detail: API-Tests
+
+### Die Beispiel-API: Siemens Enterprise Error Handler
 
 `src/MyCodingZone.WebApi` ist eine Minimal API, gegen die die Regeln laufen. Fehler beantwortet sie mit
 [`Siemens.AspNet.ErrorHandling`](https://www.nuget.org/packages/Siemens.AspNet.ErrorHandling) mit [`Siemens.AspNet.ErrorHandling.Contracts`](https://www.nuget.org/packages/Siemens.AspNet.ErrorHandling.Contracts) (RFC 7807):
@@ -159,7 +162,7 @@ Der Client kann seinen Request also selbst korrigieren:
 
 Die vollständigen Antworten liegen als Snapshots in `src/MyCodingZone.WebApi.Test/Api/Users/V1/Create/InvalidRequests/Responses/`.
 
-## Die API-Tests: AspNetCore.Simple.MsTest.Sdk
+### Die API-Tests: AspNetCore.Simple.MsTest.Sdk
 
 Die Tests in `src/MyCodingZone.WebApi.Test` laufen mit dem [AspNetCore.Simple.MsTest.Sdk](https://www.nuget.org/packages/AspNetCore.Simple.MsTest.Sdk).
 Sie prüfen Request und Response gegen den Vertrag der API, nicht nur den Status-Code:
@@ -211,8 +214,8 @@ src/
 ├── MyCodingZone.CodeFixes.Test/  04 Spezifikation der Code Fixes: Quelltext vorher / nachher, ein Szenario pro Datei
 ├── MyCodingZone.CodeRules/        05 Dieselben Regeln auf der Siemens Code Rule Engine (Setup, Rule Pack, generierte Tests)
 ├── MyCodingZone.CodeRules.Engine.Test/   05 Funktionale Tests der Regeln mit Assert.That.CodeRule, gleiche Ordner wie die Regeln (<Regel>_Tests.cs)
-├── MyCodingZone.WebApi/           Beispiel-API (Minimal API) mit Siemens Error Handler
-└── MyCodingZone.WebApi.Test/     Snapshot-basierte API-Tests, inkl. Fehlerfälle
+├── MyCodingZone.WebApi/           06 Beispiel-API (Minimal API) mit Siemens Error Handler
+└── MyCodingZone.WebApi.Test/     06 Snapshot-basierte API-Tests, inkl. Fehlerfälle
 ```
 
 ## Voraussetzungen
