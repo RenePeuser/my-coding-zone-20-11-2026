@@ -167,6 +167,21 @@ Sie prüfen Request und Response gegen den Vertrag der API, nicht nur den Status
 - **Request** und **Response** sind typisiert (`Accepts…`, `Produces<T>(…)`), der Request wird als echter Body gesendet.
 - **Snapshots** vergleichen die komplette Antwort: Status-Code, Header und Body. Abweichungen erscheinen als Tabelle mit Pfad, erwartetem und aktuellem Wert.
 
+So sieht ein Test in der Fluent API aus. Jede Datei in `Requests/` ergibt einen Testlauf:
+
+```csharp
+[TestMethod]
+[DynamicRequestLocator]
+public Task Should_Be_Able_To_Create_A_New_User(string useCase)
+{
+    return Client.AssertPost("api/v1/users")
+                 .AcceptsFromEmbeddedJson(useCase)
+                 .Produces<CreateUserResponse>(HttpStatusCode.OK)
+                 .ExpectedResponseFromEmbeddedJson(useCase)
+                 .ExecuteAsync();
+}
+```
+
 Der wichtigste Punkt: **Serialisierung garantiert nicht, dass der Typ passt**, solange sich das Ergebnis deserialisieren lässt.
 Ein Feld, das als String statt Zahl kommt, oder ein umbenanntes Property fallen beim Deserialisieren nicht auf, wenn der Client es
 ignoriert oder tolerant abbildet. Deshalb vergleicht der Snapshot die rohe JSON-Antwort und nicht nur das deserialisierte Objekt.
