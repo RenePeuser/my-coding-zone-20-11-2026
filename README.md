@@ -159,6 +159,20 @@ Der Client kann seinen Request also selbst korrigieren:
 
 Die vollständigen Antworten liegen als Snapshots in `src/MyCodingZone.WebApi.Test/Api/Users/V1/Create/InvalidRequests/Responses/`.
 
+## Die API-Tests: AspNetCore.Simple.MsTest.Sdk
+
+Die Tests in `src/MyCodingZone.WebApi.Test` laufen mit dem [AspNetCore.Simple.MsTest.Sdk](https://www.nuget.org/packages/AspNetCore.Simple.MsTest.Sdk).
+Sie prüfen Request und Response gegen den Vertrag der API, nicht nur den Status-Code:
+
+- **Request** und **Response** sind typisiert (`Accepts…`, `Produces<T>(…)`), der Request wird als echter Body gesendet.
+- **Snapshots** vergleichen die komplette Antwort: Status-Code, Header und Body. Abweichungen erscheinen als Tabelle mit Pfad, erwartetem und aktuellem Wert.
+
+Der wichtigste Punkt: **Serialisierung garantiert nicht, dass der Typ passt**, solange sich das Ergebnis deserialisieren lässt.
+Ein Feld, das als String statt Zahl kommt, oder ein umbenanntes Property fallen beim Deserialisieren nicht auf, wenn der Client es
+ignoriert oder tolerant abbildet. Deshalb vergleicht der Snapshot die rohe JSON-Antwort und nicht nur das deserialisierte Objekt.
+
+Beide Schreibweisen (klassisch und Fluent) laufen durch dieselbe Pipeline, siehe `src/MyCodingZone.WebApi.Test/SNAPSHOT_TESTING.md`.
+
 ## Repository-Struktur
 
 ```
