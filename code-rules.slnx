@@ -17,7 +17,7 @@
     <Project Path="src/MyCodingZone.CodeRules.Engine.Test/MyCodingZone.CodeRules.Engine.Test.csproj" />
     <Project Path="src/MyCodingZone.CodeRules/MyCodingZone.CodeRules.csproj" />
   </Folder>
-  <Folder Name="/Api/">
+  <Folder Name="/06 Api Next Level/">
     <Project Path="src/MyCodingZone.WebApi.Test/MyCodingZone.WebApi.Test.csproj" Id="9a18b7a4-46bc-4e33-b1bc-9e4ed6ff1eab" />
     <Project Path="src/MyCodingZone.WebApi/MyCodingZone.WebApi.csproj" Id="96006d8e-008f-4197-b7ca-4c8dc7101241" />
   </Folder>
