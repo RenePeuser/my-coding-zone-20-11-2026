@@ -14,10 +14,10 @@ vom ersten Parsen der Solution bis zur Code Rule Engine, die dieselben Regeln in
 | Stufe | Projekt | Was sie zeigt |
 |---|---|---|
 | **01 Solution Parsing** | `src/MyCodingZone.HowTo` | Solution und Projekte mit MSBuild lesen, C# mit Reflection und Roslyn, eine eigene kleine Abstraktion |
-| **02 CodeRule als Test** | `src/MyCodingZone.CodeRules.Tests` | Regeln als MSTest-Tests mit [Solution.Parser](https://www.nuget.org/packages/Solution.Parser), eigene Test-Infrastruktur (Base Class, Assert, Human-/AI-Output) |
+| **02 CodeRule als Test** | `src/MyCodingZone.CodeRules.Test` | Regeln als MSTest-Tests mit [Solution.Parser](https://www.nuget.org/packages/Solution.Parser), eigene Test-Infrastruktur (Base Class, Assert, Human-/AI-Output) |
 | **03 Roslyn Analyzer** | `src/MyCodingZone.Analyzer` (+ `.Test`) | Roslyn Analyzer: Feedback direkt in IDE und Build – Async (`MCZ_ASYNC_*`), Minimal-API-Konventionen (`MCZ_MAPI_*`), Inline-Regeln (`MCZ_INLINE_*`) |
 | **04 Roslyn CodeFixes** | `src/MyCodingZone.CodeFixes` (+ `.Test`) | Code Fixes zu den Analyzern: der Verstoß wird per Quick Action repariert, z. B. fehlendes `.WithTags(...)` ergänzen oder `return new X(...)` in eine lokale Variable ziehen |
-| **05 Code Rule Engine** | `src/MyCodingZone.CodeRules` (+ `.Test`) | Dieselben Regeln wie Stufe 2 auf der Siemens Code Rule Engine: eine Setup-Klasse, ein Test pro Regel wird generiert, Rule Pack, `RuleTester` |
+| **05 Code Rule Engine** | `src/MyCodingZone.CodeRules` (+ `.Test`) | Dieselben Regeln wie Stufe 2 auf der [Siemens Code Rule Engine](https://www.nuget.org/packages/Siemens.AspNet.CodeRules.MSTest): eine Setup-Klasse, ein Test pro Regel wird generiert, Rule Pack, `RuleTester` |
 
 Stufe 2 und Stufe 5 enthalten **dieselben zehn Regeln** mit denselben IDs. Der direkte Vergleich zeigt, was die Engine abnimmt:
 
@@ -113,15 +113,15 @@ public sealed class CodeRuleSetup : ICodeRuleSetup
 }
 ```
 
-Der Source Generator aus `Siemens.AspNet.CodeRules.MSTest` liest die Registrierungen beim Build und schreibt einen MSTest-Test pro Regel
+Der Source Generator aus [`Siemens.AspNet.CodeRules.MSTest`](https://www.nuget.org/packages/Siemens.AspNet.CodeRules.MSTest) liest die Registrierungen beim Build und schreibt einen MSTest-Test pro Regel
 (`RECORDS_RULE_001_RecordPropertiesMustBeImmutable`, ...), gruppiert nach `Projects`, `Records` und `Services`.
 Ein Guard-Test schlägt fehl, wenn eine registrierte Regel keinen Test bekommen hat.
 
 | Paket | Zweck |
 |---|---|
-| `Siemens.AspNet.CodeRules.Contracts` | Regeln und Rule Packs schreiben (`ICodeRule`, `Finding`, `CodeContext`, `SolutionContext`) |
-| `Siemens.AspNet.CodeRules.Engine` | `ICodeRuleSetup`, Registrierung, `RuleTester<TRule>` |
-| `Siemens.AspNet.CodeRules.MSTest` | bringt beides mit, plus Source Generator |
+| [`Siemens.AspNet.CodeRules.Contracts`](https://www.nuget.org/packages/Siemens.AspNet.CodeRules.Contracts) | Regeln und Rule Packs schreiben (`ICodeRule`, `Finding`, `CodeContext`, `SolutionContext`) |
+| [`Siemens.AspNet.CodeRules.Engine`](https://www.nuget.org/packages/Siemens.AspNet.CodeRules.Engine) | `ICodeRuleSetup`, Registrierung, `RuleTester<TRule>` |
+| [`Siemens.AspNet.CodeRules.MSTest`](https://www.nuget.org/packages/Siemens.AspNet.CodeRules.MSTest) | bringt beides mit, plus Source Generator |
 
 Die Engine achtet auf die Qualität der Findings: `Current` muss exakt der Quelltext an `Where` sein, weil ein Fix genau diesen Bereich durch `ShouldBe` ersetzt.
 Beim Portieren hat `RuleTester` genau solche Ungenauigkeiten der Stufe-2-Regeln aufgedeckt (z. B. `SERVICES_RULE_003` meldete die Klasse statt des Parameters).
@@ -129,7 +129,7 @@ Beim Portieren hat `RuleTester` genau solche Ungenauigkeiten der Stufe-2-Regeln 
 ## Die Beispiel-API: Siemens Enterprise Error Handler
 
 `src/MyCodingZone.WebApi` ist eine Minimal API, gegen die die Regeln laufen. Fehler beantwortet sie mit
-[`Siemens.AspNet.ErrorHandling`](https://www.nuget.org/packages/Siemens.AspNet.ErrorHandling) (RFC 7807):
+[`Siemens.AspNet.ErrorHandling`](https://www.nuget.org/packages/Siemens.AspNet.ErrorHandling) mit [`Siemens.AspNet.ErrorHandling.Contracts`](https://www.nuget.org/packages/Siemens.AspNet.ErrorHandling.Contracts) (RFC 7807):
 
 ```csharp
 builder.Services.AddErrorHandling(builder.Configuration);
@@ -155,22 +155,22 @@ Der Client kann seinen Request also selbst korrigieren:
 }
 ```
 
-Die vollständigen Antworten liegen als Snapshots in `src/MyCodingZone.WebApi.Tests/Api/Users/V1/Create/InvalidRequests/Responses/`.
+Die vollständigen Antworten liegen als Snapshots in `src/MyCodingZone.WebApi.Test/Api/Users/V1/Create/InvalidRequests/Responses/`.
 
 ## Repository-Struktur
 
 ```
 src/
 ├── MyCodingZone.HowTo/            01 Einstieg: MSBuild, Reflection, Roslyn und eine eigene Abstraktion
-├── MyCodingZone.CodeRules.Tests/  02 CodeRules als Tests (eigene Infrastruktur)
+├── MyCodingZone.CodeRules.Test/  02 CodeRules als Tests (eigene Infrastruktur)
 ├── MyCodingZone.Analyzer/         03 Roslyn Analyzer (MCZ_ASYNC_*, MCZ_MAPI_*, MCZ_INLINE_*)
-├── MyCodingZone.Analyzer.Tests/   03 Spezifikation des Analyzers, ein Szenario pro Datei
+├── MyCodingZone.Analyzer.Test/   03 Spezifikation des Analyzers, ein Szenario pro Datei
 ├── MyCodingZone.CodeFixes/        04 Code Fixes zu den Analyzern (MCZ_MAPI_*, MCZ_INLINE_*)
-├── MyCodingZone.CodeFixes.Tests/  04 Spezifikation der Code Fixes: Quelltext vorher / nachher, ein Szenario pro Datei
+├── MyCodingZone.CodeFixes.Test/  04 Spezifikation der Code Fixes: Quelltext vorher / nachher, ein Szenario pro Datei
 ├── MyCodingZone.CodeRules/        05 Dieselben Regeln auf der Siemens Code Rule Engine (Setup, Rule Pack, generierte Tests)
-├── MyCodingZone.CodeRules.Test/   05 Funktionale Tests der Regeln mit Assert.That.CodeRule, gleiche Ordner wie die Regeln (<Regel>_Tests.cs)
+├── MyCodingZone.CodeRules.Engine.Test/   05 Funktionale Tests der Regeln mit Assert.That.CodeRule, gleiche Ordner wie die Regeln (<Regel>_Tests.cs)
 ├── MyCodingZone.WebApi/           Beispiel-API (Minimal API) mit Siemens Error Handler
-└── MyCodingZone.WebApi.Tests/     Snapshot-basierte API-Tests, inkl. Fehlerfälle
+└── MyCodingZone.WebApi.Test/     Snapshot-basierte API-Tests, inkl. Fehlerfälle
 ```
 
 ## Voraussetzungen
@@ -195,7 +195,7 @@ dotnet test src/MyCodingZone.CodeRules --filter "TestCategory=CodeRules Services
 dotnet test src/MyCodingZone.CodeRules --filter "TestCategory=CodeRules DependencyInjection"
 
 # die funktionalen Tests der Regeln (Assert.That.CodeRule)
-dotnet test src/MyCodingZone.CodeRules.Test
+dotnet test src/MyCodingZone.CodeRules.Engine.Test
 
 # nur die HowTo-Beispiele
 dotnet test src/MyCodingZone.HowTo --filter TestCategory=HowTo
