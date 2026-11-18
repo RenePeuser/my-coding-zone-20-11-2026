@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace MyCodingZone.CodeRules.Records
 {
-    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Tests/Records/RECORDS_RULE_002.cs</summary>
+    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Test/Records/RECORDS_RULE_002.cs</summary>
     public sealed class RecordsMustNotImplementMethods : ICodeRule
     {
         public string Id => "RECORDS_RULE_002";

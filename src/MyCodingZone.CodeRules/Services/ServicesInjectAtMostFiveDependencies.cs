@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace MyCodingZone.CodeRules.Services
 {
-    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Tests/Services/SERVICES_RULE_006.cs</summary>
+    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Test/Services/SERVICES_RULE_006.cs</summary>
     public sealed class ServicesInjectAtMostFiveDependencies : IRule<ServiceContext>
     {
         private const int MaxDependencies = 5;

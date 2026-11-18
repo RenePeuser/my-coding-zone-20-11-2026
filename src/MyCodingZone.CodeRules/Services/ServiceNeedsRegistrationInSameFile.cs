@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace MyCodingZone.CodeRules.Services
 {
-    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Tests/Services/SERVICES_RULE_001.cs</summary>
+    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Test/Services/SERVICES_RULE_001.cs</summary>
     public sealed class ServiceNeedsRegistrationInSameFile : IRule<ServiceContext>
     {
         public string Id => "SERVICES_RULE_001";

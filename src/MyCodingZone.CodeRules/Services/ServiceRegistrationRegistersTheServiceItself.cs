@@ -3,7 +3,7 @@ using Solution.Parser.CSharp;
 
 namespace MyCodingZone.CodeRules.Services
 {
-    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Tests/Services/SERVICES_RULE_007.cs</summary>
+    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Test/Services/SERVICES_RULE_007.cs</summary>
     public sealed class ServiceRegistrationRegistersTheServiceItself : IRule<ServiceContext>
     {
         public string Id => "SERVICES_RULE_007";

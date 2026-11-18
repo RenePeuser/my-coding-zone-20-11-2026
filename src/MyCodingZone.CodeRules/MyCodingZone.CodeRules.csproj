@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <!--
-      Stage 5: the same rules as MyCodingZone.CodeRules.Tests, now on the Siemens Code Rule Engine.
+      Stage 5: the same rules as MyCodingZone.CodeRules.Test, now on the Siemens Code Rule Engine.
       Siemens.AspNet.CodeRules.MSTest brings the engine, the contracts and a source generator that writes
       one MSTest test per registered rule (see CodeRuleSetup.cs). No test classes for the rules themselves.
     -->
@@ -15,7 +15,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <!-- Brings the engine, the contracts and the test generator. MyCodingZone.CodeRules.Test gets the library
+        <!-- Brings the engine, the contracts and the test generator. MyCodingZone.CodeRules.Engine.Test gets the library
              transitively and excludes the generator itself (ExcludeAssets="analyzers;build"). -->
         <PackageReference Include="Siemens.AspNet.CodeRules.MSTest" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" />

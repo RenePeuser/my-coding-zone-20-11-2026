@@ -3,22 +3,22 @@
     <Project Path="src/MyCodingZone.HowTo/MyCodingZone.HowTo.csproj" />
   </Folder>
   <Folder Name="/02 CodeRules as Test/">
-    <Project Path="src/MyCodingZone.CodeRules.Tests/MyCodingZone.CodeRules.Tests.csproj" />
+    <Project Path="src/MyCodingZone.CodeRules.Test/MyCodingZone.CodeRules.Test.csproj" />
   </Folder>
   <Folder Name="/03 Roslyn Analyzer/">
-    <Project Path="src/MyCodingZone.Analyzer.Tests/MyCodingZone.Analyzer.Tests.csproj" />
+    <Project Path="src/MyCodingZone.Analyzer.Test/MyCodingZone.Analyzer.Test.csproj" />
     <Project Path="src/MyCodingZone.Analyzer/MyCodingZone.Analyzer.csproj" />
   </Folder>
   <Folder Name="/04 Roslyn CodeFixes/">
-    <Project Path="src/MyCodingZone.CodeFixes.Tests/MyCodingZone.CodeFixes.Tests.csproj" />
+    <Project Path="src/MyCodingZone.CodeFixes.Test/MyCodingZone.CodeFixes.Test.csproj" />
     <Project Path="src/MyCodingZone.CodeFixes/MyCodingZone.CodeFixes.csproj" />
   </Folder>
   <Folder Name="/05 Code Rule Engine/">
-    <Project Path="src/MyCodingZone.CodeRules.Test/MyCodingZone.CodeRules.Test.csproj" />
+    <Project Path="src/MyCodingZone.CodeRules.Engine.Test/MyCodingZone.CodeRules.Engine.Test.csproj" />
     <Project Path="src/MyCodingZone.CodeRules/MyCodingZone.CodeRules.csproj" />
   </Folder>
   <Folder Name="/Api/">
-    <Project Path="src/MyCodingZone.WebApi.Tests/MyCodingZone.WebApi.Tests.csproj" Id="9a18b7a4-46bc-4e33-b1bc-9e4ed6ff1eab" />
+    <Project Path="src/MyCodingZone.WebApi.Test/MyCodingZone.WebApi.Test.csproj" Id="9a18b7a4-46bc-4e33-b1bc-9e4ed6ff1eab" />
     <Project Path="src/MyCodingZone.WebApi/MyCodingZone.WebApi.csproj" Id="96006d8e-008f-4197-b7ca-4c8dc7101241" />
   </Folder>
   <Folder Name="/Docs/">

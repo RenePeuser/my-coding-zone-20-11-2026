@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace MyCodingZone.CodeRules.Projects
 {
-    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Tests/ProjectReferences/PROJECTS_RULE_001.cs</summary>
+    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Test/ProjectReferences/PROJECTS_RULE_001.cs</summary>
     public sealed class ProductionProjectsMustNotReferenceTestProjects : ISolutionRule
     {
         public string Id => "PROJECTS_RULE_001";

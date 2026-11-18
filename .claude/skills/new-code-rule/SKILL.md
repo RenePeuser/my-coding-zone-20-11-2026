@@ -1,6 +1,6 @@
 ---
 name: new-code-rule
-description: Build a new CodeRule (MSTest) in src/MyCodingZone.CodeRules.Tests with the Solution.Parser API - solution, project and C# rules with findings that name what, where, why and how to fix
+description: Build a new CodeRule (MSTest) in src/MyCodingZone.CodeRules.Test with the Solution.Parser API - solution, project and C# rules with findings that name what, where, why and how to fix
 ---
 
 # New CodeRule - with Solution.Parser
@@ -14,7 +14,7 @@ human or an agent can act on without guessing.
 **When to use:**
 - The user describes a convention, architecture boundary or "we always/never do X" rule
 - A review comment keeps coming back and should become a test
-- An existing rule in `src/MyCodingZone.CodeRules.Tests` has to be extended
+- An existing rule in `src/MyCodingZone.CodeRules.Test` has to be extended
 
 ---
 
@@ -47,15 +47,15 @@ Only reach for raw Roslyn when the Solution.Parser model does not carry what you
 
 ### 3. Create the file
 
-CodeRules live only in `src/MyCodingZone.CodeRules.Tests/`. `src/MyCodingZone.HowTo` holds examples, not rules.
+CodeRules live only in `src/MyCodingZone.CodeRules.Test/`. `src/MyCodingZone.HowTo` holds examples, not rules.
 
 - Id: `<TOPIC>_RULE_<NNN>`, e.g. `RECORD_RULE_001`, `PROJECTS_RULE_001`. Reuse the topic of an existing
-  rule when it fits and take the next free number (look at `src/MyCodingZone.CodeRules.Tests/**/*_RULE_*.cs`);
+  rule when it fits and take the next free number (look at `src/MyCodingZone.CodeRules.Test/**/*_RULE_*.cs`);
   otherwise start a new topic with `_001`.
 - Folder: one per topic, named in plain words, e.g. `Records/`, `ProjectReferences/`. The folder becomes the
   category in the output.
 - File name and class name = rule id. One rule per file.
-- Namespace: `MyCodingZone.CodeRules.Tests`, no sub namespace per folder.
+- Namespace: `MyCodingZone.CodeRules.Test`, no sub namespace per folder.
 - Categories: `[TestCategory("CodeRules")]` plus one specific, e.g. `[TestCategory("CodeRules Records")]`.
 - Method name reads as the rule: `Productive_Projects_Are_Not_Allowed_To_Reference_Any_Test_Project`.
 
@@ -63,7 +63,7 @@ CodeRules live only in `src/MyCodingZone.CodeRules.Tests/`. `src/MyCodingZone.Ho
 
 Collect **all** findings as `CodeRuleFinding`, then assert once with `Assert.That.CodeRuleHasNoFindings`.
 The rule only states *what* it checks - layout, sorting, documentation link and Human/Ai output come from
-`src/MyCodingZone.CodeRules.Tests/Findings/`. Never build the failure message as a string.
+`src/MyCodingZone.CodeRules.Test/Findings/`. Never build the failure message as a string.
 
 Build every finding with an object initializer only - no constructor arguments, no mix of both.
 `Subject` is `required`, the compiler rejects a finding without it. All other properties are optional.
@@ -78,7 +78,7 @@ take `Subject`, `Location` and `Current` from the declaration, then add what car
 using System.Collections.Immutable;
 using Extensions.Pack;
 
-namespace MyCodingZone.CodeRules.Tests
+namespace MyCodingZone.CodeRules.Test
 {
     [TestCategory("CodeRules")]
     [TestCategory("CodeRules Records")]
@@ -169,13 +169,13 @@ default is the framed Human output. Fixtures can catch `CodeRuleViolationExcepti
 ### 6. Verify - green AND red
 
 1. Run only the new rule:
-   `dotnet test src/MyCodingZone.CodeRules.Tests --filter "FullyQualifiedName~RECORD_RULE_001"`
+   `dotnet test src/MyCodingZone.CodeRules.Test --filter "FullyQualifiedName~RECORD_RULE_001"`
 2. If it is red on the current code: the code is wrong, not the rule. Report the findings to the user;
    do not weaken the rule or add exceptions without explicit approval (see AGENTS.md).
 3. **Negative check:** temporarily introduce one violation (e.g. add a forbidden `<ProjectReference>`,
    a mutable property), run the rule, confirm the finding reads well, then **restore the file** and
    confirm with `git status` / `git diff` that nothing is left behind.
-4. Run the whole category: `dotnet test src/MyCodingZone.CodeRules.Tests --filter "TestCategory=CodeRules"`.
+4. Run the whole category: `dotnet test src/MyCodingZone.CodeRules.Test --filter "TestCategory=CodeRules"`.
 
 ### 7. Report
 

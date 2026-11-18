@@ -2,7 +2,7 @@ using System.Collections.Immutable;
 
 namespace MyCodingZone.CodeRules.Services
 {
-    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Tests/Services/SERVICES_RULE_003.cs</summary>
+    /// <summary>Stage 2 counterpart: src/MyCodingZone.CodeRules.Test/Services/SERVICES_RULE_003.cs</summary>
     public sealed class InjectMultipleImplementationsAsIEnumerable : IRule<ServiceContext>
     {
         // Collection types Microsoft.Extensions.DependencyInjection cannot resolve as "all implementations of T"

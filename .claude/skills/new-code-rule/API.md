@@ -3,7 +3,7 @@
 Namespaces: `Solution.Parser.Sln`, `Solution.Parser.Project`, `Solution.Parser.CSharp`.
 Helpers like `IsEmpty()`, `IsFalse()`, `Flatten(separator)`, `DoesNotContain(...)` come from `Extensions.Pack`.
 
-In `src/MyCodingZone.CodeRules.Tests` watch out for name clashes: `CSharpSyntaxTree` and `Enum` exist in Roslyn / System
+In `src/MyCodingZone.CodeRules.Test` watch out for name clashes: `CSharpSyntaxTree` and `Enum` exist in Roslyn / System
 too - `CodeRuleTestBase.cs` aliases them.
 
 ## Loading (already done in `CodeRuleTestBase`)
@@ -112,5 +112,5 @@ or match on text in `Body` / `SourceCode` and accept the false-positive risk con
 
 ## Existing rules as reference
 
-- `src/MyCodingZone.CodeRules.Tests/Records/RECORD_RULE_001.cs` - C# level: mutable record properties, with before/after sample
-- `src/MyCodingZone.CodeRules.Tests/ProjectReferences/PROJECTS_RULE_001.cs` - project level: productive projects must not reference test projects
+- `src/MyCodingZone.CodeRules.Test/Records/RECORD_RULE_001.cs` - C# level: mutable record properties, with before/after sample
+- `src/MyCodingZone.CodeRules.Test/ProjectReferences/PROJECTS_RULE_001.cs` - project level: productive projects must not reference test projects

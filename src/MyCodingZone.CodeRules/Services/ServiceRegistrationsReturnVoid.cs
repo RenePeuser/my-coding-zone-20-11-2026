@@ -3,7 +3,7 @@ using System.Collections.Immutable;
 namespace MyCodingZone.CodeRules.Services
 {
     /// <summary>
-    /// Stage 2 counterpart: src/MyCodingZone.CodeRules.Tests/Services/SERVICES_RULE_005.cs.
+    /// Stage 2 counterpart: src/MyCodingZone.CodeRules.Test/Services/SERVICES_RULE_005.cs.
     /// Needs no service model, so it evaluates the plain CodeContext.
     /// </summary>
     public sealed class ServiceRegistrationsReturnVoid : ICodeRule

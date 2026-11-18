@@ -229,7 +229,7 @@ Generates report and applies automatic fixes (with placeholder context).
 
 ### Specific File/Directory
 ```bash
-/check-asserts --path src/MyCodingZone.WebApi.Tests
+/check-asserts --path src/MyCodingZone.WebApi.Test
 ```
 
 ---
