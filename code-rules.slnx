@@ -32,6 +32,9 @@
     <File Path="Directory.Packages.props" />
     <File Path="NuGet.Config" />
   </Folder>
+  <Folder Name="/CI-CD/">
+    <File Path=".github/workflows/build-and-test.yml" />
+  </Folder>
   <Folder Name="/SolutionItems/">
     <File Path=".editorconfig" />
     <File Path=".gitattributes" />
