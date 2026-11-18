@@ -1,0 +1,46 @@
+{
+  "content": {
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": [
+          "application/problem+json"
+        ]
+      }
+    ],
+    "value": {
+      "type": "ValidationProblemDetailsExtended",
+      "title": "The JSON request body is missing required properties",
+      "status": 422,
+      "detail": "JSON deserialization for type 'CreateUserRequest' was missing required properties including: 'firstName'.",
+      "errorDetails": {
+        "$": {
+          "currentValue": "}",
+          "errors": [
+            "JSON deserialization for type 'CreateUserRequest' was missing required properties including: 'firstName'."
+          ],
+          "samples": [],
+          "location": {
+            "row": 5,
+            "column": 1
+          }
+        }
+      },
+      "errors": {
+        "$": [
+          "JSON deserialization for type 'CreateUserRequest' was missing required properties including: 'firstName'."
+        ]
+      },
+      "RequestType": "CreateUserRequest",
+      "RequestContent": {
+        "lastName": "2026",
+        "email": "mycodingzone@2026.local",
+        "userType": "Speaker"
+      }
+    }
+  },
+  "statusCode": "UnprocessableEntity",
+  "headers": [],
+  "trailingHeaders": [],
+  "isSuccessStatusCode": false
+}

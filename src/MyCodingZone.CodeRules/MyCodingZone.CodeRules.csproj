@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <!--
+      Stage 5: the same rules as MyCodingZone.CodeRules.Tests, now on the Siemens Code Rule Engine.
+      Siemens.AspNet.CodeRules.MSTest brings the engine, the contracts and a source generator that writes
+      one MSTest test per registered rule (see CodeRuleSetup.cs). No test classes for the rules themselves.
+    -->
+    <PropertyGroup>
+        <IsTestProject>true</IsTestProject>
+        <IsPackable>false</IsPackable>
+        <!-- CA1062: the engine never passes a null context to Evaluate. -->
+        <NoWarn>$(NoWarn);CA1515;CA1707;CA1826;CA1062</NoWarn>
+        <!-- Writes the generated rule tests to obj/.../generated so they can be read without the IDE -->
+        <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- Brings the engine, the contracts and the test generator. MyCodingZone.CodeRules.Test gets the library
+             transitively and excludes the generator itself (ExcludeAssets="analyzers;build"). -->
+        <PackageReference Include="Siemens.AspNet.CodeRules.MSTest" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" />
+        <PackageReference Include="MSTest.TestAdapter" />
+        <PackageReference Include="MSTest.TestFramework" />
+        <PackageReference Include="coverlet.collector">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Using Include="Microsoft.VisualStudio.TestTools.UnitTesting" />
+        <Using Include="Siemens.AspNet.CodeRules.Contracts" />
+    </ItemGroup>
+
+</Project>

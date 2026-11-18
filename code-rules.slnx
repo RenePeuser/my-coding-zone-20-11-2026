@@ -1,0 +1,42 @@
+<Solution>
+  <Folder Name="/01 How To/">
+    <Project Path="src/MyCodingZone.HowTo/MyCodingZone.HowTo.csproj" />
+  </Folder>
+  <Folder Name="/02 CodeRules as Test/">
+    <Project Path="src/MyCodingZone.CodeRules.Tests/MyCodingZone.CodeRules.Tests.csproj" />
+  </Folder>
+  <Folder Name="/03 Roslyn Analyzer/">
+    <Project Path="src/MyCodingZone.Analyzer.Tests/MyCodingZone.Analyzer.Tests.csproj" />
+    <Project Path="src/MyCodingZone.Analyzer/MyCodingZone.Analyzer.csproj" />
+  </Folder>
+  <Folder Name="/04 Roslyn CodeFixes/">
+    <Project Path="src/MyCodingZone.CodeFixes.Tests/MyCodingZone.CodeFixes.Tests.csproj" />
+    <Project Path="src/MyCodingZone.CodeFixes/MyCodingZone.CodeFixes.csproj" />
+  </Folder>
+  <Folder Name="/05 Code Rule Engine/">
+    <Project Path="src/MyCodingZone.CodeRules.Test/MyCodingZone.CodeRules.Test.csproj" />
+    <Project Path="src/MyCodingZone.CodeRules/MyCodingZone.CodeRules.csproj" />
+  </Folder>
+  <Folder Name="/Api/">
+    <Project Path="src/MyCodingZone.WebApi.Tests/MyCodingZone.WebApi.Tests.csproj" Id="9a18b7a4-46bc-4e33-b1bc-9e4ed6ff1eab" />
+    <Project Path="src/MyCodingZone.WebApi/MyCodingZone.WebApi.csproj" Id="96006d8e-008f-4197-b7ca-4c8dc7101241" />
+  </Folder>
+  <Folder Name="/Docs/">
+    <File Path="README.md" />
+    <File Path="AGENTS.md" />
+    <File Path="CLAUDE.md" />
+    <File Path="LICENSE" />
+    <File Path="MyCoding_Zone_CodeRules_Analyzer.pptx" />
+  </Folder>
+  <Folder Name="/Nuget/">
+    <File Path="Directory.Packages.props" />
+    <File Path="NuGet.Config" />
+  </Folder>
+  <Folder Name="/SolutionItems/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="global.json" />
+  </Folder>
+</Solution>

@@ -1,0 +1,99 @@
+<Project>
+    <PropertyGroup>
+
+        <!-- PERFORMANCE FIRST MODE / STAGE MODE -->
+
+        <!-- ManagePackageVersionsCentrally
+         Enables centralized NuGet package version management via
+         Directory.Packages.props for consistent dependency versions across the solution. -->
+        <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+
+        <!-- Ultra fast design-time builds -->
+        <AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+
+        <!-- Use latest stable language features -->
+        <LangVersion>latest</LangVersion>
+        <TargetFramework>net10.0</TargetFramework>
+
+        <!-- Keep nullable for safety -->
+        <Nullable>enable</Nullable>
+
+        <!-- Keep implicit usings -->
+        <ImplicitUsings>enable</ImplicitUsings>
+
+        <!-- Deterministic still fine -->
+        <Deterministic>true</Deterministic>
+
+        <!-- Disable heavy analyzers for stage demo -->
+        <EnableNETAnalyzers>false</EnableNETAnalyzers>
+        <AnalysisMode>None</AnalysisMode>
+        <EnforceCodeStyleInBuild>false</EnforceCodeStyleInBuild>
+
+        <!-- Do NOT generate XML docs locally -->
+        <GenerateDocumentationFile>false</GenerateDocumentationFile>
+
+        <!-- Do NOT audit packages locally -->
+        <NuGetAudit>false</NuGetAudit>
+
+        <!-- Do NOT block builds on warnings during demo -->
+        <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+
+        <!-- Faster globalization -->
+        <InvariantGlobalization>true</InvariantGlobalization>
+
+        <!-- Our own analyzers (MCZ_*) run in build and editor of every project.
+             The .NET analyzers stay off locally (EnableNETAnalyzers=false), so this stays cheap. -->
+        <RunAnalyzersDuringBuild>true</RunAnalyzersDuringBuild>
+        <RunAnalyzersDuringLiveAnalysis>true</RunAnalyzersDuringLiveAnalysis>
+
+    </PropertyGroup>
+
+    <!--
+      OWN ANALYZERS AND CODE FIXES FOR EVERY PROJECT (DEV mode: project references, no NuGet package)
+
+      A change to a rule shows up with the next build, without packing and publishing.
+
+      OutputItemType="Analyzer"
+        The built dll is passed to the compiler as an analyzer (csc /analyzer:), not as a normal assembly reference.
+        Only then Roslyn loads the DiagnosticAnalyzer / CodeFixProvider types: MCZ_* diagnostics in build and IDE,
+        quick actions (code fixes) in the IDE. Without it the analyzer is compiled, but never runs.
+
+      ReferenceOutputAssembly="false"
+        The project does not compile against the analyzer assembly. The analyzer is a build tool, not a runtime dependency:
+        its types are not visible to the code, the dll is not copied to bin/ and not deployed.
+
+      Keep in mind:
+        - Only the analyzer dlls themselves are loaded, not their package dependencies.
+          That is why MyCodingZone.Analyzer has its own small Throw helper instead of using Argument.Check.
+        - Analyzer and CodeFixes cannot analyze themselves (circular reference), so they are excluded.
+        - The IDE caches loaded analyzer dlls. After a change to a rule, restart the IDE if the new behavior does not show up.
+        - Severities live in .editorconfig (e.g. the MCZ_MAPI_* rules are disabled by default and switched on there).
+    -->
+    <PropertyGroup>
+        <IsOwnRoslynProject Condition="'$(MSBuildProjectName)' == 'MyCodingZone.Analyzer' Or '$(MSBuildProjectName)' == 'MyCodingZone.CodeFixes'">true</IsOwnRoslynProject>
+    </PropertyGroup>
+    <ItemGroup Condition="'$(IsOwnRoslynProject)' != 'true'">
+        <ProjectReference Include="$(MSBuildThisFileDirectory)src\MyCodingZone.Analyzer\MyCodingZone.Analyzer.csproj"
+                          OutputItemType="Analyzer"
+                          ReferenceOutputAssembly="false" />
+        <ProjectReference Include="$(MSBuildThisFileDirectory)src\MyCodingZone.CodeFixes\MyCodingZone.CodeFixes.csproj"
+                          OutputItemType="Analyzer"
+                          ReferenceOutputAssembly="false" />
+    </ItemGroup>
+
+    <!-- CI STRICT MODE -->
+    <PropertyGroup Condition="'$(CI)' == 'true'">
+
+        <EnableNETAnalyzers>true</EnableNETAnalyzers>
+        <AnalysisMode>AllEnabledByDefault</AnalysisMode>
+        <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <NuGetAudit>true</NuGetAudit>
+        <NuGetAuditMode>all</NuGetAuditMode>
+        <NuGetAuditLevel>low</NuGetAuditLevel>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <WarningsAsErrors>Nullable</WarningsAsErrors>
+
+    </PropertyGroup>
+
+</Project>

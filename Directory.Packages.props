@@ -1,0 +1,45 @@
+<Project>
+  <ItemGroup Label="Code rules - Siemens Code Rule Engine">
+    <PackageVersion Include="Siemens.AspNet.CodeRules.Contracts" Version="7.7.6" />
+    <PackageVersion Include="Siemens.AspNet.CodeRules.Engine" Version="7.7.6" />
+    <PackageVersion Include="Siemens.AspNet.CodeRules.MSTest" Version="7.7.6" />
+  </ItemGroup>
+  <ItemGroup Label="Error handling - Siemens enterprise error handler">
+    <PackageVersion Include="Siemens.AspNet.ErrorHandling" Version="7.7.6" />
+    <PackageVersion Include="Siemens.AspNet.ErrorHandling.Contracts" Version="7.7.6" />
+  </ItemGroup>
+  <ItemGroup Label="Parsing">
+    <!-- 18.10+ only targets net11.0 / net472: stay on 18.9.6 while the repo targets net10.0 -->
+    <PackageVersion Include="Microsoft.Build" Version="18.9.6" />
+    <PackageVersion Include="Microsoft.Build.Framework" Version="18.9.6" />
+    <!-- Roslyn = the compiler of the pinned SDK (10.0.404 ships 5.9). A newer version builds, but the compiler refuses to load
+         the analyzer (CS9057) and the MCZ_* rules silently stop running. Update together with global.json. -->
+    <PackageVersion Include="Microsoft.CodeAnalysis" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.Analyzers" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="5.9.0" />
+    <PackageVersion Include="Microsoft.VisualStudio.SolutionPersistence" Version="1.0.52" />
+    <PackageVersion Include="Solution.Parser" Version="6.1.4" />
+  </ItemGroup>
+  <ItemGroup Label="Testing">
+    <PackageVersion Include="AspNetCore.Simple.MsTest.Sdk" Version="10.2.0" />
+    <PackageVersion Include="coverlet.collector" Version="10.1.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="18.12.0" />
+    <PackageVersion Include="MSTest" Version="4.5.3" />
+    <PackageVersion Include="MSTest.TestAdapter" Version="4.5.3" />
+    <PackageVersion Include="MSTest.TestFramework" Version="4.5.3" />
+  </ItemGroup>
+  <ItemGroup Label="Web API / common">
+    <PackageVersion Include="Argument.Check" Version="5.0.7" />
+    <PackageVersion Include="Asp.Versioning.Abstractions" Version="10.2.1" />
+    <PackageVersion Include="Asp.Versioning.Http" Version="10.2.3" />
+    <PackageVersion Include="Extensions.Pack" Version="7.0.0" />
+    <PackageVersion Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.3.14" />
+    <PackageVersion Include="Microsoft.AspNetCore.OpenApi" Version="10.0.15" />
+    <PackageVersion Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.15" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection" Version="10.0.15" />
+    <PackageVersion Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="10.0.15" />
+    <PackageVersion Include="Microsoft.Extensions.Http" Version="10.0.15" />
+  </ItemGroup>
+</Project>
