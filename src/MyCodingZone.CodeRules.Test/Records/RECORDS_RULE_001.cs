@@ -1,4 +1,3 @@
-using System.Collections.Immutable;
 using Extensions.Pack;
 
 namespace MyCodingZone.CodeRules.Test
@@ -16,19 +15,19 @@ namespace MyCodingZone.CodeRules.Test
                            where property.IsReadOnly.IsFalse()
                            select new CodeRuleFinding
                            {
-                               Subject = property.FullyQualifiedName,
-                               Location = property.Location,
+                               What = property.FullyQualifiedName,
+                               Where = property.Location,
                                Current = property.SourceCode,
-                               Suggested = property.SourceCode.Replace("set;", "init;"),
-                               Details = ImmutableDictionary<string, string>.Empty.Add("Property", $"{property.Type} {property.Name}"),
-                               DocumentationUrl = "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record#init-only-properties"
+                               ShouldBe = property.SourceCode.Replace("set;", "init;"),
+                               Details = [("Property", $"{property.Type} {property.Name}")]
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "RECORD_RULE_001",
+                                              id: "RECORDS_RULE_001",
                                               title: "Record properties must be immutable",
-                                              because: "A record is a snapshot of a state, e.g. data loaded from the database. It must not change while it is being processed. A setter lets any code modify the same instance, so other parts that hold a reference suddenly see different data. A change must produce a new instance instead.",
-                                              fix: "Replace 'set;' with 'init;' and create a modified copy with a 'with' expression, e.g. 'order with { Status = OrderStatus.Shipped }'.");
+                                              why: "A record is a snapshot of a state, e.g. data loaded from the database. It must not change while it is being processed. A setter lets any code modify the same instance, so other parts that hold a reference suddenly see different data. A change must produce a new instance instead.",
+                                              howToFix: "Replace 'set;' with 'init;' and create a modified copy with a 'with' expression, e.g. 'order with { Status = OrderStatus.Shipped }'.",
+                                              readMoreUrl: "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record#init-only-properties");
         }
     }
 }

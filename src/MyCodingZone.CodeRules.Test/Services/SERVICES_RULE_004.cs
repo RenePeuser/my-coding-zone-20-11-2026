@@ -34,23 +34,22 @@ namespace MyCodingZone.CodeRules.Test
                            let providingRegistration = registrationMethods.FirstOrDefault(method => RegistersDirectly(method, dependency))
                            select new CodeRuleFinding
                            {
-                               Subject = $"{service.Class.FullyQualifiedName} → {dependency}",
-                               Location = registrationMethod.Location,
+                               What = $"{service.Class.FullyQualifiedName} → {dependency}",
+                               Where = registrationMethod.Location,
                                Current = registrationMethod.SourceCode,
-                               Suggested = providingRegistration is null ? null : $"services.{providingRegistration.Name}();",
-                               Fix = providingRegistration is null
-                                         ? $"'{dependency}' has no registration yet. Add one next to '{dependency}' (SERVICES_RULE_001) and call it from '{registrationMethod.Name}'."
-                                         : $"Call 'services.{providingRegistration.Name}()' in '{registrationMethod.Name}'.",
-                               Details = ImmutableDictionary<string, string>.Empty.Add("Service", service.Class.Name)
-                                                                                  .Add("Dependency", $"{parameter.Type} {parameter.Name}")
+                               ShouldBe = providingRegistration is null ? null : $"services.{providingRegistration.Name}();",
+                               HowToFix = providingRegistration is null
+                                              ? $"'{dependency}' has no registration yet. Add one next to '{dependency}' (SERVICES_RULE_001) and call it from '{registrationMethod.Name}'."
+                                              : $"Call 'services.{providingRegistration.Name}()' in '{registrationMethod.Name}'.",
+                               Details = [("Service", service.Class.Name), ("Dependency", $"{parameter.Type} {parameter.Name}")]
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "SERVICES_RULE_004",
+                                              id: "SERVICES_RULE_004",
                                               title: "A service registration registers the dependencies of the service",
-                                              because: "Whoever uses a service calls only its registration. If that registration does not bring the dependencies along, " +
-                                                       "every caller has to know the internals of the service, and a forgotten dependency only fails at runtime with 'Unable to resolve service'.",
-                                              fix: "Call the registration of each dependency from the registration of the service.");
+                                              why: "Whoever uses a service calls only its registration. If that registration does not bring the dependencies along, " +
+                                                   "every caller has to know the internals of the service, and a forgotten dependency only fails at runtime with 'Unable to resolve service'.",
+                                              howToFix: "Call the registration of each dependency from the registration of the service.");
 
             return;
 

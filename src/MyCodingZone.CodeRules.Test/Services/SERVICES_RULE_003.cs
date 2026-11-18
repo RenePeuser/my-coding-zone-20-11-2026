@@ -27,20 +27,20 @@ namespace MyCodingZone.CodeRules.Test
                            let elementType = ElementType(parameter.Type)
                            select new CodeRuleFinding
                            {
-                               Subject = $"{service.Class.FullyQualifiedName}({parameter.Type} {parameter.Name})",
-                               Location = service.Class.Location,
+                               What = $"{service.Class.FullyQualifiedName}({parameter.Type} {parameter.Name})",
+                               Where = service.Class.Location,
                                Current = $"{parameter.Type} {parameter.Name}",
-                               Suggested = $"IEnumerable<{elementType}> {parameter.Name}",
-                               Fix = $"Inject 'IEnumerable<{elementType}>' and convert it inside '{service.Class.Name}' if you need a '{collectionType}'.",
-                               DocumentationUrl = "https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-registration-methods"
+                               ShouldBe = $"IEnumerable<{elementType}> {parameter.Name}",
+                               HowToFix = $"Inject 'IEnumerable<{elementType}>' and convert it inside '{service.Class.Name}' if you need a '{collectionType}'."
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "SERVICES_RULE_003",
+                                              id: "SERVICES_RULE_003",
                                               title: "Inject multiple implementations as IEnumerable<T>",
-                                              because: "Microsoft.Extensions.DependencyInjection resolves all registered implementations of T only as IEnumerable<T>. " +
-                                                       "Any other collection type in a constructor fails at runtime with 'Unable to resolve service'.",
-                                              fix: "Replace the collection type in the constructor with IEnumerable<T>.");
+                                              why: "Microsoft.Extensions.DependencyInjection resolves all registered implementations of T only as IEnumerable<T>. " +
+                                                   "Any other collection type in a constructor fails at runtime with 'Unable to resolve service'.",
+                                              howToFix: "Replace the collection type in the constructor with IEnumerable<T>.",
+                                              readMoreUrl: "https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection#service-registration-methods");
 
             return;
 

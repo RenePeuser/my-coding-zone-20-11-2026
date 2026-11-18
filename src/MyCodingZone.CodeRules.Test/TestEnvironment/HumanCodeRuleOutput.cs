@@ -4,8 +4,8 @@ using System.Text;
 namespace MyCodingZone.CodeRules.Test
 {
     /// <summary>
-    /// Renders a violation in the same look as the AspNetCore.Simple.MsTest.Sdk failures: framed sections,
-    /// an aligned overview table and one section per finding.
+    /// Renders a violation in the same look and with the same labels as the HumanRuleOutput of the Siemens Code Rule Engine
+    /// (stage 5): framed sections, an aligned overview table and one section per finding.
     /// </summary>
     public static class HumanCodeRuleOutput
     {
@@ -26,19 +26,20 @@ namespace MyCodingZone.CodeRules.Test
 
             output.AppendLine();
             output.AppendLine(Frame);
-            output.AppendLine($"🛡️ CODE RULE VIOLATED · {violation.RuleId}");
+            output.AppendLine($"🛡️ CODE RULE VIOLATED · {violation.Id}");
             output.AppendLine(Frame);
 
             Section(output, "📦 Rule Information");
-            Field(output, "Id", violation.RuleId);
+            Field(output, "Id", violation.Id);
             Field(output, "Title", violation.Title);
-            Field(output, "Category", violation.Category);
+            Field(output, "Group", violation.Group);
             Field(output, "Findings", findings.Count.ToString(System.Globalization.CultureInfo.InvariantCulture));
             Field(output, "Docs", violation.DocumentationUrl);
+            Field(output, "Read more", violation.ReadMoreUrl);
             Field(output, "Rule", violation.RuleSource.ClickableLink);
 
             Section(output, "⚠️ Failure Details");
-            output.AppendLine(violation.Because);
+            Field(output, "Why", violation.Why);
 
             Section(output, $"🔍 Findings (Count {findings.Count})");
             output.Append(FindingsTable(findings));
@@ -46,18 +47,17 @@ namespace MyCodingZone.CodeRules.Test
             foreach (var (finding, index) in findings.Take(MaxDetailedFindings).Select((finding, index) => (finding, index)))
             {
                 Section(output, $"📄 Finding {index + 1} of {findings.Count}");
-                Field(output, "Subject", finding.Subject);
-                Field(output, "File", finding.Location?.ClickableLink);
+                Field(output, "What", finding.What);
+                Field(output, "Where", finding.Where?.ClickableLink);
 
-                foreach (var detail in finding.Details ?? ImmutableDictionary<string, string>.Empty)
+                foreach (var (key, value) in finding.Details ?? [])
                 {
-                    Field(output, detail.Key, detail.Value);
+                    Field(output, key, value);
                 }
 
                 Field(output, "Current", finding.Current);
-                Field(output, "Suggested", finding.Suggested);
-                Field(output, "Fix", finding.Fix ?? violation.Fix);
-                Field(output, "Docs", finding.DocumentationUrl);
+                Field(output, "Should be", finding.ShouldBe);
+                Field(output, "How to fix", finding.HowToFix ?? violation.HowToFix);
             }
 
             if (findings.Count > MaxDetailedFindings)
@@ -106,20 +106,20 @@ namespace MyCodingZone.CodeRules.Test
         {
             var withDetails = findings.Any(finding => finding.Details is { Count: > 0 });
 
-            var header = withDetails ? new[] { "#", "Subject", "Location", "Detail" } : new[] { "#", "Subject", "Location" };
+            var header = withDetails ? new[] { "#", "What", "Where", "Detail" } : new[] { "#", "What", "Where" };
 
             var rows = findings.Select((finding, index) =>
                                        {
                                            var cells = new List<string>
                                            {
                                                (index + 1).ToString(System.Globalization.CultureInfo.InvariantCulture),
-                                               finding.Subject,
-                                               finding.Location?.ShortForm ?? "-"
+                                               finding.What,
+                                               finding.Where?.ShortForm ?? "-"
                                            };
 
                                            if (withDetails)
                                            {
-                                               cells.Add(string.Join(", ", (finding.Details ?? ImmutableDictionary<string, string>.Empty).Values));
+                                               cells.Add(string.Join(", ", (finding.Details ?? []).Select(detail => detail.Value)));
                                            }
 
                                            return cells.Select(Truncate).ToArray();

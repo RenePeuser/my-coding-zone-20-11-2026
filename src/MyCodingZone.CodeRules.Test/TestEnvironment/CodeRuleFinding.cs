@@ -3,31 +3,28 @@ using System.Collections.Immutable;
 namespace MyCodingZone.CodeRules.Test
 {
     /// <summary>
-    /// One violation of a CodeRule: what is wrong and where. Why and the default fix live on the rule,
-    /// see <see cref="CodeRuleViolation"/>.
+    /// One violation of a CodeRule: what is wrong and where. Same shape as the <c>Finding</c> of the Siemens Code Rule Engine (stage 5).
+    /// Why and the default fix live on the rule, see <see cref="CodeRuleViolation"/>.
     /// </summary>
     public sealed record CodeRuleFinding
     {
-        /// <summary>What is wrong: the offending type, member, reference or package.</summary>
-        public required string Subject { get; init; }
+        /// <summary>The affected element: the offending type, member, reference or package.</summary>
+        public required string What { get; init; }
 
         /// <summary>Where it is. Accepts a <see cref="Solution.Parser.CSharp.CodeLocation"/> or a <see cref="FileInfo"/>.</summary>
-        public FindingLocation? Location { get; init; }
+        public FindingLocation? Where { get; init; }
 
         /// <summary>The offending code as it is now.</summary>
         public string? Current { get; init; }
 
-        /// <summary>The corrected code.</summary>
-        public string? Suggested { get; init; }
+        /// <summary>What the code should look like instead.</summary>
+        public string? ShouldBe { get; init; }
 
-        /// <summary>Overrides the fix of the rule when the fix depends on this finding.</summary>
-        public string? Fix { get; init; }
+        /// <summary>Overrides the HowToFix of the rule when the fix depends on this finding.</summary>
+        public string? HowToFix { get; init; }
 
-        /// <summary>Further reading for this finding, e.g. the docs of the API or pattern it is about. The rule documentation is added by the assert.</summary>
-        public string? DocumentationUrl { get; init; }
-
-        /// <summary>Extra "Key : value" lines.</summary>
-        public ImmutableDictionary<string, string>? Details { get; init; }
+        /// <summary>Extra "Key : value" lines, shown in the order given, e.g. <c>Details = [("Service", service.Name)]</c>.</summary>
+        public ImmutableList<(string Key, string Value)>? Details { get; init; }
     }
 
     /// <summary>

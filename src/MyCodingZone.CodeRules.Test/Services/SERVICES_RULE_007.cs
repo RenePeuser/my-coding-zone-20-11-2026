@@ -20,21 +20,21 @@ namespace MyCodingZone.CodeRules.Test
                            from registrationMethod in registrationMethods
                            select new CodeRuleFinding
                            {
-                               Subject = $"{registration.FullyQualifiedName}.{registrationMethod.Name}",
-                               Location = registrationMethod.Location,
+                               What = $"{registration.FullyQualifiedName}.{registrationMethod.Name}",
+                               Where = registrationMethod.Location,
                                Current = registrationMethod.SourceCode,
-                               Suggested = SampleRegistration(service.Class),
-                               Fix = $"Register '{service.Class.Name}' in '{registrationMethod.Name}', e.g. '{SampleRegistration(service.Class)}'. Commented out registrations do not count.",
-                               Details = ImmutableDictionary<string, string>.Empty.Add("Service", service.Class.Name)
+                               ShouldBe = SampleRegistration(service.Class),
+                               HowToFix = $"Register '{service.Class.Name}' in '{registrationMethod.Name}', e.g. '{SampleRegistration(service.Class)}'. Commented out registrations do not count.",
+                               Details = [("Service", service.Class.Name)]
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "SERVICES_RULE_007",
+                                              id: "SERVICES_RULE_007",
                                               title: "Each service registration has to register the service itself",
-                                              because: "Whoever uses a service calls only its registration. A registration that exists and is called, " +
-                                                       "but does not register the service (empty or commented out), compiles and passes every other check, " +
-                                                       "yet fails at runtime with 'Unable to resolve service' or silently drops the feature (e.g. a missing endpoint).",
-                                              fix: "Register the service in its 'Add<Service>' method, e.g. 'services.AddSingleton<IService, Service>();'.");
+                                              why: "Whoever uses a service calls only its registration. A registration that exists and is called, " +
+                                                   "but does not register the service (empty or commented out), compiles and passes every other check, " +
+                                                   "yet fails at runtime with 'Unable to resolve service' or silently drops the feature (e.g. a missing endpoint).",
+                                              howToFix: "Register the service in its 'Add<Service>' method, e.g. 'services.AddSingleton<IService, Service>();'.");
 
             return;
 

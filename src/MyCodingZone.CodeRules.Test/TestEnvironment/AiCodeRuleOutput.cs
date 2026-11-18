@@ -6,7 +6,7 @@ namespace MyCodingZone.CodeRules.Test
 {
     /// <summary>
     /// Renders a violation as JSON for AI agents: every finding, repository relative paths, no decoration.
-    /// Field names follow the AiOutputTransformer of AspNetCore.Simple.MsTest.Sdk.
+    /// Field names follow the AiResultFormatter of the Siemens Code Rule Engine (stage 5), so an agent learns one schema.
     /// </summary>
     public static class AiCodeRuleOutput
     {
@@ -25,30 +25,28 @@ namespace MyCodingZone.CodeRules.Test
             var output = new
             {
                 ErrorCode = "CODE_RULE_VIOLATED",
-                Severity = "error",
-                Rule = new
-                {
-                    Id = violation.RuleId,
-                    violation.Title,
-                    violation.Category,
-                    Why = violation.Because,
-                    Documentation = violation.DocumentationUrl,
-                    Source = new { violation.RuleSource.File, violation.RuleSource.Line }
-                },
+                RuleId = violation.Id,
+                violation.Title,
+                violation.Group,
+                violation.Why,
+                violation.HowToFix,
+                Documentation = violation.DocumentationUrl,
+                violation.ReadMoreUrl,
+                Source = new { violation.RuleSource.File, violation.RuleSource.Line },
                 FindingCount = violation.Findings.Count,
                 Findings = violation.Findings.Select(finding => new
                 {
-                    finding.Subject,
-                    finding.Location?.File,
-                    finding.Location?.Line,
+                    finding.What,
+                    finding.Where?.File,
+                    finding.Where?.Line,
                     finding.Current,
-                    finding.Suggested,
-                    SuggestedFix = finding.Fix ?? violation.Fix,
-                    Documentation = finding.DocumentationUrl,
-                    finding.Details
+                    finding.ShouldBe,
+                    HowToFix = finding.HowToFix ?? violation.HowToFix,
+                    Details = finding.Details?.ToDictionary(detail => detail.Key, detail => detail.Value)
                 }),
+                Rerun = $"dotnet test src/MyCodingZone.CodeRules.Test --filter \"FullyQualifiedName~{violation.Id}\"",
                 Instructions = "Fix the code, not the rule. Do not weaken the rule, add exceptions or [Ignore] without human approval. " +
-                               $"Re-run: dotnet test src/MyCodingZone.CodeRules.Test --filter \"FullyQualifiedName~{violation.RuleId}\""
+                               "Use 'rerun' to check your fix."
             };
 
             return Environment.NewLine + JsonSerializer.Serialize(output, Options);

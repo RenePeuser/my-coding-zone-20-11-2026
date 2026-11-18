@@ -1,5 +1,3 @@
-using System.Collections.Immutable;
-
 namespace MyCodingZone.CodeRules.Test
 {
     [TestCategory("CodeRules")]
@@ -19,19 +17,19 @@ namespace MyCodingZone.CodeRules.Test
                                  method.ReturnParameter != "void"
                            select new CodeRuleFinding
                            {
-                               Subject = $"{@class.FullyQualifiedName}.{method.Name}",
-                               Location = method.Location,
+                               What = $"{@class.FullyQualifiedName}.{method.Name}",
+                               Where = method.Location,
                                Current = method.SourceCode,
-                               Fix = $"Change the return type of '{method.Name}' from '{method.ReturnParameter}' to 'void' and remove the 'return'.",
-                               Details = ImmutableDictionary<string, string>.Empty.Add("Returns", method.ReturnParameter)
+                               HowToFix = $"Change the return type of '{method.Name}' from '{method.ReturnParameter}' to 'void' and remove the 'return'.",
+                               Details = [("Returns", method.ReturnParameter)]
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "SERVICES_RULE_005",
+                                              id: "SERVICES_RULE_005",
                                               title: "Service registrations return void",
-                                              because: "One style for all registrations: a registration is a statement, not a builder. " +
-                                                       "Returning IServiceCollection invites long fluent chains in which a missing or duplicate registration is hard to spot in a review.",
-                                              fix: "Return 'void' from the registration and call each registration as its own statement.");
+                                              why: "One style for all registrations: a registration is a statement, not a builder. " +
+                                                   "Returning IServiceCollection invites long fluent chains in which a missing or duplicate registration is hard to spot in a review.",
+                                              howToFix: "Return 'void' from the registration and call each registration as its own statement.");
         }
     }
 }

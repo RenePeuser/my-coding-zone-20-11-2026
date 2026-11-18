@@ -1,4 +1,3 @@
-using System.Collections.Immutable;
 using Solution.Parser.CSharp;
 
 namespace MyCodingZone.CodeRules.Test
@@ -15,23 +14,23 @@ namespace MyCodingZone.CodeRules.Test
                            where service.Registration is null
                            select new CodeRuleFinding
                            {
-                               Subject = service.Class.FullyQualifiedName,
-                               Location = service.Class.Location,
+                               What = service.Class.FullyQualifiedName,
+                               Where = service.Class.Location,
                                Current = service.WrongNameRegistration?.SourceCode,
-                               Suggested = SampleRegistration(service.Class),
-                               Fix = service.WrongNameRegistration is null
-                                         ? $"Add a static class 'Add{service.Class.Name}Extension' with an 'Add{service.Class.Name}(this IServiceCollection services)' method to '{Path.GetFileName(service.Class.FilePath)}'."
-                                         : $"Rename '{service.WrongNameRegistration.Name}' to 'Add{service.Class.Name}Extension', the registration has to be named after the service.",
-                               Details = ImmutableDictionary<string, string>.Empty.Add("Service", service.Class.Name)
+                               ShouldBe = SampleRegistration(service.Class),
+                               HowToFix = service.WrongNameRegistration is null
+                                              ? $"Add a static class 'Add{service.Class.Name}Extension' with an 'Add{service.Class.Name}(this IServiceCollection services)' method to '{Path.GetFileName(service.Class.FilePath)}'."
+                                              : $"Rename '{service.WrongNameRegistration.Name}' to 'Add{service.Class.Name}Extension', the registration has to be named after the service.",
+                               Details = [("Service", service.Class.Name)]
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "SERVICES_RULE_001",
+                                              id: "SERVICES_RULE_001",
                                               title: "Each service needs a registration extension in the same file",
-                                              because: "Whoever uses a service calls exactly one registration method and gets everything the service needs. " +
-                                                       "The registration next to the service keeps both in sync; a service registered somewhere else " +
-                                                       "is easily forgotten and only fails at runtime with 'Unable to resolve service'.",
-                                              fix: "Add a static 'Add<Service>Extension' class with an 'Add<Service>(this IServiceCollection services)' method to the file of the service.");
+                                              why: "Whoever uses a service calls exactly one registration method and gets everything the service needs. " +
+                                                   "The registration next to the service keeps both in sync; a service registered somewhere else " +
+                                                   "is easily forgotten and only fails at runtime with 'Unable to resolve service'.",
+                                              howToFix: "Add a static 'Add<Service>Extension' class with an 'Add<Service>(this IServiceCollection services)' method to the file of the service.");
 
             return;
 

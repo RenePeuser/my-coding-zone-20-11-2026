@@ -82,9 +82,9 @@ TestSdkSettings__OutputMode=ai dotnet test code-rules.slnx
 
 ## Writing a new CodeRule
 
-- One rule per file in `src/MyCodingZone.CodeRules.Test/<Category>/`, named after its rule id.
+- One rule per file in `src/MyCodingZone.CodeRules.Test/<Group>/`, named after its rule id.
 - Add `[TestCategory("CodeRules")]` plus a category, e.g. `[TestCategory("CodeRules Projects")]`.
-- The failure message must name the rule id, the location, the reason and the fix.
+- Use the same names as stage 5: every finding names `What` and `Where` (plus `Current` / `ShouldBe` / `HowToFix` where it helps), the assert takes `id`, `title`, `why`, `howToFix` and optionally `readMoreUrl`, with the same texts as the stage 5 rule.
 - Rules must be deterministic and fast, with few false positives, and have positive and negative fixtures.
 - Never use absolute paths. Resolve files relative to the repository root (see `src/MyCodingZone.HowTo/RepositoryPaths.cs`).
 

@@ -25,20 +25,20 @@ namespace MyCodingZone.CodeRules.Test
                            where !calls.Any(call => call.Contains($".{registrationMethod.Name}(", StringComparison.Ordinal))
                            select new CodeRuleFinding
                            {
-                               Subject = $"{registration.FullyQualifiedName}.{registrationMethod.Name}",
-                               Location = registrationMethod.Location,
+                               What = $"{registration.FullyQualifiedName}.{registrationMethod.Name}",
+                               Where = registrationMethod.Location,
                                Current = registrationMethod.SourceCode,
-                               Suggested = $"services.{registrationMethod.Name}();",
-                               Fix = $"Call 'services.{registrationMethod.Name}()' from the registration of the feature that uses '{service.Class.Name}', or from Program.cs.",
-                               Details = ImmutableDictionary<string, string>.Empty.Add("Service", service.Class.Name)
+                               ShouldBe = $"services.{registrationMethod.Name}();",
+                               HowToFix = $"Call 'services.{registrationMethod.Name}()' from the registration of the feature that uses '{service.Class.Name}', or from Program.cs.",
+                               Details = [("Service", service.Class.Name)]
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "SERVICES_RULE_002",
+                                              id: "SERVICES_RULE_002",
                                               title: "Each service registration has to be called",
-                                              because: "A registration that is never called registers nothing. The application compiles, " +
-                                                       "but fails at runtime as soon as the service is resolved.",
-                                              fix: "Call the registration from the registration of the parent feature or from Program.cs.");
+                                              why: "A registration that is never called registers nothing. The application compiles, " +
+                                                   "but fails at runtime as soon as the service is resolved.",
+                                              howToFix: "Call the registration from the registration of the parent feature or from Program.cs.");
         }
     }
 }

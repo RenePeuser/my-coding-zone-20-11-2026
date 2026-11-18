@@ -1,6 +1,3 @@
-
-using System.Collections.Immutable;
-
 namespace MyCodingZone.CodeRules.Test
 {
     [TestCategory("CodeRules")]
@@ -15,21 +12,20 @@ namespace MyCodingZone.CodeRules.Test
                            from method in record.Methods
                            select new CodeRuleFinding
                            {
-                               Subject = method.FullyQualifiedName,
-                               Location = method.Location,
+                               What = method.FullyQualifiedName,
+                               Where = method.Location,
                                Current = method.SourceCode,
-                               Fix = $"Move the method '{method.Name}' to a separate service class or static helper.",
-                               Details = ImmutableDictionary.Create<string, string>().Add("Record", record.Name)
-                                                                                     .Add("Method", $"{method.ReturnParameter} {method.Name}(...)")
+                               HowToFix = $"Move the method '{method.Name}' to a separate service class or static helper.",
+                               Details = [("Record", record.Name), ("Method", $"{method.ReturnParameter} {method.Name}(...)")]
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "RECORDS_RULE_002",
+                                              id: "RECORDS_RULE_002",
                                               title: "Records must not implement methods",
-                                              because: "Records are designed for data transfer and value objects. " +
-                                                       "Mixing data and logic violates the separation of concerns and " +
-                                                       "makes the code harder to test and maintain.",
-                                              fix: "Move methods to a separate service class or static helper class.");
+                                              why: "Records are designed for data transfer and value objects. " +
+                                                   "Mixing data and logic violates the separation of concerns and " +
+                                                   "makes the code harder to test and maintain.",
+                                              howToFix: "Move methods to a separate service class or static helper class.");
         }
     }
 }

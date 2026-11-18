@@ -21,18 +21,18 @@ namespace MyCodingZone.CodeRules.Test
                            let projectFile = project.FileInfo
                            select new CodeRuleFinding
                            {
-                               Subject = $"{project.AssemblyName} → {reference.Name}",
-                               Location = projectFile,
+                               What = $"{project.AssemblyName} → {reference.Name}",
+                               Where = projectFile,
                                Current = $"<ProjectReference Include=\"{reference.Include}\" />",
-                               Fix = $"Remove the <ProjectReference> from '{projectFile.Name}'. If the productive code needs something from the test project, move that code into a productive project instead."
+                               HowToFix = $"Remove the <ProjectReference> from '{projectFile.Name}'. If the productive code needs something from the test project, move that code into a productive project instead."
                            };
 
             Assert.That.CodeRuleHasNoFindings(findings,
-                                              rule: "PROJECTS_RULE_001",
+                                              id: "PROJECTS_RULE_001",
                                               title: "Productive projects must not reference test projects",
-                                              because: "Test projects are never deployed. A productive project that depends on them ships test code and test packages " +
-                                                       "(MSTest, test SDKs, fakes) into production and creates a dependency cycle between production and test code.",
-                                              fix: "Remove the <ProjectReference> to the test project.");
+                                              why: "Test projects are never deployed. A productive project that depends on them ships test code and test packages " +
+                                                   "(MSTest, test SDKs, fakes) into production and creates a dependency cycle between production and test code.",
+                                              howToFix: "Remove the <ProjectReference> to the test project.");
         }
     }
 }

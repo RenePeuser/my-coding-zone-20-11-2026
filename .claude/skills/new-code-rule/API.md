@@ -112,5 +112,5 @@ or match on text in `Body` / `SourceCode` and accept the false-positive risk con
 
 ## Existing rules as reference
 
-- `src/MyCodingZone.CodeRules.Test/Records/RECORD_RULE_001.cs` - C# level: mutable record properties, with before/after sample
+- `src/MyCodingZone.CodeRules.Test/Records/RECORDS_RULE_001.cs` - C# level: mutable record properties, with before/after sample
 - `src/MyCodingZone.CodeRules.Test/ProjectReferences/PROJECTS_RULE_001.cs` - project level: productive projects must not reference test projects

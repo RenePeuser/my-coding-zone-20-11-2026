@@ -4,13 +4,15 @@ namespace MyCodingZone.CodeRules.Test
 {
     /// <summary>
     /// The complete result of a failing CodeRule: the rule and every finding. Human and Ai output are both rendered from it.
+    /// The rule part uses the names of <c>IRule</c> of the Siemens Code Rule Engine (stage 5).
     /// </summary>
-    public sealed record CodeRuleViolation(string RuleId,
+    public sealed record CodeRuleViolation(string Id,
                                            string Title,
-                                           string Category,
-                                           string Because,
-                                           string Fix,
+                                           string Group,
+                                           string Why,
+                                           string HowToFix,
                                            string DocumentationUrl,
+                                           string? ReadMoreUrl,
                                            FindingLocation RuleSource,
                                            ImmutableList<CodeRuleFinding> Findings);
 
