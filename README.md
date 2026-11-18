@@ -63,7 +63,9 @@ CodeRules liegen versioniert in der Codebase, laufen lokal und in der CI und lie
 | Neue Regel | In Minuten | Höherer API- und Testaufwand |
 | Zugriff | Solution, Dateien, MSBuild, Parser | C#-/VB-Semantikmodell |
 | Feedback | Testlauf oder CI | Direkt in IDE und Build |
-| Code Fix | – | Optional automatisch |
+| Code Fix | Möglich, aber tricky\* | Optional automatisch |
+
+\* Ein Code Fix im Test-Ansatz ist machbar, muss aber selbst den Quelltext an `Finding.Where` finden und ersetzen. `Finding.Current` muss dafür exakt dem Quelltext an dieser Stelle entsprechen.
 
 Eine Regel muss nicht als Analyzer geboren werden:
 
