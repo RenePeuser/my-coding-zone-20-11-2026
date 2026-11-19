@@ -1,3 +1,4 @@
+using System.Collections.Immutable;
 using AspNetCore.Simple.MsTest.Sdk;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -5,6 +6,16 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace MyCodingZone.HowTo
 {
+    // We use this type so show the Syntax Tree Visualizer in Visual Studio,
+    // which is a great tool to explore the structure of C# code.
+    public record PersonForSyntaxTreeVisualizer
+    {
+        // Property Declaration
+        public required int Age { get; init; }
+
+        public required string City { get; set; }
+    }
+
     [TestClass]
     [TestCategory("HowTo")]
     public class Better_Usage
@@ -24,6 +35,8 @@ namespace MyCodingZone.HowTo
         {
             var tree = CSharpSyntaxTree.ParseText(Code);
             _root = tree.GetRoot();
+
+            var nodes = _root.DescendantNodes().ToImmutableList();
         }
 
         [TestMethod]
