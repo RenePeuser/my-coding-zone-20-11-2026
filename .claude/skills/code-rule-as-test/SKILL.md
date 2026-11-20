@@ -1,20 +1,35 @@
 ---
-name: new-code-rule
-description: Build a new CodeRule (MSTest) in src/MyCodingZone.CodeRules.Test with the Solution.Parser API - solution, project and C# rules with findings that name what, where, why and how to fix - plus its stage 5 counterpart, rule tests and docs/code-rules page
+name: code-rule-as-test
+description: Stage 2 only - write a CodeRule as a plain MSTest test class deriving from CodeRuleTestBase in src/MyCodingZone.CodeRules.Test, using Solution.Parser and the own CodeRuleFinding / Assert.That.CodeRuleHasNoFindings infrastructure. Does NOT use ICodeRule / ISolutionRule / IRule<T> - for the Siemens Code Rule Engine use /code-rule-with-engine.
 ---
 
-# New CodeRule - with Solution.Parser
+# CodeRule as test (stage 2)
 
 **Purpose:** Turn a piece of project knowledge ("productive projects must not reference test projects",
-"record properties must be immutable", ...) into an executable CodeRule that fails with a finding a
-human or an agent can act on without guessing.
+"record properties must be immutable", ...) into a CodeRule written as an ordinary MSTest test, with the repository's
+own infrastructure. This is the "build it yourself" variant of the talk.
 
 **Package:** `Solution.Parser` (version in `Directory.Packages.props`). API cheat sheet: [API.md](API.md).
 
+## Scope - read first
+
+This repository has several implementations of "a rule" for demo purposes. This skill writes **exactly one kind**:
+
+| Do | Do not |
+|---|---|
+| `public class <ID> : CodeRuleTestBase` with `[TestClass]` / `[TestMethod]` in `src/MyCodingZone.CodeRules.Test/<Group>/` | implement `ICodeRule`, `ISolutionRule` or `IRule<TContext>` (that is stage 5 → `/code-rule-with-engine`) |
+| `CodeRuleFinding` + `Assert.That.CodeRuleHasNoFindings(...)` | use `Finding`, `RuleTester`, `Assert.That.CodeRule.ViolatesAsync` (stage 5) |
+| | write a `DiagnosticAnalyzer` (stage 3, `src/MyCodingZone.Analyzer`) or an example in `src/MyCodingZone.HowTo` (stage 1) |
+
+**Counterpart:** stage 2 and stage 5 share the rule IDs (see AGENTS.md). Ask the user once at the start:
+*"Only the stage 2 test, or also the stage 5 engine rule?"* Default is both: do this skill first, then
+`/code-rule-with-engine` with the **same** `Id`, `Title`, `Why`, `HowToFix`, `ReadMoreUrl`. If the stage 5 rule already
+exists, copy the texts from it.
+
 **When to use:**
-- The user describes a convention, architecture boundary or "we always/never do X" rule
-- A review comment keeps coming back and should become a test
+- The user wants a rule "as a test", "in stage 2", "with CodeRuleTestBase" or "without the engine"
 - An existing rule in `src/MyCodingZone.CodeRules.Test` has to be extended
+- The stage 2 counterpart of an existing stage 5 rule is missing
 
 ---
 
@@ -41,19 +56,19 @@ All data is loaded once in `CodeRuleTestBase` (`[AssemblyInitialize]`). Use it, 
 | Project | csproj content: references, packages, properties | `project.ProjectReferences`, `project.PackageReferences`, `project.Document` (XDocument) |
 | C# file | types, members, attributes, usings, namespaces | `ProductiveSyntaxTrees`, `TestSyntaxTrees`, `AllSyntaxTrees`, `Records`, `Classes`, `Enums`, `Interfaces`, `Structs` |
 
+A derived model several rules of one group share (e.g. "all services") goes into an abstract base class deriving
+from `CodeRuleTestBase` with a static `Lazy<T>` - see `Services/ServiceCodeRuleBase.cs`.
+
 Only reach for raw Roslyn when the Solution.Parser model does not carry what you need
 (see "Model gaps" in [API.md](API.md)). If you add something to `CodeRuleTestBase`, keep it lazy or cheap.
 
 ### 3. Create the file
 
-Stage 2 rules live in `src/MyCodingZone.CodeRules.Test/`, their stage 5 counterparts in `src/MyCodingZone.CodeRules/`
-(step 6). `src/MyCodingZone.HowTo` holds examples, not rules.
-
 - Id: `<TOPIC>_RULE_<NNN>`, e.g. `RECORDS_RULE_001`, `PROJECTS_RULE_001`. Reuse the topic of an existing
-  rule when it fits and take the next free number (look at `src/MyCodingZone.CodeRules.Test/**/*_RULE_*.cs`);
-  otherwise start a new topic with `_001`.
+  rule when it fits and take the next free number - check **both** `src/MyCodingZone.CodeRules.Test/**/*_RULE_*.cs`
+  and the `Id` properties in `src/MyCodingZone.CodeRules/**/*.cs`; otherwise start a new topic with `_001`.
 - Folder: one per topic, named in plain words, e.g. `Records/`, `ProjectReferences/`. The folder becomes the
-  group in the output (like the namespace segment of a stage 5 rule).
+  group in the output.
 - File name and class name = rule id. One rule per file.
 - Namespace: `MyCodingZone.CodeRules.Test`, no sub namespace per folder.
 - Categories: `[TestCategory("CodeRules")]` plus one specific, e.g. `[TestCategory("CodeRules Records")]`.
@@ -65,9 +80,8 @@ Collect **all** findings as `CodeRuleFinding`, then assert once with `Assert.Tha
 The rule only states *what* it checks - layout, sorting, documentation link and Human/Ai output come from
 `src/MyCodingZone.CodeRules.Test/TestEnvironment/`. Never build the failure message as a string.
 
-The names are the same as in stage 5 (Siemens Code Rule Engine): the finding has `What`, `Where`, `Current`,
-`ShouldBe`, `HowToFix` and `Details` like `Finding`; the assert takes `id`, `title`, `why`, `howToFix` and
-`readMoreUrl` like `IRule`. Use the same texts as the stage 5 counterpart of the rule.
+The names mirror stage 5 on purpose: the finding has `What`, `Where`, `Current`, `ShouldBe`, `HowToFix` and
+`Details`; the assert takes `id`, `title`, `why`, `howToFix` and `readMoreUrl`.
 
 Build every finding with an object initializer only - no constructor arguments, no mix of both.
 `What` is `required`, the compiler rejects a finding without it. All other properties are optional.
@@ -171,23 +185,11 @@ default is the framed Human output. Fixtures can catch `CodeRuleViolationExcepti
 - **Parse errors:** a file with `tree.HasParseErrors` yields an incomplete model; do not trust a green rule on it.
 - **Determinism:** no time, no network, no ordering assumptions. Sort findings if the output order matters.
 
-### 6. Stage 5 counterpart and documentation page
+### 6. Documentation page
 
-Stage 2 and stage 5 share the rule IDs (see AGENTS.md). A new stage 2 rule is complete only with:
-
-- **Stage 5 rule:** `src/MyCodingZone.CodeRules/<Group>/<RuleClass>.cs`, a `sealed` class implementing `ICodeRule`,
-  `ISolutionRule` or `IRule<TContext>`, named after what it checks (e.g. `RecordPropertiesMustBeImmutable`), with the
-  same `Id`, `Title`, `Why`, `HowToFix` and `ReadMoreUrl` as the stage 2 assert. `Finding.Current` must be exactly the
-  source at `Finding.Where`.
-- **Registration:** add it to `MyCodingZoneRulePack`, otherwise no test is generated and the guard test fails.
-- **Rule tests:** `src/MyCodingZone.CodeRules.Engine.Test/<Group>/<RuleClass>_Tests.cs` with
-  `Should_Report_..._When_...` (`Assert.That.CodeRule.ViolatesAsync<TRule>`, findings marked with `[|...|]`) and
-  `Should_Accept_..._When_...` (`CompliesAsync<TRule>`, variants as `[DataRow]`). See AGENTS.md for the details.
-- **Documentation page:** `docs/code-rules/<ID>.md` (copy an existing page: Why, How to fix, an example that violates
-  and one that complies) plus a line in `docs/code-rules/README.md`. Every finding links to this page; without it
-  the `Docs` link of the new rule is a 404.
-
-Ask the user first if they explicitly want only the stage 2 rule (e.g. for a quick demo).
+Every finding links to `docs/code-rules/<ID>.md`. If the page does not exist yet (it is shared with stage 5), create it:
+copy an existing page (Why, How to fix, an example that violates and one that complies) and add a line to
+`docs/code-rules/README.md`. Without it the `Docs` link of the new rule is a 404.
 
 ### 7. Verify - green AND red
 
@@ -198,10 +200,10 @@ Ask the user first if they explicitly want only the stage 2 rule (e.g. for a qui
 3. **Negative check:** temporarily introduce one violation (e.g. add a forbidden `<ProjectReference>`,
    a mutable property), run the rule, confirm the finding reads well, then **restore the file** and
    confirm with `git status` / `git diff` that nothing is left behind.
-4. Run the whole category, both stages: `dotnet test code-rules.slnx --filter "TestCategory~CodeRules"`
-   (includes the generated stage 5 tests and `src/MyCodingZone.CodeRules.Engine.Test`).
+4. Run the stage 2 category: `dotnet test src/MyCodingZone.CodeRules.Test --filter TestCategory=CodeRules`.
 
-### 8. Report
+### 8. Report and hand over
 
 Tell the user: rule id and file, what it checks, green on the current code (or the findings), how the
 negative check looked (paste the finding), and any known blind spots (e.g. projects outside the slnx).
+If the stage 5 counterpart is still missing, continue with `/code-rule-with-engine` (or say clearly that it is missing).

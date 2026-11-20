@@ -6,7 +6,8 @@ The goal: project knowledge lives in executable CodeRules. When a rule fails, th
 The repository tells the story in six stages: 01 solution parsing (`src/MyCodingZone.HowTo`), 02 CodeRules as tests with an own
 infrastructure (`src/MyCodingZone.CodeRules.Test`), 03 Roslyn analyzer (`src/MyCodingZone.Analyzer`), 04 Roslyn code fixes (`src/MyCodingZone.CodeFixes`), 05 the same rules as stage 2
 on the Siemens Code Rule Engine (`src/MyCodingZone.CodeRules`) and 06 the sample Minimal API with snapshot API tests (`src/MyCodingZone.WebApi`). Stage 2 and stage 5 share the rule IDs; a rule changed in one
-stage has to be changed in the other one as well, including its page in `docs/code-rules/<ID>.md`. Use the `/new-code-rule` skill to add a rule.
+stage has to be changed in the other one as well, including its page in `docs/code-rules/<ID>.md`. To add a rule use `/code-rule-with-engine` for stage 5 (`ICodeRule` by default, `ISolutionRule` / `IRule<TContext>` where it fits)
+and `/code-rule-as-test` for stage 2 (MSTest with `CodeRuleTestBase`); each skill hands over to the other for the counterpart.
 
 ## Commands
 
