@@ -1,4 +1,5 @@
 using System.Collections.Immutable;
+using System.Diagnostics;
 using AspNetCore.Simple.MsTest.Sdk;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
@@ -35,9 +36,6 @@ namespace MyCodingZone.HowTo
         {
             var tree = CSharpSyntaxTree.ParseText(Code);
             _root = tree.GetRoot();
-
-            var nodes = _root.DescendantNodes().ToImmutableList();
-            Console.WriteLine(nodes);
         }
 
         [TestMethod]
