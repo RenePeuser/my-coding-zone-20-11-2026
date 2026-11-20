@@ -47,8 +47,8 @@ namespace MyCodingZone.CodeRules.Test
             // so rules that only use the syntax stay as fast as before.
             // The trees have to come from project.Trees: a tree parsed on its own (CSharpSyntaxTree.Parse(file)) has no symbols.
 
-            Solution = SolutionFile.Find("code-rules.slnx", ParseMode.WithSymbols);
-            // Solution = SolutionFile.Find("code-rules.slnx");
+            // Solution = SolutionFile.Find("code-rules.slnx", ParseMode.WithSymbols);
+            Solution = SolutionFile.Find("code-rules.slnx");
 
             ProductiveSyntaxTrees = Solution.ProductionProjects
                                             .SelectMany(p => p.Trees)

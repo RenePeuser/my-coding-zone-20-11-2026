@@ -41,9 +41,9 @@ namespace MyCodingZone.WebApi.Api.User.V1.Create
                                 createUserRequest.Email,
                                 createUserRequest.UserType);
 
-            var response = new CreateUserResponse(user);
-
-            return response;
+            var createUserResponse = new CreateUserResponse(user);
+            
+            return createUserResponse;
         }
     }
 }
