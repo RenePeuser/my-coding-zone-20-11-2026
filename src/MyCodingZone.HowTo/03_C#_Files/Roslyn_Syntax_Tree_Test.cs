@@ -37,6 +37,7 @@ namespace MyCodingZone.HowTo
             _root = tree.GetRoot();
 
             var nodes = _root.DescendantNodes().ToImmutableList();
+            Console.WriteLine(nodes);
         }
 
         [TestMethod]
