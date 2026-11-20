@@ -19,6 +19,6 @@ namespace MyCodingZone.Analyzer
                                                                     description: "Tags are required for consistent OpenAPI grouping.",
                                                                     category: "MinimalApi.Design",
                                                                     defaultSeverity: DiagnosticSeverity.Info,
-                                                                    isEnabledByDefault: false);
+                                                                    isEnabledByDefault: true);
     }
 }

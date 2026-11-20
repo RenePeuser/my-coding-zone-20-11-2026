@@ -9,6 +9,7 @@ namespace MyCodingZone.CodeRules.Test
         Ai
     }
 
+    // This is just for demo purposes. In a real project, you would use the SDK's TestSdkSettings.OutputMode instead of this static property.
     public static class CodeRuleSettings
     {
         public const string DocumentationDomain = "https://github.com/RenePeuser/my-coding-zone-20-11-2026";

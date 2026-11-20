@@ -19,6 +19,6 @@ namespace MyCodingZone.Analyzer
                                                                     description: "Endpoint names are required for routing, client generation, and consistent monitoring.",
                                                                     category: "MinimalApi.Design",
                                                                     defaultSeverity: DiagnosticSeverity.Info,
-                                                                    isEnabledByDefault: false);
+                                                                    isEnabledByDefault: true);
     }
 }

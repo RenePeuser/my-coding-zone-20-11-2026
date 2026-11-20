@@ -20,7 +20,7 @@ namespace MyCodingZone.Analyzer.MinimalApi
                                                                 description: "If the handler does not return a response DTO, the endpoint should explicitly declare 204 to reflect no-body semantics.",
                                                                 category: "MinimalApi.Design",
                                                                 defaultSeverity: DiagnosticSeverity.Info,
-                                                                isEnabledByDefault: false);
+                                                                isEnabledByDefault: true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

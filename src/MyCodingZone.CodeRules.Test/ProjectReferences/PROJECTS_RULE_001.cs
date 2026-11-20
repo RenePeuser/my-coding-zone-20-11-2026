@@ -27,6 +27,8 @@ namespace MyCodingZone.CodeRules.Test
                                HowToFix = $"Remove the <ProjectReference> from '{projectFile.Name}'. If the productive code needs something from the test project, move that code into a productive project instead."
                            };
 
+
+            // Important: Output rendering Human vs AI
             Assert.That.CodeRuleHasNoFindings(findings,
                                               id: "PROJECTS_RULE_001",
                                               title: "Productive projects must not reference test projects",

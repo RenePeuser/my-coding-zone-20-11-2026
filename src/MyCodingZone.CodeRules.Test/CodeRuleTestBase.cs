@@ -42,17 +42,21 @@ namespace MyCodingZone.CodeRules.Test
         [AssemblyInitialize]
         public static void Init(TestContext testContext)
         {
-            Solution = SolutionFile.Find("code-rules.slnx");
+            // ParseMode.WithSymbols: syntax trees plus symbols (call.Method, call.Passes(...), method.Origin, ...).
+            // Nothing is compiled here. A project is compiled the first time a rule asks for one of its symbols,
+            // so rules that only use the syntax stay as fast as before.
+            // The trees have to come from project.Trees: a tree parsed on its own (CSharpSyntaxTree.Parse(file)) has no symbols.
+
+            Solution = SolutionFile.Find("code-rules.slnx", ParseMode.WithSymbols);
+            // Solution = SolutionFile.Find("code-rules.slnx");
 
             ProductiveSyntaxTrees = Solution.ProductionProjects
-                                            .SelectMany(p => p.SourceFiles.GetCSharpFiles())
-                                            .Select(CSharpSyntaxTree.Parse)
+                                            .SelectMany(p => p.Trees)
                                             .Where(tree => !IgnoreForCodeRuleAnalyse.Any(namespaceToIgnore => tree.Namespace.Name.Contains(namespaceToIgnore)))
                                             .ToImmutableList();
 
             TestSyntaxTrees = Solution.UnitTestProjects
-                                      .SelectMany(p => p.SourceFiles.GetCSharpFiles())
-                                      .Select(CSharpSyntaxTree.Parse)
+                                      .SelectMany(p => p.Trees)
                                       .Where(tree => !IgnoreForCodeRuleAnalyse.Any(namespaceToIgnore => tree.Namespace.Name.Contains(namespaceToIgnore)))
                                       .ToImmutableList();
 

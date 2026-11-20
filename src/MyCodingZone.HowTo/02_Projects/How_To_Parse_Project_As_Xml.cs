@@ -27,6 +27,8 @@ namespace MyCodingZone.HowTo
                                  fix: "Fix the root element name in the .csproj file");
         }
 
+
+        // Achtung: Hier gibt es einen Fallstrick :) 
         [TestMethod]
         public void How_To_Find_PackageReferences()
         {
@@ -54,6 +56,35 @@ namespace MyCodingZone.HowTo
             Assert.That.IsNotEmpty(packageName,
                                    because: "Package name must not be empty",
                                    fix: "Set a valid package name in Include attribute");
+        }
+
+        [TestMethod]
+        public void PackageReferences_Should_Not_Have_A_Version()
+        {
+            // Convention from AGENTS.md: NuGet versions live only in Directory.Packages.props.
+            // Checked for every project under src/, not just for this one.
+            var sourceDirectory = Path.Combine(RepositoryPaths.Root.FullName, "src");
+
+            var findings = Directory.EnumerateFiles(sourceDirectory, "*.csproj", SearchOption.AllDirectories)
+                                    .SelectMany(path => XDocument.Load(path, LoadOptions.SetLineInfo)
+                                                                 .Descendants("PackageReference")
+                                                                 .Where(reference => reference.Attribute("Version") is not null ||
+                                                                                     reference.Element("Version") is not null)
+                                                                 .Select(reference => Describe(path, reference)))
+                                    .ToList();
+
+            Assert.That.IsEmpty(findings,
+                                because: $"Versions are managed centrally, a version in the project file overrides it and the projects drift apart{Environment.NewLine}{string.Join(Environment.NewLine, findings)}",
+                                fix: "Remove the Version from the PackageReference and add or update <PackageVersion Include=\"...\" Version=\"...\" /> in Directory.Packages.props");
+        }
+
+        private static string Describe(string path, XElement reference)
+        {
+            // LoadOptions.SetLineInfo gives every XElement a line number, that is the 'Where' of the finding.
+            var line = ((System.Xml.IXmlLineInfo)reference).LineNumber;
+            var relativePath = Path.GetRelativePath(RepositoryPaths.Root.FullName, path);
+
+            return $"What: PackageReference '{reference.Attribute("Include")?.Value}' has a Version, Where: {relativePath}({line})";
         }
     }
 }

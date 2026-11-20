@@ -13,9 +13,7 @@
     <!-- IntelliSense                   -->
     <!-- ============================== -->
     <s:Boolean
-        x:Key="/Default/CodeEditing/Intellisense/CodeCompletion/IntelliSenseCompletingCharacters/CSharpCompletingCharacters/UpgradedFromVSSettings/@EntryValue">
-    True
-    </s:Boolean>
+        x:Key="/Default/CodeEditing/Intellisense/CodeCompletion/IntelliSenseCompletingCharacters/CSharpCompletingCharacters/UpgradedFromVSSettings/@EntryValue">True</s:Boolean>
 
 
     <!-- ========================================================= -->
@@ -69,9 +67,7 @@
 
     <!-- Suppress extremely noisy comma-break rule -->
     <s:String
-        x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=RedundantCommaLineBreak/@EntryIndexedValue">
-    DO_NOT_SHOW
-    </s:String>
+        x:Key="/Default/CodeInspection/Highlighting/InspectionSeverities/=RedundantCommaLineBreak/@EntryIndexedValue">DO_NOT_SHOW</s:String>
 
     <!-- Ignore unused accessors -->
     <s:String
@@ -232,7 +228,9 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B20F39F722283242A1DCC3A37FDE093B/Shortcut/@EntryValue">#if</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B20F39F722283242A1DCC3A37FDE093B/Text/@EntryValue">#if $expression$ $SELECTION$$END$ #endif</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B20F39F722283242A1DCC3A37FDE093B/Text/@EntryValue">#if $expression$&#xD;
+     $SELECTION$$END$ &#xD;
+  #endif</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B20F39F722283242A1DCC3A37FDE093B/IsBlessed/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -268,7 +266,9 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=114CAE40334756458DF914559FA65BBF/Shortcut/@EntryValue">#region</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=114CAE40334756458DF914559FA65BBF/Text/@EntryValue">#region $name$ $SELECTION$$END$ #endregion</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=114CAE40334756458DF914559FA65BBF/Text/@EntryValue">#region $name$&#xD;
+     $SELECTION$$END$&#xD;
+  #endregion</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=114CAE40334756458DF914559FA65BBF/IsBlessed/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -302,7 +302,11 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8CD67D12BAA48A4D859329BE238D2425/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8CD67D12BAA48A4D859329BE238D2425/Text/@EntryValue">[NUnit.Framework.Test] public Task Should_Not_Be_Able_To_Get_$entity$_By_Id_Without_Authentication() { return Client.AssertGetAsUnauthorizedAsync("$url$"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8CD67D12BAA48A4D859329BE238D2425/Text/@EntryValue">[NUnit.Framework.Test]&#xD;
+public Task Should_Not_Be_Able_To_Get_$entity$_By_Id_Without_Authentication()&#xD;
+{&#xD;
+	return Client.AssertGetAsUnauthorizedAsync("$url$");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8CD67D12BAA48A4D859329BE238D2425/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -346,7 +350,21 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A9CD96273781A7498704638741B82AB4/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A9CD96273781A7498704638741B82AB4/Text/@EntryValue">internal static class $request$ValidatorExtension { internal static void $request$Validator(this IServiceCollection services) { services.AddSingletonIfNotExists&lt;IRequestValidator&lt;$request$&gt;, $request$Validator&gt;(); } } internal sealed class $request$Validator : IRequestValidator&lt;$request$&gt; { public Task ValidateAsync(AddOpportunity request) { return Task.CompletedTask; } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A9CD96273781A7498704638741B82AB4/Text/@EntryValue">internal static class $request$ValidatorExtension&#xD;
+{&#xD;
+    internal static void $request$Validator(this IServiceCollection services)&#xD;
+    {&#xD;
+        services.AddSingletonIfNotExists&lt;IRequestValidator&lt;$request$&gt;, $request$Validator&gt;();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+internal sealed class $request$Validator : IRequestValidator&lt;$request$&gt;&#xD;
+{&#xD;
+    public Task ValidateAsync(AddOpportunity request)&#xD;
+    {&#xD;
+        return Task.CompletedTask;       &#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=A9CD96273781A7498704638741B82AB4/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -398,7 +416,12 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=458D185AC455504D83D145782B5F6038/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=458D185AC455504D83D145782B5F6038/Text/@EntryValue">[TestClass] [TestCategory("$category$")] public class $testName$ { }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=458D185AC455504D83D145782B5F6038/Text/@EntryValue">[TestClass]&#xD;
+[TestCategory("$category$")]&#xD;
+public class $testName$&#xD;
+{&#xD;
+	&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=458D185AC455504D83D145782B5F6038/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -422,7 +445,13 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FFF6886F70E2C345A7636A9CABE01DD1/Shortcut/@EntryValue">addconfigurationextension</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FFF6886F70E2C345A7636A9CABE01DD1/Text/@EntryValue">internal static class Add$name$Extension { internal static void Add$name$(this IServiceCollection services, IConfiguration configuration) { services.AddSingletonOption&lt;$name$&gt;(configuration); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FFF6886F70E2C345A7636A9CABE01DD1/Text/@EntryValue">internal static class Add$name$Extension&#xD;
+{&#xD;
+    internal static void Add$name$(this IServiceCollection services, IConfiguration configuration)&#xD;
+    {&#xD;
+		services.AddSingletonOption&lt;$name$&gt;(configuration);&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FFF6886F70E2C345A7636A9CABE01DD1/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -444,7 +473,13 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=89498DE7E7B6F245BB5446935389B1C5/Shortcut/@EntryValue">addserviceextension</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=89498DE7E7B6F245BB5446935389B1C5/Text/@EntryValue">internal static class Add$Name$Extension { internal static void Add$Name$(this IServiceCollection services) { services.AddSingletonIfNotExists&lt;I$Name$, $Name$&gt;(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=89498DE7E7B6F245BB5446935389B1C5/Text/@EntryValue">internal static class Add$Name$Extension&#xD;
+{&#xD;
+    internal static void Add$Name$(this IServiceCollection services)&#xD;
+    {&#xD;
+		services.AddSingletonIfNotExists&lt;I$Name$, $Name$&gt;();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=89498DE7E7B6F245BB5446935389B1C5/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -466,7 +501,31 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=AF41F15AFBA0434ABDD2AB558C3A80AA/Shortcut/@EntryValue">addswaggergen</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=AF41F15AFBA0434ABDD2AB558C3A80AA/Text/@EntryValue">services.AddSwaggerGen(c =&gt; { c.SwaggerDoc("$version$", new OpenApiInfo { Version = "$version$", Title = "$title$", Description = "A simple example ASP.NET Core Web API", TermsOfService = new Uri("$termsOfUse$"), Contact = new OpenApiContact { Name = "$name$", Email = $email$, Url = new Uri("$contactUri$"), }, License = new OpenApiLicense { Name = "$license$", Url = new Uri("$licenseuri$"), } }); c.OperationFilter&lt;RemoveVersionParameterFilter&gt;(); c.DocumentFilter&lt;ReplaceVersionWithExactValueInPathFilter&gt;(); c.EnableAnnotations(); });</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=AF41F15AFBA0434ABDD2AB558C3A80AA/Text/@EntryValue">services.AddSwaggerGen(c =&gt;&#xD;
+{&#xD;
+    c.SwaggerDoc("$version$", new OpenApiInfo&#xD;
+    {&#xD;
+        Version = "$version$",&#xD;
+        Title = "$title$",&#xD;
+        Description = "A simple example ASP.NET Core Web API",&#xD;
+        TermsOfService = new Uri("$termsOfUse$"),&#xD;
+        Contact = new OpenApiContact&#xD;
+        {&#xD;
+            Name = "$name$",&#xD;
+            Email = $email$,&#xD;
+            Url = new Uri("$contactUri$"),&#xD;
+        },&#xD;
+        License = new OpenApiLicense&#xD;
+        {&#xD;
+            Name = "$license$",&#xD;
+            Url = new Uri("$licenseuri$"),&#xD;
+        }&#xD;
+    });&#xD;
+&#xD;
+	c.OperationFilter&lt;RemoveVersionParameterFilter&gt;();&#xD;
+	c.DocumentFilter&lt;ReplaceVersionWithExactValueInPathFilter&gt;();&#xD;
+	c.EnableAnnotations();&#xD;
+});</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=AF41F15AFBA0434ABDD2AB558C3A80AA/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -536,7 +595,19 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=85692C03602BD9419D835140425B22D4/Shortcut/@EntryValue">appbuilder</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=85692C03602BD9419D835140425B22D4/Text/@EntryValue">internal sealed class AppBuilder { internal App Build() { var services = new ServiceCollection(); var startup = new Startup(); startup.ConfigureServices(services); var serviceProvider = services.BuildServiceProvider(); return serviceProvider.GetService&lt;App&gt;(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=85692C03602BD9419D835140425B22D4/Text/@EntryValue">internal sealed class AppBuilder&#xD;
+{&#xD;
+    internal App Build()&#xD;
+    {&#xD;
+        var services = new ServiceCollection();&#xD;
+        var startup = new Startup();&#xD;
+&#xD;
+        startup.ConfigureServices(services);&#xD;
+        var serviceProvider = services.BuildServiceProvider();&#xD;
+&#xD;
+        return serviceProvider.GetService&lt;App&gt;();        &#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=85692C03602BD9419D835140425B22D4/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -556,7 +627,20 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BDF8642FAD237B42B3C9848EFEB4E545/Shortcut/@EntryValue">appwithservicecollection</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BDF8642FAD237B42B3C9848EFEB4E545/Text/@EntryValue">internal sealed class App { private readonly IServiceProvider _serviceProvider; public App(IServiceProvider serviceProvider) { _serviceProvider = serviceProvider; } public Task&lt;int&gt; RunAsync(string[] args) { return Task.FromResult(0); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BDF8642FAD237B42B3C9848EFEB4E545/Text/@EntryValue">internal sealed class App&#xD;
+{&#xD;
+    private readonly IServiceProvider _serviceProvider;&#xD;
+&#xD;
+    public App(IServiceProvider serviceProvider)&#xD;
+    {&#xD;
+        _serviceProvider = serviceProvider;&#xD;
+    }&#xD;
+&#xD;
+    public Task&lt;int&gt; RunAsync(string[] args)&#xD;
+    {&#xD;
+        return Task.FromResult(0);&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BDF8642FAD237B42B3C9848EFEB4E545/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -630,7 +714,15 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E76BE2AE3CF21A4D90024CD0394AB881/Shortcut/@EntryValue">assert-add-get-mstest</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E76BE2AE3CF21A4D90024CD0394AB881/Text/@EntryValue">[TestMethod] public async Task Should_Return_That_$Domain$_Which_Was_Added() { // 1. We have to add a $Domain$ first before we can fetch one ! var added$Domain$Response = await Client.AssertPostAsync&lt;Add&#xD;        Domain=""$ Response=""&gt;("v1/$domainPath$", "Add$Domain$Payload.json", "Added$Domain$Response.json"); // 2. We should be able to fetch a $Domain$ which we added before await Client.AssertGetAsync&lt;Get&#xD;        Domain=""$ ByIdResponse=""&gt;($"v1/$domainPath$/{added$Domain$Response.User.Id}", "$Domain$GetByIdResponse.json"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E76BE2AE3CF21A4D90024CD0394AB881/Text/@EntryValue">[TestMethod]&#xD;
+public async Task Should_Return_That_$Domain$_Which_Was_Added()&#xD;
+{&#xD;
+    // 1. We have to add a $Domain$ first before we can fetch one !&#xD;
+    var added$Domain$Response = await Client.AssertPostAsync&lt;Add$Domain$Response&gt;("v1/$domainPath$", "Add$Domain$Payload.json", "Added$Domain$Response.json");&#xD;
+&#xD;
+    // 2. We should be able to fetch a $Domain$ which we added before&#xD;
+    await Client.AssertGetAsync&lt;Get$Domain$ByIdResponse&gt;($"v1/$domainPath$/{added$Domain$Response.User.Id}", "$Domain$GetByIdResponse.json");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E76BE2AE3CF21A4D90024CD0394AB881/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -656,7 +748,12 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DA89427ABC7CE34FA887D53B8B2C353D/Shortcut/@EntryValue">assert-get-all</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DA89427ABC7CE34FA887D53B8B2C353D/Text/@EntryValue">[NUnit.Framework.Test] public Task Should_Return_All_Expected_$domain$s() { return Client.AssertGetAsync&lt;GetAll&#xD;        domain=""$ Response=""&gt;($"api/", "GetAll$domain$.json"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DA89427ABC7CE34FA887D53B8B2C353D/Text/@EntryValue">[NUnit.Framework.Test]&#xD;
+public Task Should_Return_All_Expected_$domain$s()&#xD;
+{&#xD;
+    return Client.AssertGetAsync&lt;GetAll$domain$Response&gt;($"api/",&#xD;
+                                                        "GetAll$domain$.json");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DA89427ABC7CE34FA887D53B8B2C353D/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -676,7 +773,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7105FA64DB263842B65B934250A09058/Shortcut/@EntryValue">assert-get-emtpy-result-mstest</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7105FA64DB263842B65B934250A09058/Text/@EntryValue">[TestMethod] public Task Should_Return_No_$domain$_If_No_One_Was_Added() { return Client.AssertGetAsync&lt;GetAll&#xD;        domain=""$ Response=""&gt;("v1/$domain$", "{}"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7105FA64DB263842B65B934250A09058/Text/@EntryValue">[TestMethod]&#xD;
+public Task Should_Return_No_$domain$_If_No_One_Was_Added()&#xD;
+{&#xD;
+    return Client.AssertGetAsync&lt;GetAll$domain$Response&gt;("v1/$domain$", "{}");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7105FA64DB263842B65B934250A09058/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -698,7 +799,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1392E7BFE698AE42B886AA0B06F10E70/Shortcut/@EntryValue">assert-get-no-auth-mstest</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1392E7BFE698AE42B886AA0B06F10E70/Text/@EntryValue">[TestMethod] public Task Should_Not_Return_All_$domain$_Without_Authentication() { return Client.AssertGetAsUnauthorizedAsync("$url$"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1392E7BFE698AE42B886AA0B06F10E70/Text/@EntryValue">[TestMethod]&#xD;
+public Task Should_Not_Return_All_$domain$_Without_Authentication()&#xD;
+{&#xD;
+    return Client.AssertGetAsUnauthorizedAsync("$url$");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1392E7BFE698AE42B886AA0B06F10E70/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -722,7 +827,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7E7F5A3E1A31854C86F099DBF4FBB650/Shortcut/@EntryValue">assertdeletebyidnoauth</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7E7F5A3E1A31854C86F099DBF4FBB650/Text/@EntryValue">[NUnit.Framework.Test] public Task Should_Not_Be_Able_To_Delete_$entity$_By_Id_Without_Authentication() { return NoAuthClient.AssertDeleteAsUnauthorizedAsync("$url$"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7E7F5A3E1A31854C86F099DBF4FBB650/Text/@EntryValue">[NUnit.Framework.Test]&#xD;
+public Task Should_Not_Be_Able_To_Delete_$entity$_By_Id_Without_Authentication()&#xD;
+{&#xD;
+    return NoAuthClient.AssertDeleteAsUnauthorizedAsync("$url$");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7E7F5A3E1A31854C86F099DBF4FBB650/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -748,7 +857,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=48855A09C0C9D044A49E0FA049DA6D56/Shortcut/@EntryValue">assertdeletenoauth</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=48855A09C0C9D044A49E0FA049DA6D56/Text/@EntryValue">[NUnit.Framework.Test] public Task Should_Not_Be_Able_To_Delete_All_$entity$_Without_Authentication() { return NoAuthClient.AssertDeleteAsUnauthorizedAsync("$url$"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=48855A09C0C9D044A49E0FA049DA6D56/Text/@EntryValue">[NUnit.Framework.Test]&#xD;
+public Task Should_Not_Be_Able_To_Delete_All_$entity$_Without_Authentication()&#xD;
+{&#xD;
+    return NoAuthClient.AssertDeleteAsUnauthorizedAsync("$url$");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=48855A09C0C9D044A49E0FA049DA6D56/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -774,7 +887,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7D704F5D72E44A45AA9718C953DB7EC7/Shortcut/@EntryValue">assertgetempty</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7D704F5D72E44A45AA9718C953DB7EC7/Text/@EntryValue">[TestMethod] public Task Should_Return_No_$entity$_If_No_One_Was_Added() { return Client.AssertGetAsync&lt;$response$&gt;("$url$", "{}"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7D704F5D72E44A45AA9718C953DB7EC7/Text/@EntryValue">[TestMethod]&#xD;
+public Task Should_Return_No_$entity$_If_No_One_Was_Added()&#xD;
+{&#xD;
+    return Client.AssertGetAsync&lt;$response$&gt;("$url$", "{}");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7D704F5D72E44A45AA9718C953DB7EC7/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -804,7 +921,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D4CD4522BEACE9459BF41A012CF07183/Shortcut/@EntryValue">assertgetnoauth</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D4CD4522BEACE9459BF41A012CF07183/Text/@EntryValue">[NUnit.Framework.Test] public Task Should_Not_Return_All_$entity$_Without_Authentication() { return Client.AssertGetAsUnauthorizedAsync("$url$"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D4CD4522BEACE9459BF41A012CF07183/Text/@EntryValue">[NUnit.Framework.Test]&#xD;
+public Task Should_Not_Return_All_$entity$_Without_Authentication()&#xD;
+{&#xD;
+	return Client.AssertGetAsUnauthorizedAsync("$url$");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D4CD4522BEACE9459BF41A012CF07183/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -830,7 +951,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D1394926A334C84AA0ABAAA8A6EE5F10/Shortcut/@EntryValue">assertpostnoauth</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D1394926A334C84AA0ABAAA8A6EE5F10/Text/@EntryValue">[NUnit.Framework.Test] public Task Should_Not_Be_Possible_To_Add_$entity$_Without_Authentication() { return Client.AssertPostAsUnauthorizedAsync("$url$", new $entity$()); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D1394926A334C84AA0ABAAA8A6EE5F10/Text/@EntryValue">[NUnit.Framework.Test]&#xD;
+public Task Should_Not_Be_Possible_To_Add_$entity$_Without_Authentication()&#xD;
+{&#xD;
+	return Client.AssertPostAsUnauthorizedAsync("$url$", new $entity$());&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D1394926A334C84AA0ABAAA8A6EE5F10/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -858,7 +983,18 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1977368ACEFFAE4E9DCB17D517539A3B/Description/@EntryValue">Attached property</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1977368ACEFFAE4E9DCB17D517539A3B/Text/@EntryValue">public static readonly $dependencyProperty$ $propertyName$Property = $dependencyProperty$.RegisterAttached( "$propertyName$", typeof($propertyType$), typeof($containingType$), new PropertyMetadata(default($propertyType$))); internal static void Set$propertyName$(DependencyObject $element$, $propertyType$ value) { $element$.SetValue($propertyName$Property, value); } public static $propertyType$ Get$propertyName$(DependencyObject $element$) { return ($propertyType$) $element$.GetValue($propertyName$Property); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1977368ACEFFAE4E9DCB17D517539A3B/Text/@EntryValue">public static readonly $dependencyProperty$ $propertyName$Property = $dependencyProperty$.RegisterAttached(&#xD;
+  "$propertyName$", typeof($propertyType$), typeof($containingType$), new PropertyMetadata(default($propertyType$)));&#xD;
+&#xD;
+internal static void Set$propertyName$(DependencyObject $element$, $propertyType$ value)&#xD;
+{&#xD;
+  $element$.SetValue($propertyName$Property, value);&#xD;
+}&#xD;
+&#xD;
+public static $propertyType$ Get$propertyName$(DependencyObject $element$)&#xD;
+{&#xD;
+  return ($propertyType$) $element$.GetValue($propertyName$Property);&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1977368ACEFFAE4E9DCB17D517539A3B/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -916,7 +1052,17 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0F35E18376564D4EAF74C84462E8E019/Description/@EntryValue">Attribute using recommended pattern</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0F35E18376564D4EAF74C84462E8E019/Text/@EntryValue">[System.AttributeUsage(System.AttributeTargets.$target$, Inherited = $inherited$, AllowMultiple = $allowmultiple$)] sealed class $name$Attribute : System.Attribute { // See the attribute guidelines at // http://go.microsoft.com/fwlink/?LinkId=85236 public $name$Attribute () { $SELSTART$// TODO: Implement code here throw new System.NotImplementedException();$SELEND$ } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0F35E18376564D4EAF74C84462E8E019/Text/@EntryValue">[System.AttributeUsage(System.AttributeTargets.$target$, Inherited = $inherited$, AllowMultiple = $allowmultiple$)]&#xD;
+sealed class $name$Attribute : System.Attribute&#xD;
+{&#xD;
+    // See the attribute guidelines at &#xD;
+    //  http://go.microsoft.com/fwlink/?LinkId=85236&#xD;
+   public $name$Attribute () &#xD;
+   { &#xD;
+       $SELSTART$// TODO: Implement code here&#xD;
+       throw new System.NotImplementedException();$SELEND$&#xD;
+   }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0F35E18376564D4EAF74C84462E8E019/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -968,7 +1114,16 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FC7D060CC871D5479034CFC20984EBC4/Shortcut/@EntryValue">auth0</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FC7D060CC871D5479034CFC20984EBC4/Text/@EntryValue">{ "Auth0": { "Authority": "$authority$", "TokenEndpoint": "$tokenendpoint$", "ClientId": "$clientid$", "ClientSecret": "$clientsecret$", "Audience": "$audience$", "TokenCacheTime": "23:55:00" } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FC7D060CC871D5479034CFC20984EBC4/Text/@EntryValue">{&#xD;
+  "Auth0": {&#xD;
+    "Authority": "$authority$",&#xD;
+    "TokenEndpoint": "$tokenendpoint$",&#xD;
+    "ClientId": "$clientid$",&#xD;
+    "ClientSecret": "$clientsecret$",&#xD;
+    "Audience": "$audience$",&#xD;
+    "TokenCacheTime": "23:55:00"&#xD;
+  }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FC7D060CC871D5479034CFC20984EBC4/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1006,7 +1161,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=9BE634097493074F976CAF52B8358C0E/Description/@EntryValue">checked block</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=9BE634097493074F976CAF52B8358C0E/Text/@EntryValue">checked { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=9BE634097493074F976CAF52B8358C0E/Text/@EntryValue">checked&#xD;
+  {&#xD;
+     $END$&#xD;
+  }</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=9BE634097493074F976CAF52B8358C0E/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1028,7 +1186,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=79EC7A10F8C5424AB1F620BFF9D9A55F/Shortcut/@EntryValue">class</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=79EC7A10F8C5424AB1F620BFF9D9A55F/Text/@EntryValue">class $name$ { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=79EC7A10F8C5424AB1F620BFF9D9A55F/Text/@EntryValue">class $name$&#xD;
+  {&#xD;
+    $END$&#xD;
+  }</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=79EC7A10F8C5424AB1F620BFF9D9A55F/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1062,7 +1223,37 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BB8C7B36E5352E4D909780D078AE2616/Shortcut/@EntryValue">clisystemtestbase</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BB8C7B36E5352E4D909780D078AE2616/Text/@EntryValue">public abstract class SystemTestBase { protected string Output { get; private set; } protected int ExitCode { get; private set; } [TestInitialize] public async Task InitAsync() { BeforeExecution(); await using var sw = new StringWriter(); Console.SetOut(sw); string[] strings = CollectConsoleParameters().ToArray(); ExitCode = await Program.Main(strings); Output = sw.ToString(); AfterExecution(); } protected virtual void BeforeExecution() { } protected abstract IEnumerable&lt;string&gt; CollectConsoleParameters(); protected virtual void AfterExecution() { } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BB8C7B36E5352E4D909780D078AE2616/Text/@EntryValue">public abstract class SystemTestBase&#xD;
+{&#xD;
+    protected string Output { get; private set; }&#xD;
+&#xD;
+    protected int ExitCode { get; private set; }&#xD;
+&#xD;
+    [TestInitialize]&#xD;
+    public async Task InitAsync()&#xD;
+    {&#xD;
+        BeforeExecution();&#xD;
+&#xD;
+        await using var sw = new StringWriter();&#xD;
+        Console.SetOut(sw);&#xD;
+&#xD;
+        string[] strings = CollectConsoleParameters().ToArray();&#xD;
+        ExitCode = await Program.Main(strings);&#xD;
+        Output = sw.ToString();&#xD;
+&#xD;
+        AfterExecution();&#xD;
+    }&#xD;
+&#xD;
+    protected virtual void BeforeExecution()&#xD;
+    {&#xD;
+    }&#xD;
+&#xD;
+    protected abstract IEnumerable&lt;string&gt; CollectConsoleParameters();&#xD;
+&#xD;
+    protected virtual void AfterExecution()&#xD;
+    {&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BB8C7B36E5352E4D909780D078AE2616/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1082,7 +1273,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=496C565B4C01584DBA16970AC97F9D4F/Shortcut/@EntryValue">collecterrros</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=496C565B4C01584DBA16970AC97F9D4F/Text/@EntryValue">private static IEnumerable&lt;string&gt; CollectErrors($type$ type) { yield break; }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=496C565B4C01584DBA16970AC97F9D4F/Text/@EntryValue">private static IEnumerable&lt;string&gt; CollectErrors($type$ type)&#xD;
+{&#xD;
+	yield break;&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=496C565B4C01584DBA16970AC97F9D4F/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1104,7 +1298,15 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=33B67CE9FE69324BB5C4918CC730B06F/Shortcut/@EntryValue">command-no-response</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=33B67CE9FE69324BB5C4918CC730B06F/Text/@EntryValue">internal sealed record $command$ : ICommand; internal sealed class $command$Handler : ICommandHandler&lt;$command$&gt; { public Task Handle($command$ request, CancellationToken cancellationToken) { throw new NotImplementedException(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=33B67CE9FE69324BB5C4918CC730B06F/Text/@EntryValue">internal sealed record $command$ : ICommand;&#xD;
+&#xD;
+internal sealed class $command$Handler : ICommandHandler&lt;$command$&gt;&#xD;
+{&#xD;
+    public Task Handle($command$ request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=33B67CE9FE69324BB5C4918CC730B06F/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1124,7 +1326,17 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=70EE0E6CE47B244098C3D801806588D7/Shortcut/@EntryValue">command-with-response</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=70EE0E6CE47B244098C3D801806588D7/Text/@EntryValue">internal sealed record $command$ : ICommand&lt;$response$&gt;; public sealed record $response$; internal sealed class $command$Handler : ICommandHandler&lt;$command&#xD;                response=""$&gt; { public Task&lt;$response$&gt; Handle($command$ request, CancellationToken cancellationToken) { throw new NotImplementedException(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=70EE0E6CE47B244098C3D801806588D7/Text/@EntryValue">internal sealed record $command$ : ICommand&lt;$response$&gt;;&#xD;
+&#xD;
+public sealed record $response$;&#xD;
+&#xD;
+internal sealed class $command$Handler : ICommandHandler&lt;$command$, $response$&gt;&#xD;
+{&#xD;
+    public Task&lt;$response$&gt; Handle($command$ request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=70EE0E6CE47B244098C3D801806588D7/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1166,7 +1378,21 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F6E97C774C0EBE458B9BF56D1BEAA9CE/Shortcut/@EntryValue">controller-simple-get</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F6E97C774C0EBE458B9BF56D1BEAA9CE/Text/@EntryValue">[Authorize] [ApiController] [ApiVersion("1.0")] [Route("$baseurl$")] public class $entityUpperCase$sController : ControllerBase { [HttpGet] [ProducesResponseType(typeof(GetAll$entityUpperCase$Response), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [SwaggerOperation(OperationId = "get-all-$entitylowercase$", Tags = new[] { "$entityUpperCase$s" })] public Task&lt;GetAll&#xD;                entityUpperCase=""$ Response=""&gt; GetAll$entityUpperCase$Async() { throw new NotImplementedException(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F6E97C774C0EBE458B9BF56D1BEAA9CE/Text/@EntryValue">[Authorize]&#xD;
+[ApiController]&#xD;
+[ApiVersion("1.0")]&#xD;
+[Route("$baseurl$")]&#xD;
+public class $entityUpperCase$sController : ControllerBase&#xD;
+{&#xD;
+	[HttpGet]&#xD;
+	[ProducesResponseType(typeof(GetAll$entityUpperCase$Response), StatusCodes.Status200OK)]&#xD;
+	[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+	[SwaggerOperation(OperationId = "get-all-$entitylowercase$", Tags = new[] { "$entityUpperCase$s" })]&#xD;
+	public Task&lt;GetAll$entityUpperCase$Response&gt; GetAll$entityUpperCase$Async()&#xD;
+	{&#xD;
+		throw new NotImplementedException();&#xD;
+	}&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F6E97C774C0EBE458B9BF56D1BEAA9CE/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1196,7 +1422,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E63EA076A7E75048B60C38407CC1C2AC/Shortcut/@EntryValue">cors-settings</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E63EA076A7E75048B60C38407CC1C2AC/Text/@EntryValue"> "CorsSettings": { "Origins": "*", "Headers": "Origin, X-Requested-With, Content-Type, Accept", "AllowCredentials": true }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E63EA076A7E75048B60C38407CC1C2AC/Text/@EntryValue">  "CorsSettings": {&#xD;
+    "Origins": "*",&#xD;
+    "Headers": "Origin, X-Requested-With, Content-Type, Accept",&#xD;
+    "AllowCredentials": true&#xD;
+  }</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E63EA076A7E75048B60C38407CC1C2AC/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1214,7 +1444,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0E1FAF5241FA8A40AEB03CA2AE065648/Description/@EntryValue">Constructor</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0E1FAF5241FA8A40AEB03CA2AE065648/Text/@EntryValue">public $classname$ () { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0E1FAF5241FA8A40AEB03CA2AE065648/Text/@EntryValue">public $classname$ ()&#xD;
+  {&#xD;
+    $END$&#xD;
+  }</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0E1FAF5241FA8A40AEB03CA2AE065648/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1296,7 +1529,14 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=61E52A32A8000749A65D71522F7675B8/Description/@EntryValue">Dependency property</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=61E52A32A8000749A65D71522F7675B8/Text/@EntryValue">public static readonly $dependencyProperty$ $propertyName$Property = $dependencyProperty$.Register( $nameofProperty$, typeof($propertyType$), typeof($containingType$), new PropertyMetadata(default($propertyType$))); public $propertyType$ $propertyName$ { get { return ($propertyType$) GetValue($propertyName$Property); } set { SetValue($propertyName$Property, value); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=61E52A32A8000749A65D71522F7675B8/Text/@EntryValue">public static readonly $dependencyProperty$ $propertyName$Property = $dependencyProperty$.Register(&#xD;
+  $nameofProperty$, typeof($propertyType$), typeof($containingType$), new PropertyMetadata(default($propertyType$)));&#xD;
+&#xD;
+public $propertyType$ $propertyName$&#xD;
+{&#xD;
+  get { return ($propertyType$) GetValue($propertyName$Property); }&#xD;
+  set { SetValue($propertyName$Property, value); }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=61E52A32A8000749A65D71522F7675B8/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1356,7 +1596,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4F61B30618E42D489E7A607F7A81459A/Description/@EntryValue">do...while loop</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4F61B30618E42D489E7A607F7A81459A/Text/@EntryValue">do { $SELECTION$$END$ } while ($expression$);</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4F61B30618E42D489E7A607F7A81459A/Text/@EntryValue">do&#xD;
+{&#xD;
+  $SELECTION$$END$&#xD;
+} while ($expression$);</s:String>
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4F61B30618E42D489E7A607F7A81459A/Mnemonic/@EntryValue">4</s:String>
     <s:Boolean
@@ -1424,7 +1667,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DFFE5706C2C1CC4FA7DE44A8581809E9/Description/@EntryValue">else statement</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DFFE5706C2C1CC4FA7DE44A8581809E9/Text/@EntryValue">else { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DFFE5706C2C1CC4FA7DE44A8581809E9/Text/@EntryValue">else&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DFFE5706C2C1CC4FA7DE44A8581809E9/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1448,7 +1694,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5864DF8CF3941B46824BA7075B496234/Shortcut/@EntryValue">enum</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5864DF8CF3941B46824BA7075B496234/Text/@EntryValue">enum $name$ { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5864DF8CF3941B46824BA7075B496234/Text/@EntryValue">enum $name$&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5864DF8CF3941B46824BA7075B496234/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1482,7 +1731,50 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1EB75AABA8EA594FAF6B2E1B7A0717CD/Shortcut/@EntryValue">errorhandlingmiddleware</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1EB75AABA8EA594FAF6B2E1B7A0717CD/Text/@EntryValue">public class ErrorHandlingMiddleware : IMiddleware { public async Task InvokeAsync(HttpContext context, RequestDelegate next) { try { await next(context); } catch (ProblemDetailsException exception) { context.Response.Clear(); context.Response.ContentType = MediaTypeNames.Application.Json; if (exception.ProblemDetails.Status != null) { context.Response.StatusCode = exception.ProblemDetails.Status.Value; } await context.Response.WriteAsync(JsonSerializer.Serialize(exception.ProblemDetails)); } } } public class ProblemDetailsException : Exception { public ProblemDetailsException(int statusCode, string title, string details, params (string key, object value)[] extensions) { ProblemDetails = new ProblemDetails { Title = title, Detail = details, Status = statusCode }; foreach (var extension in extensions.Select(tuple =&gt; new KeyValuePair&lt;string&#xD;                    object=""&gt;(tuple.key, tuple.value))) { ProblemDetails.Extensions.Add(extension); } } public ProblemDetails ProblemDetails { get; } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1EB75AABA8EA594FAF6B2E1B7A0717CD/Text/@EntryValue">public class ErrorHandlingMiddleware : IMiddleware&#xD;
+{&#xD;
+    public async Task InvokeAsync(HttpContext context, RequestDelegate next)&#xD;
+    {&#xD;
+        try&#xD;
+        {&#xD;
+            await next(context);&#xD;
+        }&#xD;
+        catch (ProblemDetailsException exception)&#xD;
+        {&#xD;
+            context.Response.Clear();&#xD;
+            context.Response.ContentType = MediaTypeNames.Application.Json;&#xD;
+&#xD;
+            if (exception.ProblemDetails.Status != null)&#xD;
+            {&#xD;
+                context.Response.StatusCode = exception.ProblemDetails.Status.Value;&#xD;
+            }&#xD;
+&#xD;
+            await context.Response.WriteAsync(JsonSerializer.Serialize(exception.ProblemDetails));&#xD;
+        }&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+public class ProblemDetailsException : Exception&#xD;
+{&#xD;
+    public ProblemDetailsException(int statusCode, string title, string details,&#xD;
+        params (string key, object value)[] extensions)&#xD;
+    {&#xD;
+        ProblemDetails = new ProblemDetails&#xD;
+        {&#xD;
+            Title = title,&#xD;
+            Detail = details,&#xD;
+            Status = statusCode&#xD;
+        };&#xD;
+&#xD;
+        foreach (var extension in extensions.Select(tuple =&gt;&#xD;
+            new KeyValuePair&lt;string, object&gt;(tuple.key, tuple.value)))&#xD;
+        {&#xD;
+            ProblemDetails.Extensions.Add(extension);&#xD;
+        }&#xD;
+    }&#xD;
+&#xD;
+    public ProblemDetails ProblemDetails { get; }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1EB75AABA8EA594FAF6B2E1B7A0717CD/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1500,7 +1792,12 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B9383001B58E7F4399544EC6C6D4D82F/Shortcut/@EntryValue">Exception</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B9383001B58E7F4399544EC6C6D4D82F/Text/@EntryValue">public class $newException$Exception : System.Exception { public $newException$Exception() { } public $newException$Exception( string message ) : base( message ) { } public $newException$Exception( string message, System.Exception inner ) : base( message, inner ) { } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B9383001B58E7F4399544EC6C6D4D82F/Text/@EntryValue">public class $newException$Exception : System.Exception&#xD;
+{&#xD;
+  public $newException$Exception() { }&#xD;
+  public $newException$Exception( string message ) : base( message ) { }&#xD;
+  public $newException$Exception( string message, System.Exception inner ) : base( message, inner ) { }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B9383001B58E7F4399544EC6C6D4D82F/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1534,7 +1831,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4844543B88F8814EAF0499F226CEAEA1/Shortcut/@EntryValue">extensionclass</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4844543B88F8814EAF0499F226CEAEA1/Text/@EntryValue">public static class $Name$Extensions { $method$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4844543B88F8814EAF0499F226CEAEA1/Text/@EntryValue">public static class $Name$Extensions&#xD;
+{&#xD;
+	$method$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4844543B88F8814EAF0499F226CEAEA1/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1560,7 +1860,9 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DACC672DB86C8D408E2B8DFBEBE56C98/Shortcut/@EntryValue">extensionmethod</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DACC672DB86C8D408E2B8DFBEBE56C98/Text/@EntryValue">internal static void $name$(this $type$ source) { }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DACC672DB86C8D408E2B8DFBEBE56C98/Text/@EntryValue">internal static void $name$(this $type$ source)&#xD;
+{&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DACC672DB86C8D408E2B8DFBEBE56C98/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1588,7 +1890,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=68FA74F8D4330A42BEFB3E08129F1F35/Description/@EntryValue">Simple "for" loop</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=68FA74F8D4330A42BEFB3E08129F1F35/Text/@EntryValue">for (int $INDEX$ = 0; $INDEX$ &lt; $UPPER$; $&#xD;                    INDEX$++) { $ SELECTION$$ END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=68FA74F8D4330A42BEFB3E08129F1F35/Text/@EntryValue">for (int $INDEX$ = 0; $INDEX$ &lt; $UPPER$; $INDEX$++)
+{
+  $SELECTION$$END$
+}</s:String>
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=68FA74F8D4330A42BEFB3E08129F1F35/Mnemonic/@EntryValue">3</s:String>
     <s:Boolean
@@ -1628,7 +1933,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6D0E71BB59F55A449A6E127810A8802E/Description/@EntryValue">foreach block</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6D0E71BB59F55A449A6E127810A8802E/Text/@EntryValue">foreach ($TYPE$ $VARIABLE$ in $COLLECTION$) { $SELECTION$$END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6D0E71BB59F55A449A6E127810A8802E/Text/@EntryValue">foreach ($TYPE$ $VARIABLE$ in $COLLECTION$)
+{
+  $SELECTION$$END$
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6D0E71BB59F55A449A6E127810A8802E/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1672,7 +1980,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D8FBD7D188BBCE4ABB40D540E00A273B/Description/@EntryValue">Reverse 'for' loop</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D8FBD7D188BBCE4ABB40D540E00A273B/Text/@EntryValue">for (int $index$ = $max$ - 1; $index$ &gt;= 0 ; $index$--) { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D8FBD7D188BBCE4ABB40D540E00A273B/Text/@EntryValue">for (int $index$ = $max$ - 1; $index$ &gt;= 0 ; $index$--)&#xD;
+      {&#xD;
+       $END$&#xD;
+      }</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D8FBD7D188BBCE4ABB40D540E00A273B/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1746,7 +2057,8 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=26B7E4A6CF98EE4E866ECE48CBAC24F8/Shortcut/@EntryValue">getresponsetypes</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=26B7E4A6CF98EE4E866ECE48CBAC24F8/Text/@EntryValue">[ProducesResponseType(StatusCodes.Status200OK)] [ProducesResponseType(StatusCodes.Status404NotFound)]</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=26B7E4A6CF98EE4E866ECE48CBAC24F8/Text/@EntryValue">[ProducesResponseType(StatusCodes.Status200OK)]&#xD;
+[ProducesResponseType(StatusCodes.Status404NotFound)]</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=26B7E4A6CF98EE4E866ECE48CBAC24F8/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1764,7 +2076,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=311056B6864A9A4097CACBCBD829A018/Shortcut/@EntryValue">globalproduceconsumes</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=311056B6864A9A4097CACBCBD829A018/Text/@EntryValue">services.Configure&lt;Microsoft.AspNetCore.Mvc.MvcOptions&gt;(options =&gt; { options.Filters.Add(new Microsoft.AspNetCore.Mvc.ProducesAttribute(System.Net.Mime.MediaTypeNames.Application.Json)); options.Filters.Add(new Microsoft.AspNetCore.Mvc.ConsumesAttribute(System.Net.Mime.MediaTypeNames.Application.Json)); });</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=311056B6864A9A4097CACBCBD829A018/Text/@EntryValue">services.Configure&lt;Microsoft.AspNetCore.Mvc.MvcOptions&gt;(options =&gt;&#xD;
+{&#xD;
+	options.Filters.Add(new Microsoft.AspNetCore.Mvc.ProducesAttribute(System.Net.Mime.MediaTypeNames.Application.Json));&#xD;
+	options.Filters.Add(new Microsoft.AspNetCore.Mvc.ConsumesAttribute(System.Net.Mime.MediaTypeNames.Application.Json));&#xD;
+});</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=311056B6864A9A4097CACBCBD829A018/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1822,7 +2138,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2309729714BBB04EB920AA915E5D0401/Description/@EntryValue">if statement</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2309729714BBB04EB920AA915E5D0401/Text/@EntryValue">if ($expr$) { $SELECTION$$END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2309729714BBB04EB920AA915E5D0401/Text/@EntryValue">if ($expr$)&#xD;
+{  &#xD;
+  $SELECTION$$END$&#xD;
+}</s:String>
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2309729714BBB04EB920AA915E5D0401/Mnemonic/@EntryValue">1</s:String>
     <s:Boolean
@@ -1856,7 +2175,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DA7C27CCE7F18F4CB8285120D4B30C1A/Shortcut/@EntryValue">indexer</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DA7C27CCE7F18F4CB8285120D4B30C1A/Text/@EntryValue">$access$ $type$ this[$indextype$ index] { get {$END$ /* return the specified index here */ } set { /* set the specified index to value here */ } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DA7C27CCE7F18F4CB8285120D4B30C1A/Text/@EntryValue">$access$ $type$ this[$indextype$ index]&#xD;
+{&#xD;
+  get {$END$ /* return the specified index here */ }&#xD;
+  set { /* set the specified index to value here */ }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DA7C27CCE7F18F4CB8285120D4B30C1A/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1896,7 +2219,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F911B959B4259749AC984F9935FCD690/Shortcut/@EntryValue">interface</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F911B959B4259749AC984F9935FCD690/Text/@EntryValue">interface I$name$ { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F911B959B4259749AC984F9935FCD690/Text/@EntryValue">interface I$name$&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F911B959B4259749AC984F9935FCD690/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1932,7 +2258,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=81FCBFCF7D874C4B91CFA2C35B1C6FED/Description/@EntryValue">Iterate an array</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=81FCBFCF7D874C4B91CFA2C35B1C6FED/Text/@EntryValue">for (int $INDEX$ = 0; $INDEX$ &lt; $ARRAY$.&#xD;                    Length; $ INDEX$++) { $ TYPE$ $ VAR$= $ ARRAY$[$ INDEX$]; $ END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=81FCBFCF7D874C4B91CFA2C35B1C6FED/Text/@EntryValue">for (int $INDEX$ = 0; $INDEX$ &lt; $ARRAY$.Length; $INDEX$++)
+{
+  $TYPE$ $VAR$ = $ARRAY$[$INDEX$];
+  $END$
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=81FCBFCF7D874C4B91CFA2C35B1C6FED/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -1980,7 +2310,12 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CBB4F856BADB43438E70875916BD8696/Description/@EntryValue">simple iterator</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CBB4F856BADB43438E70875916BD8696/Text/@EntryValue">public $SystemCollectionsGenericIEnumeratorG$&lt;$type$&gt; GetEnumerator() { $SELSTART$throw new System.NotImplementedException(); yield return default($type$); $SELEND$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CBB4F856BADB43438E70875916BD8696/Text/@EntryValue">public $SystemCollectionsGenericIEnumeratorG$&lt;$type$&gt; GetEnumerator()&#xD;
+{&#xD;
+    $SELSTART$throw new System.NotImplementedException();&#xD;
+    yield return default($type$);&#xD;
+    $SELEND$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CBB4F856BADB43438E70875916BD8696/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2016,7 +2351,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8F0E54793F0A314D8075BC893388FA05/Description/@EntryValue">Iterate a IList&lt;T&gt;</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8F0E54793F0A314D8075BC893388FA05/Text/@EntryValue">for (int $INDEX$ = 0; $INDEX$ &lt; $LIST$.&#xD;                    Count; $ INDEX$++) { $ TYPE$ $ ITEM$= $ LIST$[$ INDEX$]; $ END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8F0E54793F0A314D8075BC893388FA05/Text/@EntryValue">for (int $INDEX$ = 0; $INDEX$ &lt; $LIST$.Count; $INDEX$++)&#xD;
+{&#xD;
+  $TYPE$ $ITEM$ = $LIST$[$INDEX$];&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8F0E54793F0A314D8075BC893388FA05/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2106,7 +2445,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EBB23BAB9366E444BA5150799D6BC766/Description/@EntryValue">lock statement</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EBB23BAB9366E444BA5150799D6BC766/Text/@EntryValue">lock ($expression$) { $SELECTION$$END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EBB23BAB9366E444BA5150799D6BC766/Text/@EntryValue">lock ($expression$)&#xD;
+{&#xD;
+   $SELECTION$$END$&#xD;
+}</s:String>
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EBB23BAB9366E444BA5150799D6BC766/Mnemonic/@EntryValue">5</s:String>
     <s:Boolean
@@ -2140,7 +2482,21 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5E4ADF066AD53D4499268487A4B53B72/Description/@EntryValue">This is the snippet for an class which represents extension methods for an specifc type</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5E4ADF066AD53D4499268487A4B53B72/Text/@EntryValue">// &lt;copyright&#xD;                    file="$Type$.cs" company="TRUMPF GmbH + Co. KG"&gt; // All rights reserved to TRUMPF GmbH + Co. KG, Germany. // &lt;/copyright&gt; namespace ExtensionMethods { using System; /// &lt;summary&gt; /// Extension methods for the &lt;see&#xD;                    cref="$Type$" /&gt;. /// &lt;/summary&gt; public static class $Type$Extensions { } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5E4ADF066AD53D4499268487A4B53B72/Text/@EntryValue">// &lt;copyright file="$Type$.cs" company="TRUMPF GmbH + Co. KG"&gt;&#xD;
+//   All rights reserved to TRUMPF GmbH + Co. KG, Germany.&#xD;
+// &lt;/copyright&gt;&#xD;
+&#xD;
+namespace ExtensionMethods&#xD;
+{&#xD;
+    using System;&#xD;
+&#xD;
+	/// &lt;summary&gt;&#xD;
+	/// Extension methods for the &lt;see cref="$Type$"/&gt;.&#xD;
+	/// &lt;/summary&gt;&#xD;
+	public static class $Type$Extensions&#xD;
+	{	&#xD;
+	}&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5E4ADF066AD53D4499268487A4B53B72/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2164,7 +2520,62 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E630FBC80FC38F479F8F4BF65136CCEF/Description/@EntryValue">This template represents a base class for IDisposable</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E630FBC80FC38F479F8F4BF65136CCEF/Text/@EntryValue">/// &lt;summary&gt; /// Represents a base class for &lt;see&#xD;                    cref="IDisposable" /&gt; implementation. /// &lt;/summary&gt; /// &lt;seealso cref="System.IDisposable" /&gt; public abstract class $Name$ : IDisposable { /// &lt;summary&gt; /// The m disposed /// &lt;/summary&gt; private bool mDisposed; /// &lt;summary&gt; /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. /// &lt;/summary&gt; public void Dispose() { Dispose(true); GC.SuppressFinalize(this); } /// &lt;summary&gt; /// Releases unmanaged and - optionally - managed resources. /// &lt;/summary&gt; /// &lt;param&#xD;                    name="disposing"&gt;&lt;c&gt;true&lt;/c&gt; to release both managed and unmanaged resources; &lt;c&gt;false&lt;/c&gt; to release only unmanaged resources.&lt;/param&gt; protected void Dispose(bool disposing) { if (!mDisposed) { if (disposing) { DisposeManagedResources(); } DisposeUnManagedResources(); mDisposed = true; } } /// &lt;summary&gt; /// Disposes the managed resources. /// &lt;/summary&gt; protected abstract void DisposeManagedResources(); /// &lt;summary&gt; /// Disposes the unmanaged resources. /// &lt;/summary&gt; protected abstract void DisposeUnManagedResources(); /// &lt;summary&gt; /// Finalizes an instance of the &lt;see&#xD;                    cref="~$Name$" /&gt; class. /// &lt;/summary&gt; ~$Name$() { Dispose(false); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E630FBC80FC38F479F8F4BF65136CCEF/Text/@EntryValue">/// &lt;summary&gt;&#xD;
+/// Represents a base class for &lt;see cref="IDisposable"/&gt; implementation.&#xD;
+/// &lt;/summary&gt;&#xD;
+/// &lt;seealso cref="System.IDisposable" /&gt;&#xD;
+public abstract class $Name$ : IDisposable&#xD;
+{&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// The m disposed&#xD;
+    /// &lt;/summary&gt;&#xD;
+    private bool mDisposed;&#xD;
+&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    public void Dispose()&#xD;
+    {&#xD;
+        Dispose(true);&#xD;
+        GC.SuppressFinalize(this);&#xD;
+    }&#xD;
+&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Releases unmanaged and - optionally - managed resources.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    /// &lt;param name="disposing"&gt;&lt;c&gt;true&lt;/c&gt; to release both managed and unmanaged resources; &lt;c&gt;false&lt;/c&gt; to release only unmanaged resources.&lt;/param&gt;&#xD;
+    protected void Dispose(bool disposing)&#xD;
+    {&#xD;
+        if (!mDisposed)&#xD;
+        {&#xD;
+            if (disposing)&#xD;
+            {&#xD;
+                DisposeManagedResources();&#xD;
+            }&#xD;
+&#xD;
+            DisposeUnManagedResources();&#xD;
+            mDisposed = true;&#xD;
+        }&#xD;
+    }&#xD;
+&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Disposes the managed resources.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    protected abstract void DisposeManagedResources();    &#xD;
+&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Disposes the unmanaged resources.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    protected abstract void DisposeUnManagedResources();&#xD;
+&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Finalizes an instance of the &lt;see cref="~$Name$"/&gt; class.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    ~$Name$()&#xD;
+    {&#xD;
+        Dispose(false);&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E630FBC80FC38F479F8F4BF65136CCEF/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2186,7 +2597,29 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=78495D577D35A34B9E360EEA9D5747D2/Description/@EntryValue">test</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=78495D577D35A34B9E360EEA9D5747D2/Text/@EntryValue">[ValueConversion(typeof(object), typeof(object))] public class $classname$ : TcMarkupExtensionConverterOneWay&lt;$classname$&gt; { /// &lt;summary&gt; /// Converts a value. /// &lt;/summary&gt; /// &lt;param&#xD;                    name="value"&gt;The value produced by the binding source.&lt;/param&gt; /// &lt;param name="targetType"&gt;The type of the binding target property.&lt;/param&gt; /// &lt;param&#xD;                    name="parameter"&gt;The converter parameter to use.&lt;/param&gt; /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt; /// &lt;returns&gt; /// The converted value. If the method returns &lt;c&gt;null&lt;/c&gt;, the valid &lt;c&gt;null&lt;/c&gt; value is used. /// &lt;/returns&gt; public override object Convert(object value, Type targetType, object parameter, CultureInfo culture) { if (!ValidateValue(value)) { return null; } throw new NotImplementedException(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=78495D577D35A34B9E360EEA9D5747D2/Text/@EntryValue">[ValueConversion(typeof(object), typeof(object))]&#xD;
+public class $classname$ : TcMarkupExtensionConverterOneWay&lt;$classname$&gt;&#xD;
+{&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Converts a value.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    /// &lt;param name="value"&gt;The value produced by the binding source.&lt;/param&gt;&#xD;
+    /// &lt;param name="targetType"&gt;The type of the binding target property.&lt;/param&gt;&#xD;
+    /// &lt;param name="parameter"&gt;The converter parameter to use.&lt;/param&gt;&#xD;
+    /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt;&#xD;
+    /// &lt;returns&gt;&#xD;
+    /// The converted value. If the method returns &lt;c&gt;null&lt;/c&gt;, the valid &lt;c&gt;null&lt;/c&gt; value is used.&#xD;
+    /// &lt;/returns&gt;&#xD;
+    public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)&#xD;
+    {&#xD;
+        if (!ValidateValue(value))&#xD;
+        {&#xD;
+            return null;&#xD;
+        }&#xD;
+&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=78495D577D35A34B9E360EEA9D5747D2/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2206,7 +2639,47 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0AFA58C46B3CEC4FB18605F36155D807/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0AFA58C46B3CEC4FB18605F36155D807/Text/@EntryValue">[ValueConversion(typeof(object), typeof(object))] public class $classname$ : TcMarkupExtensionMultiValueConverter&lt; $classname$&gt; { /// &lt;summary&gt; /// Converts source values to a value for the binding target. The data binding engine calls this method when it propagates the values from source bindings to the binding target. /// &lt;/summary&gt; /// &lt;param&#xD;                    name="values"&gt;The array of values that the source bindings in the &lt;see&#xD;                    cref="T:System.Windows.Data.MultiBinding" /&gt; produces. The value &lt;see&#xD;                    cref="F:System.Windows.DependencyProperty.UnsetValue" /&gt; indicates that the source binding has no value to provide for conversion.&lt;/param&gt; /// &lt;param&#xD;                    name="targetType"&gt;The type of the binding target property.&lt;/param&gt; /// &lt;param name="parameter"&gt;The converter parameter to use.&lt;/param&gt; /// &lt;param&#xD;                    name="culture"&gt;The culture to use in the converter.&lt;/param&gt; /// &lt;returns&gt; /// A converted value.If the method returns null, the valid null value is used.A return value of &lt;see&#xD;                    cref="T:System.Windows.DependencyProperty" /&gt;.&lt;see&#xD;                                                                      cref="F:System.Windows.DependencyProperty.UnsetValue" /&gt; indicates that the converter did not produce a value, and that the binding will use the &lt;see&#xD;                    cref="P:System.Windows.Data.BindingBase.FallbackValue" /&gt; if it is available, or else will use the default value.A return value of &lt;see&#xD;                    cref="T:System.Windows.Data.Binding" /&gt;.&lt;see cref="F:System.Windows.Data.Binding.DoNothing" /&gt; indicates that the binding does not transfer the value or use the &lt;see&#xD;                    cref="P:System.Windows.Data.BindingBase.FallbackValue" /&gt; or the default value. /// &lt;/returns&gt; /// &lt;exception&#xD;                    cref="System.NotImplementedException"&gt;&lt;/exception&gt; public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture) { if (!ValidateValue(values)) { return null; } throw new NotImplementedException(); } /// &lt;summary&gt; /// Converts a binding target value to the source binding values. /// &lt;/summary&gt; /// &lt;param&#xD;                    name="value"&gt;The value that the binding target produces.&lt;/param&gt; /// &lt;param name="targetTypes"&gt;The array of types to convert to. The array length indicates the number and types of values that are suggested for the method to return.&lt;/param&gt; /// &lt;param&#xD;                    name="parameter"&gt;The converter parameter to use.&lt;/param&gt; /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt; /// &lt;returns&gt; /// An array of values that have been converted from the target value back to the source values. /// &lt;/returns&gt; /// &lt;exception&#xD;                    cref="System.NotImplementedException"&gt;&lt;/exception&gt; public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture) { throw new NotImplementedException(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0AFA58C46B3CEC4FB18605F36155D807/Text/@EntryValue">[ValueConversion(typeof(object), typeof(object))]&#xD;
+public class  $classname$ : TcMarkupExtensionMultiValueConverter&lt; $classname$&gt;&#xD;
+{&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Converts source values to a value for the binding target. The data binding engine calls this method when it propagates the values from source bindings to the binding target.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    /// &lt;param name="values"&gt;The array of values that the source bindings in the &lt;see cref="T:System.Windows.Data.MultiBinding" /&gt; produces. The value &lt;see cref="F:System.Windows.DependencyProperty.UnsetValue" /&gt; indicates that the source binding has no value to provide for conversion.&lt;/param&gt;&#xD;
+    /// &lt;param name="targetType"&gt;The type of the binding target property.&lt;/param&gt;&#xD;
+    /// &lt;param name="parameter"&gt;The converter parameter to use.&lt;/param&gt;&#xD;
+    /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt;&#xD;
+    /// &lt;returns&gt;&#xD;
+    /// A converted value.If the method returns null, the valid null value is used.A return value of &lt;see cref="T:System.Windows.DependencyProperty" /&gt;.&lt;see cref="F:System.Windows.DependencyProperty.UnsetValue" /&gt; indicates that the converter did not produce a value, and that the binding will use the &lt;see cref="P:System.Windows.Data.BindingBase.FallbackValue" /&gt; if it is available, or else will use the default value.A return value of &lt;see cref="T:System.Windows.Data.Binding" /&gt;.&lt;see cref="F:System.Windows.Data.Binding.DoNothing" /&gt; indicates that the binding does not transfer the value or use the &lt;see cref="P:System.Windows.Data.BindingBase.FallbackValue" /&gt; or the default value.&#xD;
+    /// &lt;/returns&gt;&#xD;
+    /// &lt;exception cref="System.NotImplementedException"&gt;&lt;/exception&gt;&#xD;
+    public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)&#xD;
+    {&#xD;
+        if (!ValidateValue(values))&#xD;
+        {&#xD;
+&#xD;
+            return null;&#xD;
+&#xD;
+        }&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Converts a binding target value to the source binding values.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    /// &lt;param name="value"&gt;The value that the binding target produces.&lt;/param&gt;&#xD;
+    /// &lt;param name="targetTypes"&gt;The array of types to convert to. The array length indicates the number and types of values that are suggested for the method to return.&lt;/param&gt;&#xD;
+    /// &lt;param name="parameter"&gt;The converter parameter to use.&lt;/param&gt;&#xD;
+    /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt;&#xD;
+    /// &lt;returns&gt;&#xD;
+    /// An array of values that have been converted from the target value back to the source values.&#xD;
+    /// &lt;/returns&gt;&#xD;
+    /// &lt;exception cref="System.NotImplementedException"&gt;&lt;/exception&gt;&#xD;
+    public override object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0AFA58C46B3CEC4FB18605F36155D807/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2226,7 +2699,31 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DF225FFCA4724A47A19779EF8646C1BE/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DF225FFCA4724A47A19779EF8646C1BE/Text/@EntryValue">[ValueConversion(typeof(object), typeof(object))] public class $classname$ : TcMarkupExtensionMultiValueConverterOneWay&lt; $classname$&gt; { /// &lt;summary&gt; /// Converts source values to a value for the binding target. The data binding engine calls this method when it propagates the values from source bindings to the binding target. /// &lt;/summary&gt; /// &lt;param&#xD;                    name="values"&gt;The array of values that the source bindings in the &lt;see&#xD;                    cref="T:System.Windows.Data.MultiBinding" /&gt; produces. The value &lt;see&#xD;                    cref="F:System.Windows.DependencyProperty.UnsetValue" /&gt; indicates that the source binding has no value to provide for conversion.&lt;/param&gt; /// &lt;param&#xD;                    name="targetType"&gt;The type of the binding target property.&lt;/param&gt; /// &lt;param name="parameter"&gt;The converter parameter to use.&lt;/param&gt; /// &lt;param&#xD;                    name="culture"&gt;The culture to use in the converter.&lt;/param&gt; /// &lt;returns&gt; /// A converted value.If the method returns null, the valid null value is used.A return value of &lt;see&#xD;                    cref="T:System.Windows.DependencyProperty" /&gt;.&lt;see&#xD;                                                                      cref="F:System.Windows.DependencyProperty.UnsetValue" /&gt; indicates that the converter did not produce a value, and that the binding will use the &lt;see&#xD;                    cref="P:System.Windows.Data.BindingBase.FallbackValue" /&gt; if it is available, or else will use the default value.A return value of &lt;see&#xD;                    cref="T:System.Windows.Data.Binding" /&gt;.&lt;see cref="F:System.Windows.Data.Binding.DoNothing" /&gt; indicates that the binding does not transfer the value or use the &lt;see&#xD;                    cref="P:System.Windows.Data.BindingBase.FallbackValue" /&gt; or the default value. /// &lt;/returns&gt; /// &lt;exception&#xD;                    cref="System.NotImplementedException"&gt;&lt;/exception&gt; public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture) { if (!ValidateValue(values)) { return null; } throw new NotImplementedException(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DF225FFCA4724A47A19779EF8646C1BE/Text/@EntryValue">[ValueConversion(typeof(object), typeof(object))]&#xD;
+public class  $classname$ : TcMarkupExtensionMultiValueConverterOneWay&lt; $classname$&gt;&#xD;
+{&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Converts source values to a value for the binding target. The data binding engine calls this method when it propagates the values from source bindings to the binding target.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    /// &lt;param name="values"&gt;The array of values that the source bindings in the &lt;see cref="T:System.Windows.Data.MultiBinding" /&gt; produces. The value &lt;see cref="F:System.Windows.DependencyProperty.UnsetValue" /&gt; indicates that the source binding has no value to provide for conversion.&lt;/param&gt;&#xD;
+    /// &lt;param name="targetType"&gt;The type of the binding target property.&lt;/param&gt;&#xD;
+    /// &lt;param name="parameter"&gt;The converter parameter to use.&lt;/param&gt;&#xD;
+    /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt;&#xD;
+    /// &lt;returns&gt;&#xD;
+    /// A converted value.If the method returns null, the valid null value is used.A return value of &lt;see cref="T:System.Windows.DependencyProperty" /&gt;.&lt;see cref="F:System.Windows.DependencyProperty.UnsetValue" /&gt; indicates that the converter did not produce a value, and that the binding will use the &lt;see cref="P:System.Windows.Data.BindingBase.FallbackValue" /&gt; if it is available, or else will use the default value.A return value of &lt;see cref="T:System.Windows.Data.Binding" /&gt;.&lt;see cref="F:System.Windows.Data.Binding.DoNothing" /&gt; indicates that the binding does not transfer the value or use the &lt;see cref="P:System.Windows.Data.BindingBase.FallbackValue" /&gt; or the default value.&#xD;
+    /// &lt;/returns&gt;&#xD;
+    /// &lt;exception cref="System.NotImplementedException"&gt;&lt;/exception&gt;&#xD;
+    public override object Convert(object[] values, Type targetType, object parameter, CultureInfo culture)&#xD;
+    {&#xD;
+        if (!ValidateValue(values))&#xD;
+        {&#xD;
+&#xD;
+            return null;&#xD;
+&#xD;
+        }&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DF225FFCA4724A47A19779EF8646C1BE/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2248,7 +2745,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2E766DAF0A68FE4AAC86186085612459/Description/@EntryValue">Creates a method with no parameters, which returns a class.</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2E766DAF0A68FE4AAC86186085612459/Text/@EntryValue">public Task&lt;$returnType$&gt; $name$() { $END$ return null; }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2E766DAF0A68FE4AAC86186085612459/Text/@EntryValue">public Task&lt;$returnType$&gt; $name$()&#xD;
+{&#xD;
+	$END$&#xD;
+	return null;&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2E766DAF0A68FE4AAC86186085612459/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2274,7 +2775,9 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=73D7E5D505C60F43BFFE979F74B533B9/Description/@EntryValue">Represents an extension method</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=73D7E5D505C60F43BFFE979F74B533B9/Text/@EntryValue">internal static void $Name$(this $Type$ $argument$) { }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=73D7E5D505C60F43BFFE979F74B533B9/Text/@EntryValue">internal static void $Name$(this $Type$ $argument$)&#xD;
+{&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=73D7E5D505C60F43BFFE979F74B533B9/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2304,7 +2807,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F3217F4CAB441D40964CA33B888EF1C8/Description/@EntryValue">Creates a private void method.</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F3217F4CAB441D40964CA33B888EF1C8/Text/@EntryValue">private void $name$() { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F3217F4CAB441D40964CA33B888EF1C8/Text/@EntryValue">private void $name$()&#xD;
+{&#xD;
+	$END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F3217F4CAB441D40964CA33B888EF1C8/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2326,7 +2832,10 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=59CAC0A42753C948B74B481440173FE0/Description/@EntryValue">Creates a simple public void method.</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=59CAC0A42753C948B74B481440173FE0/Text/@EntryValue">public void $name$() { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=59CAC0A42753C948B74B481440173FE0/Text/@EntryValue">public void $name$()&#xD;
+{&#xD;
+    $END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=59CAC0A42753C948B74B481440173FE0/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2346,7 +2855,10 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=649F74BC7BBAC644B5EDD9A6B0C7EA29/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=649F74BC7BBAC644B5EDD9A6B0C7EA29/Text/@EntryValue">public IEnumerable&lt;$Type$&gt; $Name$() { yield return null; }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=649F74BC7BBAC644B5EDD9A6B0C7EA29/Text/@EntryValue">public IEnumerable&lt;$Type$&gt; $Name$()&#xD;
+{&#xD;
+    yield return null;&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=649F74BC7BBAC644B5EDD9A6B0C7EA29/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2412,7 +2924,43 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EC05DAC64ADE514AAB23BFD39BF3A45A/Description/@EntryValue">The implementation of the IDisposable pattern without base class</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EC05DAC64ADE514AAB23BFD39BF3A45A/Text/@EntryValue">private bool disposed = false; /// &lt;summary&gt; /// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources. /// &lt;/summary&gt; public void Dispose() { Dispose(true); GC.SuppressFinalize(this); } /// &lt;summary&gt; /// Releases unmanaged and - optionally - managed resources. /// &lt;/summary&gt; /// &lt;param&#xD;                    name="disposing"&gt;&lt;c&gt;true&lt;/c&gt; to release both managed and unmanaged resources; &lt;c&gt;false&lt;/c&gt; to release only unmanaged resources.&lt;/param&gt; protected virtual void Dispose(bool disposing) { if(!this.disposed) { if(disposing) { // Dispose managed resources. } // Dispose unmanaged resources. // Note disposing has been done. disposed = true; } } /// &lt;summary&gt; /// Finalizes an instance of the &lt;see&#xD;                    cref="$Name$" /&gt; class. /// &lt;/summary&gt; ~$Name$() { Dispose(false); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EC05DAC64ADE514AAB23BFD39BF3A45A/Text/@EntryValue">private bool disposed = false;&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.&#xD;
+/// &lt;/summary&gt;&#xD;
+public void Dispose()&#xD;
+{&#xD;
+    Dispose(true);&#xD;
+    GC.SuppressFinalize(this);&#xD;
+}&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// Releases unmanaged and - optionally - managed resources.&#xD;
+/// &lt;/summary&gt;&#xD;
+/// &lt;param name="disposing"&gt;&lt;c&gt;true&lt;/c&gt; to release both managed and unmanaged resources; &lt;c&gt;false&lt;/c&gt; to release only unmanaged resources.&lt;/param&gt;&#xD;
+protected virtual void Dispose(bool disposing)&#xD;
+{&#xD;
+    if(!this.disposed)&#xD;
+    {&#xD;
+        if(disposing)&#xD;
+        {&#xD;
+            // Dispose managed resources.&#xD;
+        }&#xD;
+&#xD;
+		// Dispose unmanaged resources.&#xD;
+        // Note disposing has been done.&#xD;
+        disposed = true;&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+/// &lt;summary&gt;&#xD;
+/// Finalizes an instance of the &lt;see cref="$Name$"/&gt; class.&#xD;
+/// &lt;/summary&gt;&#xD;
+~$Name$()&#xD;
+{&#xD;
+    Dispose(false);&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=EC05DAC64ADE514AAB23BFD39BF3A45A/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2432,7 +2980,25 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C709908B0FEE5D41B22548853DE80FFF/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C709908B0FEE5D41B22548853DE80FFF/Text/@EntryValue">private $Type$ m$Name$; public $Type$ $Name$ { get { TcInvoke.CheckAccess(this); return m$Name$; } set { TcInvoke.CheckAccess(this); if (m$Name$.NotEqualsTo(value)) { m$Name$ = value; RaisePropertyChanged(() =&gt; $Name$); } } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C709908B0FEE5D41B22548853DE80FFF/Text/@EntryValue">private $Type$ m$Name$;&#xD;
+public $Type$ $Name$&#xD;
+{&#xD;
+    get&#xD;
+    {&#xD;
+        TcInvoke.CheckAccess(this);&#xD;
+        return m$Name$;&#xD;
+    }&#xD;
+&#xD;
+    set&#xD;
+    {&#xD;
+        TcInvoke.CheckAccess(this);&#xD;
+        if (m$Name$.NotEqualsTo(value))&#xD;
+        {&#xD;
+            m$Name$ = value;            &#xD;
+            RaisePropertyChanged(() =&gt; $Name$);&#xD;
+        }&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C709908B0FEE5D41B22548853DE80FFF/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2456,7 +3022,18 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F32E54477A75E6419F7CA0843995E644/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F32E54477A75E6419F7CA0843995E644/Text/@EntryValue">/// &lt;summary&gt; /// Represents the constructor unit tests for the type &lt;see&#xD;                    cref="$type$" /&gt;. /// &lt;/summary&gt; [TestClass] public class ConstructorTest { [TestInitialize] public void TestInitialize() { $END$ } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F32E54477A75E6419F7CA0843995E644/Text/@EntryValue">/// &lt;summary&gt;&#xD;
+/// Represents the constructor unit tests for the type &lt;see cref="$type$"/&gt;.&#xD;
+/// &lt;/summary&gt;&#xD;
+[TestClass]&#xD;
+public class ConstructorTest&#xD;
+{&#xD;
+	[TestInitialize]&#xD;
+    public void TestInitialize()&#xD;
+    {&#xD;
+        $END$&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F32E54477A75E6419F7CA0843995E644/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2476,7 +3053,42 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=29D6506C85934E43937FAB6D5C5E2E05/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=29D6506C85934E43937FAB6D5C5E2E05/Text/@EntryValue">[ValueConversion(typeof(object), typeof(object))] public class $classname$ : TcMarkupExtensionConverter&lt; $classname$&gt; { /// &lt;summary&gt; /// Converts a value. /// &lt;/summary&gt; /// &lt;param&#xD;                    name="value"&gt;The value produced by the binding source.&lt;/param&gt; /// &lt;param name="targetType"&gt;The type of the binding target property.&lt;/param&gt; /// &lt;param&#xD;                    name="parameter"&gt;The converter parameter to use.&lt;/param&gt; /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt; /// &lt;returns&gt; /// The converted value. If the method returns &lt;c&gt;null&lt;/c&gt;, the valid &lt;c&gt;null&lt;/c&gt; value is used. /// &lt;/returns&gt; public override object Convert(object value, Type targetType, object parameter, CultureInfo culture) { if (!ValidateValue(value)) { return null; } throw new NotImplementedException(); } /// &lt;summary&gt; /// Converts the value back. /// &lt;/summary&gt; /// &lt;param&#xD;                    name="value"&gt;The value produced by changes on the view.&lt;/param&gt; /// &lt;param name="targetType"&gt;The type of the binding target property.&lt;/param&gt; /// &lt;param&#xD;                    name="parameter"&gt;The converter parameter to use.&lt;/param&gt; /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt; /// &lt;returns&gt;The back converted value..&lt;/returns&gt; public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) { throw new NotImplementedException(); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=29D6506C85934E43937FAB6D5C5E2E05/Text/@EntryValue">[ValueConversion(typeof(object), typeof(object))]&#xD;
+public class  $classname$ : TcMarkupExtensionConverter&lt; $classname$&gt;&#xD;
+{&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Converts a value.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    /// &lt;param name="value"&gt;The value produced by the binding source.&lt;/param&gt;&#xD;
+    /// &lt;param name="targetType"&gt;The type of the binding target property.&lt;/param&gt;&#xD;
+    /// &lt;param name="parameter"&gt;The converter parameter to use.&lt;/param&gt;&#xD;
+    /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt;&#xD;
+    /// &lt;returns&gt;&#xD;
+    /// The converted value. If the method returns &lt;c&gt;null&lt;/c&gt;, the valid &lt;c&gt;null&lt;/c&gt; value is used.&#xD;
+    /// &lt;/returns&gt;&#xD;
+    public override object Convert(object value, Type targetType, object parameter, CultureInfo culture)&#xD;
+    {&#xD;
+        if (!ValidateValue(value))&#xD;
+        {&#xD;
+            return null;&#xD;
+        }&#xD;
+&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// Converts the value back.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    /// &lt;param name="value"&gt;The value produced by changes on the view.&lt;/param&gt;&#xD;
+    /// &lt;param name="targetType"&gt;The type of the binding target property.&lt;/param&gt;&#xD;
+    /// &lt;param name="parameter"&gt;The converter parameter to use.&lt;/param&gt;&#xD;
+    /// &lt;param name="culture"&gt;The culture to use in the converter.&lt;/param&gt;&#xD;
+    /// &lt;returns&gt;The back converted value..&lt;/returns&gt;&#xD;
+    public override object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=29D6506C85934E43937FAB6D5C5E2E05/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2496,7 +3108,13 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3037EC7D823A9E4EA837AC6CAEA27995/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3037EC7D823A9E4EA837AC6CAEA27995/Text/@EntryValue">/// &lt;summary&gt; /// Represents the unit test for the &lt;see&#xD;                    cref="$ClassToTest$" /&gt; /// &lt;/summary&gt; [TestClass] public class $ClassToTest$Test { }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3037EC7D823A9E4EA837AC6CAEA27995/Text/@EntryValue">/// &lt;summary&gt;&#xD;
+/// Represents the unit test for the &lt;see cref="$ClassToTest$"/&gt;&#xD;
+/// &lt;/summary&gt;&#xD;
+[TestClass]&#xD;
+public class $ClassToTest$Test&#xD;
+{&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3037EC7D823A9E4EA837AC6CAEA27995/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2516,7 +3134,14 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CF6B7B5845BBE348BA2B5F6779EF3876/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CF6B7B5845BBE348BA2B5F6779EF3876/Text/@EntryValue">/// &lt;summary&gt; /// Represents the unit test for the &lt;see&#xD;                    cref="$type$.$methodOrProperty$" /&gt; /// &lt;/summary&gt; [TestClass] public class Tc$methodOrProperty$Test { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CF6B7B5845BBE348BA2B5F6779EF3876/Text/@EntryValue">/// &lt;summary&gt;&#xD;
+/// Represents the unit test for the &lt;see cref="$type$.$methodOrProperty$"/&gt;&#xD;
+/// &lt;/summary&gt;&#xD;
+[TestClass]&#xD;
+public class Tc$methodOrProperty$Test&#xD;
+{&#xD;
+	$END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=CF6B7B5845BBE348BA2B5F6779EF3876/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2542,7 +3167,21 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FCC76572B2173B43A0330207029B2C30/Description/@EntryValue">Creates a test class with TcInvokeTestClassBase as base class and uses TcSingleThread to run everything synchroniously.</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FCC76572B2173B43A0330207029B2C30/Text/@EntryValue">/// &lt;summary&gt; /// Represents the unit test for the &lt;see&#xD;                    cref="$class$" /&gt; /// &lt;/summary&gt; [TestClass] public class $class$Test : TcInvokeTestClassSingleThreadedBase { private $type$ mTestObject; public override void OnTestInitialize() { base.OnTestInitialize(); mTestObject = new $type$($END$); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FCC76572B2173B43A0330207029B2C30/Text/@EntryValue">/// &lt;summary&gt;&#xD;
+/// Represents the unit test for the &lt;see cref="$class$"/&gt;&#xD;
+/// &lt;/summary&gt;&#xD;
+[TestClass]&#xD;
+public class $class$Test : TcInvokeTestClassSingleThreadedBase&#xD;
+{&#xD;
+    private $type$ mTestObject;&#xD;
+&#xD;
+    public override void OnTestInitialize()&#xD;
+    {&#xD;
+        base.OnTestInitialize();&#xD;
+		&#xD;
+        mTestObject = new $type$($END$);&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FCC76572B2173B43A0330207029B2C30/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2568,7 +3207,21 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F23ED90C98DFE246A012442C0886897E/Description/@EntryValue">Creates a test class with TcInvokeTestClassBase as super class</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F23ED90C98DFE246A012442C0886897E/Text/@EntryValue">/// &lt;summary&gt; /// Represents the unit test for the &lt;see&#xD;                    cref="$class$.$methodOrProperty$" /&gt; /// &lt;/summary&gt; [TestClass] public class Tc$methodOrProperty$Test : TcInvokeTestClassSingleThreadedBase { private $class$ mTestObject; public override void OnTestInitialize() { base.OnTestInitialize(); mTestObject = new $class$($END$); } }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F23ED90C98DFE246A012442C0886897E/Text/@EntryValue">/// &lt;summary&gt;&#xD;
+/// Represents the unit test for the &lt;see cref="$class$.$methodOrProperty$"/&gt;&#xD;
+/// &lt;/summary&gt;&#xD;
+[TestClass]&#xD;
+public class Tc$methodOrProperty$Test : TcInvokeTestClassSingleThreadedBase&#xD;
+{&#xD;
+    private $class$ mTestObject;&#xD;
+&#xD;
+    public override void OnTestInitialize()&#xD;
+    {&#xD;
+        base.OnTestInitialize();&#xD;
+&#xD;
+        mTestObject = new $class$($END$);&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F23ED90C98DFE246A012442C0886897E/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2594,7 +3247,12 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=422919F8B7BEC24CADB06E7EF87CDD76/Description/@EntryValue">Template for argument null check of constructor</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=422919F8B7BEC24CADB06E7EF87CDD76/Text/@EntryValue">[TestMethod] [TestCategory(TcTestCategory.UNIT_TEST)] public void WhenConstructed_ThenNullParameterShouldThrowAnException() { TcAssert&lt;$ClassToTest$&gt;.IfNull(); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=422919F8B7BEC24CADB06E7EF87CDD76/Text/@EntryValue">[TestMethod]&#xD;
+[TestCategory(TcTestCategory.UNIT_TEST)]&#xD;
+public void WhenConstructed_ThenNullParameterShouldThrowAnException()&#xD;
+{&#xD;
+    TcAssert&lt;$ClassToTest$&gt;.IfNull();&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=422919F8B7BEC24CADB06E7EF87CDD76/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2614,7 +3272,12 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=18EB2395B4D858458DE716CB0F2442F6/Description/@EntryValue">Checks if a property is correctly set, when it is injected via the constructor.</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=18EB2395B4D858458DE716CB0F2442F6/Text/@EntryValue">[TestMethod] [TestCategory(TcTestCategory.UNIT_TEST)] public void WhenConstructed_Then$PropertyName$ShouldBeSetCorrectly() { Assert.AreEqual(m$PropertyName$, mTestObject.$PropertyName$); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=18EB2395B4D858458DE716CB0F2442F6/Text/@EntryValue">[TestMethod]&#xD;
+[TestCategory(TcTestCategory.UNIT_TEST)]&#xD;
+public void WhenConstructed_Then$PropertyName$ShouldBeSetCorrectly()&#xD;
+{&#xD;
+    Assert.AreEqual(m$PropertyName$, mTestObject.$PropertyName$);&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=18EB2395B4D858458DE716CB0F2442F6/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2640,7 +3303,12 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BE5C8386DDFFB8428911FFA8BCF2B0B5/Description/@EntryValue">Creates a method to check one argument for an ArgumentNullException</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BE5C8386DDFFB8428911FFA8BCF2B0B5/Text/@EntryValue">[TestMethod] [TestCategory(TcTestCategory.UNIT_TEST)] public void When$method$CalledWith$argumentNameUpper$Null_ThenArgumentNullExceptionShouldBeThrown() { TcAssert.ThrowsArg&lt;ArgumentNullException&gt;(() =&gt; mTestObject.$method$($END$), "$argumentName$"); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BE5C8386DDFFB8428911FFA8BCF2B0B5/Text/@EntryValue">[TestMethod]&#xD;
+[TestCategory(TcTestCategory.UNIT_TEST)]&#xD;
+public void When$method$CalledWith$argumentNameUpper$Null_ThenArgumentNullExceptionShouldBeThrown()&#xD;
+{&#xD;
+    TcAssert.ThrowsArg&lt;ArgumentNullException&gt;(() =&gt; mTestObject.$method$($END$), "$argumentName$");&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BE5C8386DDFFB8428911FFA8BCF2B0B5/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2676,7 +3344,11 @@
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=22AB3E01C15BC54DBDE766795E9469E3/@KeyIndexDefined">True</s:Boolean>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=22AB3E01C15BC54DBDE766795E9469E3/Text/@EntryValue">[TestMethod] [TestCategory(TcTestCategory.NON_FUNCTIONAL_TEST)] public void $Name$() { }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=22AB3E01C15BC54DBDE766795E9469E3/Text/@EntryValue">[TestMethod]&#xD;
+[TestCategory(TcTestCategory.NON_FUNCTIONAL_TEST)]&#xD;
+public void $Name$()&#xD;
+{    &#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=22AB3E01C15BC54DBDE766795E9469E3/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2698,7 +3370,12 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2AAF3E26A1E39E43BCB6847022672504/Description/@EntryValue">Tests all bindable properties of the test object for raise property changed, value changing, and not multiple raise property changes if value was set twice with same value.</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2AAF3E26A1E39E43BCB6847022672504/Text/@EntryValue">[TestMethod] [TestCategory(TcTestCategory.UNIT_TEST)] public void WhenClassImplementNotifyPropertyChanged_ThenAllPropertiesHaveToFollowTheContract() { mTestObject.AssertAllBindableProperties(); }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2AAF3E26A1E39E43BCB6847022672504/Text/@EntryValue">[TestMethod]&#xD;
+[TestCategory(TcTestCategory.UNIT_TEST)]&#xD;
+public void WhenClassImplementNotifyPropertyChanged_ThenAllPropertiesHaveToFollowTheContract()&#xD;
+{&#xD;
+    mTestObject.AssertAllBindableProperties();&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2AAF3E26A1E39E43BCB6847022672504/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2716,7 +3393,12 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DDAFDA622F177B41B7F8DC4E85B4A49C/Description/@EntryValue">Creates a simple black box test</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DDAFDA622F177B41B7F8DC4E85B4A49C/Text/@EntryValue">[TestMethod] [TestCategory(TcTestCategory.UNIT_TEST)] public void When$This$_Then$That$() { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DDAFDA622F177B41B7F8DC4E85B4A49C/Text/@EntryValue">[TestMethod]&#xD;
+[TestCategory(TcTestCategory.UNIT_TEST)]&#xD;
+public void When$This$_Then$That$()&#xD;
+{&#xD;
+    $END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DDAFDA622F177B41B7F8DC4E85B4A49C/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2740,7 +3422,11 @@
     <s:String
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8B7777A92FB6224D9F5D285D8F2E0297/Description/@EntryValue">Creates a method for cleaning up the tests</s:String>
     <s:String
-        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8B7777A92FB6224D9F5D285D8F2E0297/Text/@EntryValue">[TestCleanup] public void TestCleanup() { $END$ }</s:String>
+        x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8B7777A92FB6224D9F5D285D8F2E0297/Text/@EntryValue">[TestCleanup]&#xD;
+public void TestCleanup()&#xD;
+{&#xD;
+	$END$&#xD;
+}</s:String>
     <s:Boolean
         x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=8B7777A92FB6224D9F5D285D8F2E0297/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2758,7 +3444,11 @@
     <s:String
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2B68587E1C9BD64293BD589FE393DFD4/Description/@EntryValue">Creates a method to initialize a test.</s:String>
     <s:String
-            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2B68587E1C9BD64293BD589FE393DFD4/Text/@EntryValue">[TestInitialize] public void TestInitialize() { $END$ }</s:String>
+            x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2B68587E1C9BD64293BD589FE393DFD4/Text/@EntryValue">[TestInitialize]&#xD;
+public void TestInitialize()&#xD;
+{&#xD;
+	$END$&#xD;
+}</s:String>
     <s:Boolean
             x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2B68587E1C9BD64293BD589FE393DFD4/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2776,7 +3466,22 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1044CC8FEC3A82478EB44FB3E218B818/Description/@EntryValue">Create the initialize method for a connector test with the needed dependencies as mocks</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1044CC8FEC3A82478EB44FB3E218B818/Text/@EntryValue">private $TestClass$ mTestObject; private TiRemoteObjectWrapper&lt;$RemoteObject$&gt; mRemoteObjectWrapper; private TiGlobalFactoryService mGlobalFactoryService; private TiArgumentService mArgumentService; private TiLogService mLogService; [TestInitialize] public void TestInitialize() { mRemoteObjectWrapper = TcObjectCreator.Create&lt;TiRemoteObjectWrapper&lt;$RemoteObject$&gt;&gt;(); mGlobalFactoryService = TcObjectCreator.Create&lt;TiGlobalFactoryService&gt;(); mArgumentService = TcObjectCreator.Create&lt;TiArgumentService&gt;(); mLogService = TcObjectCreator.Create&lt;TiLogService&gt;(); mTestObject = new $TestClass$(mRemoteObjectWrapper, mGlobalFactoryService, mArgumentService, mLogService); }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1044CC8FEC3A82478EB44FB3E218B818/Text/@EntryValue">private $TestClass$ mTestObject;&#xD;
+private TiRemoteObjectWrapper&lt;$RemoteObject$&gt; mRemoteObjectWrapper;&#xD;
+private TiGlobalFactoryService mGlobalFactoryService;&#xD;
+private TiArgumentService mArgumentService;&#xD;
+private TiLogService mLogService;&#xD;
+&#xD;
+[TestInitialize]&#xD;
+public void TestInitialize()&#xD;
+{&#xD;
+    mRemoteObjectWrapper = TcObjectCreator.Create&lt;TiRemoteObjectWrapper&lt;$RemoteObject$&gt;&gt;();&#xD;
+    mGlobalFactoryService = TcObjectCreator.Create&lt;TiGlobalFactoryService&gt;();&#xD;
+    mArgumentService = TcObjectCreator.Create&lt;TiArgumentService&gt;();&#xD;
+    mLogService = TcObjectCreator.Create&lt;TiLogService&gt;();&#xD;
+&#xD;
+    mTestObject = new $TestClass$(mRemoteObjectWrapper, mGlobalFactoryService, mArgumentService, mLogService);&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1044CC8FEC3A82478EB44FB3E218B818/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2820,7 +3525,7 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0AED3F61BFEE324CA986BA71E9DFCDD3/Description/@EntryValue">Creates a new Substitute</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0AED3F61BFEE324CA986BA71E9DFCDD3/Text/@EntryValue">Substitute.For&lt;Ti&#xD;                    interface=""$&gt;()$END$</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0AED3F61BFEE324CA986BA71E9DFCDD3/Text/@EntryValue">Substitute.For&lt;Ti$interface$&gt;()$END$</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=0AED3F61BFEE324CA986BA71E9DFCDD3/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2890,7 +3595,26 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DEE0B1B74081024485601BADDE06E5C6/Shortcut/@EntryValue">middleware</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DEE0B1B74081024485601BADDE06E5C6/Text/@EntryValue">internal static class Add$name$Extension { internal static void Add$name$(this IServiceCollection services) { services.AddSingletonIfNotExists&lt;$name$&gt;(); } internal static void Use$name$(this IApplicationBuilder applicationBuilder) { applicationBuilder.UseMiddleware&lt;$name$&gt;(); } } internal sealed class $name$ : IMiddleware { public async Task InvokeAsync(HttpContext context, RequestDelegate next) { await next(context).ConfigureAwait(false); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DEE0B1B74081024485601BADDE06E5C6/Text/@EntryValue">internal static class Add$name$Extension&#xD;
+{&#xD;
+    internal static void Add$name$(this IServiceCollection services)&#xD;
+    {       &#xD;
+        services.AddSingletonIfNotExists&lt;$name$&gt;();&#xD;
+    }&#xD;
+	&#xD;
+	internal static void Use$name$(this IApplicationBuilder applicationBuilder)&#xD;
+	{&#xD;
+		applicationBuilder.UseMiddleware&lt;$name$&gt;();&#xD;
+	}&#xD;
+}&#xD;
+&#xD;
+internal sealed class $name$ : IMiddleware&#xD;
+{    &#xD;
+    public async Task InvokeAsync(HttpContext context, RequestDelegate next)&#xD;
+    {      &#xD;
+		await next(context).ConfigureAwait(false);       &#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DEE0B1B74081024485601BADDE06E5C6/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2912,7 +3636,106 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=64979CDD891063408DE818D69D0DF83D/Shortcut/@EntryValue">mstestbase-aspnet</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=64979CDD891063408DE818D69D0DF83D/Text/@EntryValue">[TestClass] public abstract class MsTestBase : IntegrationTestBase&lt;Startup&gt; { [AssemblyInitialize] public static Task Init(TestContext testContext) { return AssemblyInitializeAsync(testContext, (services, configuration) =&gt; { services.AddMediator(); }); } [AssemblyCleanup] internal static void Cleanup() =&gt; AssemblyCleanup(); } public abstract class IntegrationTestBase&lt;TStartup&gt; where TStartup : class { // We use assembly initialize to get better performance. But it is only possible if you change not states on the base // properties, otherwise we have to change to to clean up every test. // // Hint: With this 'AssemblyInitialize' the API is just started once. public static Task AssemblyInitializeAsync(TestContext testContext) { return AssemblyInitializeAsync(testContext, (_, _) =&gt; { }); } public static Task AssemblyInitializeAsync(TestContext testContext, Action&lt;IServiceCollection&#xD;                    IConfiguration=""&gt; registerServices) { // Create this with new, is not a fault, the reason is to keep the test class more cleaner. WebApplicationFactory = new CustomWebApplicationFactory&lt;TStartup&gt;(registerServices); ServiceProvider = WebApplicationFactory.Services; Client = WebApplicationFactory.CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false }); JsonSerializer = WebApplicationFactory.Services.GetService&lt;IJsonSerializer&gt;()!; Mediator = ServiceProvider.GetOrThrowMissingException&lt;IMediator&gt;(); UniqueRunnerName = System.Environment.MachineName; return Task.CompletedTask; } public static CustomWebApplicationFactory&lt;TStartup&gt; WebApplicationFactory { get; set; } = null!; public static IServiceProvider ServiceProvider { get; private set; } = null!; public static IJsonSerializer JsonSerializer { get; private set; } = null!; protected static string UniqueRunnerName { get; private set; } = string.Empty; protected static IMediator Mediator { get; private set; } = null!; protected static HttpClient Client { get; private set; } = null!; [AssemblyCleanup] internal static void AssemblyCleanup() { WebApplicationFactory?.Dispose(); Client?.Dispose(); } } public class CustomWebApplicationFactory&lt;TStartup&gt; : WebApplicationFactory&lt;TStartup&gt; where TStartup : class { private readonly Action&lt;IServiceCollection&#xD;                    IConfiguration=""&gt; _registerServices; public CustomWebApplicationFactory() : this((_, _) =&gt; { }) { } public CustomWebApplicationFactory(Action&lt;IServiceCollection&#xD;                    IConfiguration=""&gt; registerServices) { _registerServices = registerServices; } protected override void ConfigureWebHost(IWebHostBuilder builder) { var testSettingsFileInfo = new FileInfo(Path.Combine(System.Environment.CurrentDirectory, "appsettings.test.json")); IConfiguration configuration = null!; builder.ConfigureAppConfiguration((_, configurationBuilder) =&gt; { if (testSettingsFileInfo.Exists) { configurationBuilder.AddJsonFile(testSettingsFileInfo.FullName); } configuration = configurationBuilder.Build(); }); builder.ConfigureServices(services =&gt; { _registerServices(services, configuration); // if we need to switch between services we have to do it here }); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=64979CDD891063408DE818D69D0DF83D/Text/@EntryValue">[TestClass]&#xD;
+public abstract class MsTestBase : IntegrationTestBase&lt;Startup&gt;&#xD;
+{&#xD;
+    [AssemblyInitialize]&#xD;
+    public static Task Init(TestContext testContext)&#xD;
+    {&#xD;
+        return AssemblyInitializeAsync(testContext, (services, configuration) =&gt;&#xD;
+        {&#xD;
+            services.AddMediator();&#xD;
+        });&#xD;
+    }&#xD;
+&#xD;
+    [AssemblyCleanup]&#xD;
+    internal static void Cleanup() =&gt; AssemblyCleanup();&#xD;
+}&#xD;
+&#xD;
+public abstract class IntegrationTestBase&lt;TStartup&gt; where TStartup : class&#xD;
+{&#xD;
+    // We use assembly initialize to get better performance. But it is only possible if you change not states on the base&#xD;
+    // properties, otherwise we have to change to to clean up every test.&#xD;
+    //&#xD;
+    // Hint: With this 'AssemblyInitialize' the API is just started once.&#xD;
+    public static Task AssemblyInitializeAsync(TestContext testContext)&#xD;
+    {&#xD;
+        return AssemblyInitializeAsync(testContext, (_, _) =&gt; { });&#xD;
+    }&#xD;
+&#xD;
+    public static Task AssemblyInitializeAsync(TestContext testContext, &#xD;
+                                                Action&lt;IServiceCollection, IConfiguration&gt; registerServices)&#xD;
+    {&#xD;
+        // Create this with new, is not a fault, the reason is to keep the test class more cleaner.&#xD;
+        WebApplicationFactory = new CustomWebApplicationFactory&lt;TStartup&gt;(registerServices);&#xD;
+        ServiceProvider = WebApplicationFactory.Services;&#xD;
+        Client = WebApplicationFactory.CreateClient(new WebApplicationFactoryClientOptions { AllowAutoRedirect = false });&#xD;
+&#xD;
+        JsonSerializer = WebApplicationFactory.Services.GetService&lt;IJsonSerializer&gt;()!;&#xD;
+&#xD;
+        Mediator = ServiceProvider.GetOrThrowMissingException&lt;IMediator&gt;();&#xD;
+&#xD;
+        UniqueRunnerName = System.Environment.MachineName;&#xD;
+&#xD;
+        return Task.CompletedTask;&#xD;
+    }&#xD;
+&#xD;
+    public static CustomWebApplicationFactory&lt;TStartup&gt; WebApplicationFactory { get; set; } = null!;&#xD;
+&#xD;
+    public static IServiceProvider ServiceProvider { get; private set; } = null!;&#xD;
+&#xD;
+    public static IJsonSerializer JsonSerializer { get; private set; } = null!;&#xD;
+&#xD;
+    protected static string UniqueRunnerName { get; private set; } = string.Empty;&#xD;
+&#xD;
+    protected static IMediator Mediator { get; private set; } = null!;&#xD;
+&#xD;
+    protected static HttpClient Client { get; private set; } = null!;&#xD;
+&#xD;
+    [AssemblyCleanup]&#xD;
+    internal static void AssemblyCleanup()&#xD;
+    {&#xD;
+        WebApplicationFactory?.Dispose();&#xD;
+        Client?.Dispose();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+public class CustomWebApplicationFactory&lt;TStartup&gt; : WebApplicationFactory&lt;TStartup&gt; where TStartup : class&#xD;
+{&#xD;
+    private readonly Action&lt;IServiceCollection, IConfiguration&gt; _registerServices;&#xD;
+&#xD;
+    public CustomWebApplicationFactory() : this((_, _) =&gt; { })&#xD;
+    {&#xD;
+    }&#xD;
+&#xD;
+    public CustomWebApplicationFactory(Action&lt;IServiceCollection, IConfiguration&gt; registerServices)&#xD;
+    {&#xD;
+        _registerServices = registerServices;&#xD;
+    }&#xD;
+&#xD;
+    protected override void ConfigureWebHost(IWebHostBuilder builder)&#xD;
+    {&#xD;
+        var testSettingsFileInfo = new FileInfo(Path.Combine(System.Environment.CurrentDirectory, "appsettings.test.json"));&#xD;
+        IConfiguration configuration = null!;&#xD;
+&#xD;
+        builder.ConfigureAppConfiguration((_, configurationBuilder) =&gt;&#xD;
+        {&#xD;
+            if (testSettingsFileInfo.Exists)&#xD;
+            {&#xD;
+                configurationBuilder.AddJsonFile(testSettingsFileInfo.FullName);&#xD;
+            }&#xD;
+&#xD;
+            configuration = configurationBuilder.Build();&#xD;
+        });&#xD;
+&#xD;
+&#xD;
+        builder.ConfigureServices(services =&gt;&#xD;
+        {&#xD;
+            _registerServices(services, configuration);&#xD;
+            // if we need to switch between services we have to do it here&#xD;
+        });&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=64979CDD891063408DE818D69D0DF83D/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2930,7 +3753,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D44BEB0055F8C24EBBAC00647EAD4244/Shortcut/@EntryValue">namespace</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D44BEB0055F8C24EBBAC00647EAD4244/Text/@EntryValue">namespace $name$ { $END$$SELECTION$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D44BEB0055F8C24EBBAC00647EAD4244/Text/@EntryValue">namespace $name$&#xD;
+  {&#xD;
+     $END$$SELECTION$&#xD;
+  }</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=D44BEB0055F8C24EBBAC00647EAD4244/IsBlessed/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -2962,7 +3788,17 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=143441FE0A2A3048B3F0413E905034BB/Shortcut/@EntryValue">newtestassertpost</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=143441FE0A2A3048B3F0413E905034BB/Text/@EntryValue">[TestClass] public class $TestName$ : MsTestBase { [TestMethod] public Task $TestMethod$() { return Client.AssertPostAsync&lt;$TResponse$&gt;("$url$", "$payload$", "$result$"); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=143441FE0A2A3048B3F0413E905034BB/Text/@EntryValue">[TestClass]&#xD;
+public class $TestName$ : MsTestBase&#xD;
+{&#xD;
+	[TestMethod]&#xD;
+	public Task $TestMethod$()&#xD;
+	{&#xD;
+		return Client.AssertPostAsync&lt;$TResponse$&gt;("$url$",&#xD;
+												  "$payload$",&#xD;
+												  "$result$");&#xD;
+	}&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=143441FE0A2A3048B3F0413E905034BB/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3026,7 +3862,15 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=49EFEFF1E87A4342AD31493835937C8B/Shortcut/@EntryValue">notification</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=49EFEFF1E87A4342AD31493835937C8B/Text/@EntryValue">public record $notification$() : INotification; internal sealed class $notification$Handler : INotificationHandler&lt;$notification$&gt; { public Task Handle($notification$ notification, CancellationToken cancellationToken) { throw new NotImplementedException(); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=49EFEFF1E87A4342AD31493835937C8B/Text/@EntryValue">public record $notification$() : INotification;&#xD;
+&#xD;
+internal sealed class $notification$Handler : INotificationHandler&lt;$notification$&gt;&#xD;
+{&#xD;
+    public Task Handle($notification$ notification, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=49EFEFF1E87A4342AD31493835937C8B/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3046,7 +3890,26 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7510D9F0A07614F89194D45AD5D0497/Shortcut/@EntryValue">oauth0getall</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7510D9F0A07614F89194D45AD5D0497/Text/@EntryValue">[HttpGet] [OAuth2Scope("$service$.$entitiylowercase$.write")] [ProducesResponseType(typeof(Add$entityuppercase$Response), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [SwaggerOperation(OperationId = "get-all-$entitiylowercase$", Tags = new[] {"$entityuppercase$"})] public Task&lt;GetAll&#xD;                    entityuppercase=""$ Response=""&gt; GetOpportunityAsync($entityuppercase$ $entitiylowercase$) { return _mediator.SendAsync(new GetAll$entityuppercase$($entitiylowercase$)); } internal sealed record GetAll$entityuppercase$($entityuppercase$ $entityuppercase$) : IQuery&lt;GetAll&#xD;                    entityuppercase=""$ Response=""&gt;; internal sealed class GetAll$entityuppercase$Handler : IQueryHandler&lt;GetAll&#xD;                    entityuppercase=""$, GetAll=""$ entityuppercase=""$ Response=""&gt; { public Task&lt;GetAll&#xD;                    entityuppercase=""&#xD;                    Response=""&gt; Handle(Get$entityuppercase$ request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } </s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7510D9F0A07614F89194D45AD5D0497/Text/@EntryValue">[HttpGet]&#xD;
+[OAuth2Scope("$service$.$entitiylowercase$.write")]&#xD;
+[ProducesResponseType(typeof(Add$entityuppercase$Response), StatusCodes.Status200OK)]&#xD;
+[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+[SwaggerOperation(OperationId = "get-all-$entitiylowercase$", Tags = new[] {"$entityuppercase$"})]&#xD;
+public Task&lt;GetAll$entityuppercase$Response&gt; GetOpportunityAsync($entityuppercase$ $entitiylowercase$)&#xD;
+{&#xD;
+    return _mediator.SendAsync(new GetAll$entityuppercase$($entitiylowercase$));&#xD;
+}&#xD;
+&#xD;
+internal sealed record GetAll$entityuppercase$($entityuppercase$ $entityuppercase$) : IQuery&lt;GetAll$entityuppercase$Response&gt;;&#xD;
+&#xD;
+internal sealed class GetAll$entityuppercase$Handler : IQueryHandler&lt;GetAll$entityuppercase$, GetAll$entityuppercase$Response&gt;&#xD;
+{&#xD;
+	public Task&lt;GetAll$entityuppercase$Response&gt; Handle(Get$entityuppercase$ request, CancellationToken cancellationToken)&#xD;
+	{&#xD;
+		throw new NotImplementedException();&#xD;
+	}&#xD;
+}&#xD;
+</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B7510D9F0A07614F89194D45AD5D0497/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3076,7 +3939,26 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=53C669725D8E854AB7F53198B16EFDC7/Shortcut/@EntryValue">oauth0post</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=53C669725D8E854AB7F53198B16EFDC7/Text/@EntryValue">[HttpPost] [OAuth2Scope("$service$.$entitiylowercase$.write")] [ProducesResponseType(typeof(Add$entityuppercase$Response), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [SwaggerOperation(OperationId = "add-$entitiylowercase$", Tags = new[] {"$entityuppercase$"})] public Task&lt;Add&#xD;                    entityuppercase=""$ Response=""&gt; AddOpportunityAsync($entityuppercase$ $entitiylowercase$) { return _mediator.SendAsync(new Add$entityuppercase$($entitiylowercase$)); } internal sealed record Add$entityuppercase$($entityuppercase$ $entityuppercase$) : ICommand&lt;Add&#xD;                    entityuppercase=""$ Response=""&gt;; internal sealed class Add$entityuppercase$Handler : ICommandHandler&lt;Add&#xD;                    entityuppercase=""$, Add=""$ entityuppercase=""$ Response=""&gt; { public Task&lt;Add$ entityuppercase=""&#xD;                    Response=""&gt; Handle(Add$entityuppercase$ request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } </s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=53C669725D8E854AB7F53198B16EFDC7/Text/@EntryValue">[HttpPost]&#xD;
+[OAuth2Scope("$service$.$entitiylowercase$.write")]&#xD;
+[ProducesResponseType(typeof(Add$entityuppercase$Response), StatusCodes.Status200OK)]&#xD;
+[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+[SwaggerOperation(OperationId = "add-$entitiylowercase$", Tags = new[] {"$entityuppercase$"})]&#xD;
+public Task&lt;Add$entityuppercase$Response&gt; AddOpportunityAsync($entityuppercase$ $entitiylowercase$)&#xD;
+{&#xD;
+    return _mediator.SendAsync(new Add$entityuppercase$($entitiylowercase$));&#xD;
+}&#xD;
+&#xD;
+internal sealed record Add$entityuppercase$($entityuppercase$ $entityuppercase$) : ICommand&lt;Add$entityuppercase$Response&gt;;&#xD;
+&#xD;
+internal sealed class Add$entityuppercase$Handler : ICommandHandler&lt;Add$entityuppercase$, Add$entityuppercase$Response&gt;&#xD;
+{&#xD;
+	public Task&lt;Add$entityuppercase$Response&gt; Handle(Add$entityuppercase$ request, CancellationToken cancellationToken)&#xD;
+	{&#xD;
+		throw new NotImplementedException();&#xD;
+	}&#xD;
+}&#xD;
+</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=53C669725D8E854AB7F53198B16EFDC7/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3106,7 +3988,72 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6A93F98DB9A422438F749BE6D10EE6EA/Shortcut/@EntryValue">oauthrestcontroller</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6A93F98DB9A422438F749BE6D10EE6EA/Text/@EntryValue">[Authorize] [ApiController] [ApiVersion("1.0")] [Route("$baseurl$")] public class OpportunitiesController : ControllerBase { private readonly IMediator _mediator; public OpportunitiesController(IMediator mediator) { _mediator = mediator; } [HttpPost] [OAuth2Scope("$service$.$entitylower$.write")] [ProducesResponseType(typeof(Add$entity$Response), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [SwaggerOperation(OperationId = "add-$entity$", Tags = new[] {"$entity$"})] public Task&lt;Add&#xD;                    entity=""$ Response=""&gt; Add$entity$Async($entitylower$ $entitylower$) { return _mediator.SendAsync(new Add$entity$($entitylower$)); } [HttpGet] [OAuth2Scope("$service$.$entity$.read")] [ProducesResponseType(typeof(GetAll$entity$Response), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [SwaggerOperation(OperationId = "get-all-opportunities", Tags = new[] {"$entity$"})] public Task&lt;GetAll&#xD;                    entity=""$ Response=""&gt; GetAll$entity$sAsync() { return _mediator.SendAsync(new GetAll$entity$s($entitylower$)); } [HttpGet("{idOrNumber}")] [OAuth2Scope("$service$.$entity$.read")] [ProducesResponseType(typeof(Get$entity$ByIdOrNumberResponse), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [SwaggerOperation(OperationId = "get-opportunity-line-detail-by-id", Tags = new[] {"$entity$"})] public Task&lt;Get&#xD;                    entity=""$ ByIdOrNumberResponse=""&gt; GetOpportunityByIdOrNumberAsync(string id) { return _mediator.SendAsync(new Get$entity$ByIdOrNumber(partner, idOrNumber)); } [HttpDelete("{idOrNumber}")] [OAuth2Scope("$service$.$entity$.delete")] [ProducesResponseType(StatusCodes.Status204NoContent)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [SwaggerOperation(OperationId = "delete-$entity$-by-id", Tags = new[] {"$entity$"})] public async Task&lt;ActionResult&gt; DeleteOpportunityByIdOrNumberAsync(string id) { await _mediator.SendAsync(new Delete$entity$ById(partner, idOrNumber)).ConfigureAwait(false); return NoContent(); } [HttpDelete] [OAuth2Scope("$service$.$entity$.delete")] [ProducesResponseType(typeof(DeleteAllOpportunitiesResponse), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [SwaggerOperation(OperationId = "delete-all-$entity$", Tags = new[] {"$entity$"})] public Task&lt;DeleteAllOpportunitiesResponse&gt; DeleteAllOpportunitiesAsync(string partner, [FromQuery] string? idOrNumber = null) { return _mediator.SendAsync(new DeleteAll$entity$(partner, idOrNumber)); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6A93F98DB9A422438F749BE6D10EE6EA/Text/@EntryValue">[Authorize]&#xD;
+[ApiController]&#xD;
+[ApiVersion("1.0")]&#xD;
+[Route("$baseurl$")]&#xD;
+public class OpportunitiesController : ControllerBase&#xD;
+{&#xD;
+	private readonly IMediator _mediator;&#xD;
+&#xD;
+	public OpportunitiesController(IMediator mediator)&#xD;
+	{&#xD;
+		_mediator = mediator;&#xD;
+	}&#xD;
+&#xD;
+	[HttpPost]&#xD;
+	[OAuth2Scope("$service$.$entitylower$.write")]&#xD;
+	[ProducesResponseType(typeof(Add$entity$Response), StatusCodes.Status200OK)]&#xD;
+	[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+	[SwaggerOperation(OperationId = "add-$entity$", Tags = new[] {"$entity$"})]&#xD;
+	public Task&lt;Add$entity$Response&gt; Add$entity$Async($entitylower$ $entitylower$)&#xD;
+	{&#xD;
+		return _mediator.SendAsync(new Add$entity$($entitylower$));&#xD;
+	}&#xD;
+&#xD;
+&#xD;
+	[HttpGet]&#xD;
+	[OAuth2Scope("$service$.$entity$.read")]&#xD;
+	[ProducesResponseType(typeof(GetAll$entity$Response), StatusCodes.Status200OK)]&#xD;
+	[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+	[SwaggerOperation(OperationId = "get-all-opportunities", Tags = new[] {"$entity$"})]&#xD;
+	public Task&lt;GetAll$entity$Response&gt; GetAll$entity$sAsync()&#xD;
+	{&#xD;
+		return _mediator.SendAsync(new GetAll$entity$s($entitylower$));&#xD;
+	}&#xD;
+&#xD;
+	[HttpGet("{idOrNumber}")]&#xD;
+	[OAuth2Scope("$service$.$entity$.read")]&#xD;
+	[ProducesResponseType(typeof(Get$entity$ByIdOrNumberResponse), StatusCodes.Status200OK)]&#xD;
+	[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+	[SwaggerOperation(OperationId = "get-opportunity-line-detail-by-id", Tags = new[] {"$entity$"})]&#xD;
+	public Task&lt;Get$entity$ByIdOrNumberResponse&gt; GetOpportunityByIdOrNumberAsync(string id)&#xD;
+	{&#xD;
+		return _mediator.SendAsync(new Get$entity$ByIdOrNumber(partner, idOrNumber));&#xD;
+	}&#xD;
+&#xD;
+	[HttpDelete("{idOrNumber}")]&#xD;
+	[OAuth2Scope("$service$.$entity$.delete")]&#xD;
+	[ProducesResponseType(StatusCodes.Status204NoContent)]&#xD;
+	[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+	[SwaggerOperation(OperationId = "delete-$entity$-by-id", Tags = new[] {"$entity$"})]&#xD;
+	public async Task&lt;ActionResult&gt; DeleteOpportunityByIdOrNumberAsync(string id)&#xD;
+	{&#xD;
+		await _mediator.SendAsync(new Delete$entity$ById(partner, idOrNumber)).ConfigureAwait(false);&#xD;
+		return NoContent();&#xD;
+	}&#xD;
+&#xD;
+	[HttpDelete]&#xD;
+	[OAuth2Scope("$service$.$entity$.delete")]&#xD;
+	[ProducesResponseType(typeof(DeleteAllOpportunitiesResponse), StatusCodes.Status200OK)]&#xD;
+	[ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+	[SwaggerOperation(OperationId = "delete-all-$entity$", Tags = new[] {"$entity$"})]&#xD;
+	public Task&lt;DeleteAllOpportunitiesResponse&gt; DeleteAllOpportunitiesAsync(string partner,&#xD;
+																			[FromQuery] string? idOrNumber = null)&#xD;
+	{&#xD;
+		return _mediator.SendAsync(new DeleteAll$entity$(partner, idOrNumber));&#xD;
+	}&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6A93F98DB9A422438F749BE6D10EE6EA/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3236,7 +4183,22 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B5ED4A77E881D043AEDC3FF3CE40B3A0/Shortcut/@EntryValue">pipelinebehavior</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B5ED4A77E881D043AEDC3FF3CE40B3A0/Text/@EntryValue">internal static class Add$name$BehaviorExtension { internal static void Add$name$Behavior(this IServiceCollection services) { services.AddTransient(typeof(IPipelineBehavior&lt;,&gt;), typeof($name$Behavior&lt;,&gt;)); } } public class $name$Behavior&lt;TRequest&#xD;                    TResponse=""&gt; : IPipelineBehavior&lt;TRequest, TResponse=""&gt; where TRequest : notnull { public Task&lt;TResponse&gt; Handle(TRequest request, RequestHandlerDelegate&lt;TResponse&gt; next, CancellationToken cancellationToken) { return next(); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B5ED4A77E881D043AEDC3FF3CE40B3A0/Text/@EntryValue">internal static class Add$name$BehaviorExtension&#xD;
+{&#xD;
+    internal static void Add$name$Behavior(this IServiceCollection services)&#xD;
+    {&#xD;
+        services.AddTransient(typeof(IPipelineBehavior&lt;,&gt;), typeof($name$Behavior&lt;,&gt;));&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+public class $name$Behavior&lt;TRequest, TResponse&gt; : IPipelineBehavior&lt;TRequest, TResponse&gt;  where TRequest : notnull&#xD;
+{&#xD;
+    public Task&lt;TResponse&gt; Handle(TRequest request, RequestHandlerDelegate&lt;TResponse&gt; next, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        return next();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B5ED4A77E881D043AEDC3FF3CE40B3A0/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3258,7 +4220,8 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BE5211A76AB7DD48A0068C88F19E1D1F/Shortcut/@EntryValue">postresponsetypes</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BE5211A76AB7DD48A0068C88F19E1D1F/Text/@EntryValue">[ProducesResponseType(StatusCodes.Status201Created)] [ProducesResponseType(StatusCodes.Status400BadRequest)]</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BE5211A76AB7DD48A0068C88F19E1D1F/Text/@EntryValue">[ProducesResponseType(StatusCodes.Status201Created)]&#xD;
+[ProducesResponseType(StatusCodes.Status400BadRequest)]</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BE5211A76AB7DD48A0068C88F19E1D1F/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3294,7 +4257,22 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F130E381C42AC447963CD2C0CD9FE431/Shortcut/@EntryValue">program.cs</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F130E381C42AC447963CD2C0CD9FE431/Text/@EntryValue">namespace $namespace$ { public static class Program { internal static void Main(string[] args) { CreateHostBuilder(args).Build().Run(); } public static IHostBuilder CreateHostBuilder(string[] args) { return Host.CreateDefaultBuilder(args) .ConfigureWebHostDefaults(webBuilder =&gt; { webBuilder.UseStartup&lt;Startup&gt;(); }); } } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F130E381C42AC447963CD2C0CD9FE431/Text/@EntryValue">namespace $namespace$&#xD;
+{&#xD;
+    public static class Program&#xD;
+    {&#xD;
+        internal static void Main(string[] args)&#xD;
+        {&#xD;
+            CreateHostBuilder(args).Build().Run();&#xD;
+        }&#xD;
+&#xD;
+        public static IHostBuilder CreateHostBuilder(string[] args)&#xD;
+        {&#xD;
+            return Host.CreateDefaultBuilder(args)&#xD;
+                       .ConfigureWebHostDefaults(webBuilder =&gt; { webBuilder.UseStartup&lt;Startup&gt;(); });&#xD;
+        }&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F130E381C42AC447963CD2C0CD9FE431/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3406,7 +4384,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F43AC10E6088D842B8077AD12A18E35C/Description/@EntryValue">The "Main" method declaration</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F43AC10E6088D842B8077AD12A18E35C/Text/@EntryValue">internal static void Main( string[] args ) { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F43AC10E6088D842B8077AD12A18E35C/Text/@EntryValue">internal static void Main( string[] args )
+{
+  $END$
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F43AC10E6088D842B8077AD12A18E35C/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3426,7 +4407,143 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F1CDFE209B34E4408F9303EE14D8F000/Shortcut/@EntryValue">pulse-rest-controller</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F1CDFE209B34E4408F9303EE14D8F000/Text/@EntryValue">[Authorize] [ApiController] [ApiVersion("1.0")] [Route("v{version:apiVersion}/$path$")] [ApiExplorerSettings(GroupName = "$groupName$")] public class $ResourceName$Controller : ControllerBase { private readonly IMediator _mediator; public $ResourceName$Controller(IMediator mediator) { _mediator = mediator; } [HttpPost] [SwaggerOperation(OperationId = "add$ResourceName$")] [ProducesResponseType(typeof(Add$ResourceName$Response), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [AuthorizeUser(UserAuthorizationType.AdminPrivilege)] public Task&lt;Add&#xD;                    ResourceName=""$ Response=""&gt; Add$ResourceName$Async($ResourceName$ $resourceName$, CancellationToken cancellationToken = default) { return _mediator.SendAsync(new Add$ResourceName$($resourceName$), cancellationToken); } [HttpGet] [SwaggerOperation(OperationId = "getAll$ResourceName$s")] [ProducesResponseType(typeof(GetAll$ResourceName$sResponse), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [AuthorizeUser(UserAuthorizationType.AdminPrivilege)] public Task&lt;GetAll&#xD;                    ResourceName=""$ sResponse=""&gt; GetAll$ResourceName$sAsync(CancellationToken cancellationToken = default) { return _mediator.SendAsync(new GetAll$ResourceName$s(), cancellationToken); } [HttpGet("{id}")] [SwaggerOperation(OperationId = "get$ResourceName$ById")] [ProducesResponseType(typeof(Get$ResourceName$ByIdResponse), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [AuthorizeUser(UserAuthorizationType.AdminPrivilege)] public Task&lt;Get&#xD;                    ResourceName=""$ ByIdResponse=""&gt; Get$ResourceName$ByIdOrNumber(long id, CancellationToken cancellationToken = default) { return _mediator.SendAsync(new Get$ResourceName$ById(id), cancellationToken); } [HttpDelete] [SwaggerOperation(OperationId = "deleteAll$ResourceName$s")] [ProducesResponseType(StatusCodes.Status204NoContent)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [AuthorizeUser(UserAuthorizationType.AdminPrivilege)] public async Task&lt;IActionResult&gt; DeleteAll$ResourceName$sAsync(CancellationToken cancellationToken = default) { await _mediator.SendAsync(new DeleteAll$ResourceName$s(), cancellationToken).ConfigureAwait(false); return NoContent(); } [HttpDelete("{id}")] [SwaggerOperation(OperationId = "delete$ResourceName$ById")] [ProducesResponseType(StatusCodes.Status204NoContent)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] [AuthorizeUser(UserAuthorizationType.AdminPrivilege)] public async Task&lt;IActionResult&gt; Delete$ResourceName$ByIdAsync(long id, CancellationToken cancellationToken = default) { await _mediator.SendAsync(new Delete$ResourceName$ById(id), cancellationToken).ConfigureAwait(false); return NoContent(); } } public record $ResourceName$; internal sealed record Add$ResourceName$($ResourceName$ $ResourceName$) : ICommand&lt;Add&#xD;                    ResourceName=""$ Response=""&gt;; public record Add$ResourceName$Response($ResourceName$ $ResourceName$); internal sealed class Add$ResourceName$Handler : ICommandHandler&lt;Add&#xD;                    ResourceName=""$, Add=""$ ResourceName=""$ Response=""&gt; { public Task&lt;Add$ ResourceName=""&#xD;                    Response=""&gt; Handle(Add$ResourceName$ request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } internal sealed record GetAll$ResourceName$s : IQuery&lt;GetAll&#xD;                    ResourceName=""$ sResponse=""&gt;; public record GetAll$ResourceName$sResponse(IImmutableList&lt;$ResourceName$&gt; $ResourceName$s); internal sealed class GetAll$ResourceName$sHandler : IQueryHandler&lt;GetAll&#xD;                    ResourceName=""$ s="", GetAll=""$ ResourceName=""$ sResponse=""&gt; { public Task&lt;GetAll&#xD;                    ResourceName=""$ sResponse=""&gt; Handle(GetAll$ResourceName$s request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } internal sealed record Get$ResourceName$ById(long Id) : IQuery&lt;Get&#xD;                    ResourceName=""$ ByIdResponse=""&gt;; public record Get$ResourceName$ByIdResponse($ResourceName$ $ResourceName$); internal sealed class Get$ResourceName$ByIdHandler : IQueryHandler&lt;Get&#xD;                    ResourceName=""$ ById="", Get=""$ ResourceName=""$ ByIdResponse=""&gt; { public Task&lt;Get&#xD;                    ResourceName=""&#xD;                    ByIdResponse=""&gt; Handle(Get$ResourceName$ById request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } internal sealed record Delete$ResourceName$ById(long Id) : ICommand; internal sealed class Delete$ResourceName$ByIdHandler : ICommandHandler&lt;Delete&#xD;                    ResourceName=""$ ById=""&gt; { public Task Handle(Delete$ResourceName$ById request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } internal sealed record DeleteAll$ResourceName$s : ICommand; internal sealed class DeleteAll$ResourceName$sHandler : ICommandHandler&lt;DeleteAll&#xD;                    ResourceName=""$ s=""&gt; { public Task Handle(DeleteAll$ResourceName$s request, CancellationToken cancellationToken) { throw new NotImplementedException(); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F1CDFE209B34E4408F9303EE14D8F000/Text/@EntryValue">[Authorize]&#xD;
+[ApiController]&#xD;
+[ApiVersion("1.0")]&#xD;
+[Route("v{version:apiVersion}/$path$")]&#xD;
+[ApiExplorerSettings(GroupName = "$groupName$")]&#xD;
+public class $ResourceName$Controller : ControllerBase&#xD;
+{&#xD;
+    private readonly IMediator _mediator;&#xD;
+&#xD;
+    public $ResourceName$Controller(IMediator mediator)&#xD;
+    {&#xD;
+        _mediator = mediator;&#xD;
+    }&#xD;
+&#xD;
+    [HttpPost]&#xD;
+    [SwaggerOperation(OperationId = "add$ResourceName$")]&#xD;
+    [ProducesResponseType(typeof(Add$ResourceName$Response), StatusCodes.Status200OK)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+    [AuthorizeUser(UserAuthorizationType.AdminPrivilege)]&#xD;
+    public Task&lt;Add$ResourceName$Response&gt; Add$ResourceName$Async($ResourceName$ $resourceName$,&#xD;
+																  CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+        return _mediator.SendAsync(new Add$ResourceName$($resourceName$), cancellationToken);&#xD;
+    }&#xD;
+&#xD;
+    [HttpGet]&#xD;
+    [SwaggerOperation(OperationId = "getAll$ResourceName$s")]&#xD;
+    [ProducesResponseType(typeof(GetAll$ResourceName$sResponse), StatusCodes.Status200OK)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+    [AuthorizeUser(UserAuthorizationType.AdminPrivilege)]&#xD;
+    public Task&lt;GetAll$ResourceName$sResponse&gt; GetAll$ResourceName$sAsync(CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+        return _mediator.SendAsync(new GetAll$ResourceName$s(), cancellationToken);&#xD;
+    }&#xD;
+&#xD;
+    [HttpGet("{id}")]&#xD;
+    [SwaggerOperation(OperationId = "get$ResourceName$ById")]&#xD;
+    [ProducesResponseType(typeof(Get$ResourceName$ByIdResponse), StatusCodes.Status200OK)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+    [AuthorizeUser(UserAuthorizationType.AdminPrivilege)]&#xD;
+    public Task&lt;Get$ResourceName$ByIdResponse&gt; Get$ResourceName$ByIdOrNumber(long id,&#xD;
+																			 CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+        return _mediator.SendAsync(new Get$ResourceName$ById(id), cancellationToken);&#xD;
+    }&#xD;
+&#xD;
+    [HttpDelete]&#xD;
+    [SwaggerOperation(OperationId = "deleteAll$ResourceName$s")]&#xD;
+    [ProducesResponseType(StatusCodes.Status204NoContent)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+    [AuthorizeUser(UserAuthorizationType.AdminPrivilege)]&#xD;
+    public async Task&lt;IActionResult&gt; DeleteAll$ResourceName$sAsync(CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+        await _mediator.SendAsync(new DeleteAll$ResourceName$s(), cancellationToken).ConfigureAwait(false);&#xD;
+        return NoContent();&#xD;
+    }&#xD;
+&#xD;
+    [HttpDelete("{id}")]&#xD;
+    [SwaggerOperation(OperationId = "delete$ResourceName$ById")]&#xD;
+    [ProducesResponseType(StatusCodes.Status204NoContent)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+    [AuthorizeUser(UserAuthorizationType.AdminPrivilege)]&#xD;
+    public async Task&lt;IActionResult&gt; Delete$ResourceName$ByIdAsync(long id,&#xD;
+																   CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+&#xD;
+        await _mediator.SendAsync(new Delete$ResourceName$ById(id), cancellationToken).ConfigureAwait(false);&#xD;
+        return NoContent();&#xD;
+&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+public record $ResourceName$;&#xD;
+&#xD;
+&#xD;
+internal sealed record Add$ResourceName$($ResourceName$ $ResourceName$) : ICommand&lt;Add$ResourceName$Response&gt;;&#xD;
+&#xD;
+public record Add$ResourceName$Response($ResourceName$ $ResourceName$);&#xD;
+&#xD;
+internal sealed class Add$ResourceName$Handler : ICommandHandler&lt;Add$ResourceName$, Add$ResourceName$Response&gt;&#xD;
+{&#xD;
+    public Task&lt;Add$ResourceName$Response&gt; Handle(Add$ResourceName$ request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+internal sealed record GetAll$ResourceName$s : IQuery&lt;GetAll$ResourceName$sResponse&gt;;&#xD;
+&#xD;
+public record GetAll$ResourceName$sResponse(IImmutableList&lt;$ResourceName$&gt; $ResourceName$s);&#xD;
+&#xD;
+internal sealed class GetAll$ResourceName$sHandler : IQueryHandler&lt;GetAll$ResourceName$s, GetAll$ResourceName$sResponse&gt;&#xD;
+{&#xD;
+    public Task&lt;GetAll$ResourceName$sResponse&gt; Handle(GetAll$ResourceName$s request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+internal sealed record Get$ResourceName$ById(long Id) : IQuery&lt;Get$ResourceName$ByIdResponse&gt;;&#xD;
+&#xD;
+public record Get$ResourceName$ByIdResponse($ResourceName$ $ResourceName$);&#xD;
+&#xD;
+internal sealed class Get$ResourceName$ByIdHandler : IQueryHandler&lt;Get$ResourceName$ById, Get$ResourceName$ByIdResponse&gt;&#xD;
+{&#xD;
+    public Task&lt;Get$ResourceName$ByIdResponse&gt; Handle(Get$ResourceName$ById request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+internal sealed record Delete$ResourceName$ById(long Id) : ICommand;&#xD;
+&#xD;
+internal sealed class Delete$ResourceName$ByIdHandler : ICommandHandler&lt;Delete$ResourceName$ById&gt;&#xD;
+{&#xD;
+    public Task Handle(Delete$ResourceName$ById request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+internal sealed record DeleteAll$ResourceName$s : ICommand;&#xD;
+&#xD;
+internal sealed class DeleteAll$ResourceName$sHandler : ICommandHandler&lt;DeleteAll$ResourceName$s&gt;&#xD;
+{&#xD;
+    public Task Handle(DeleteAll$ResourceName$s request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F1CDFE209B34E4408F9303EE14D8F000/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3460,7 +4577,15 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1023E2094A3A2D4EAA83234EBBAAEED9/Shortcut/@EntryValue">query</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1023E2094A3A2D4EAA83234EBBAAEED9/Text/@EntryValue">internal sealed record $query$ : IQuery&lt;$response$&gt;; internal sealed class $query$Handler : IQueryHandler&lt;$query&#xD;                    response=""$&gt; { public Task&lt;$response$&gt; Handle($query$ request, CancellationToken cancellationToken) { throw new NotImplementedException(); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1023E2094A3A2D4EAA83234EBBAAEED9/Text/@EntryValue">internal sealed record $query$ : IQuery&lt;$response$&gt;;&#xD;
+&#xD;
+internal sealed class $query$Handler : IQueryHandler&lt;$query$, $response$&gt;&#xD;
+{&#xD;
+    public Task&lt;$response$&gt; Handle($query$ request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=1023E2094A3A2D4EAA83234EBBAAEED9/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3484,7 +4609,15 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=37DCA16E02BA4E489B24B6E6B9224CD2/Shortcut/@EntryValue">query-async-enumerable</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=37DCA16E02BA4E489B24B6E6B9224CD2/Text/@EntryValue">internal sealed record $query$ : IStreamRequest&lt;$response$&gt;; internal sealed class $query$Handler : IStreamRequestHandler&lt;$query&#xD;                    response=""$&gt; { public IAsyncEnumerable&lt;$response$&gt; Handle($query$ request, [EnumeratorCancellation] CancellationToken cancellationToken) { throw new NotImplementedException(); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=37DCA16E02BA4E489B24B6E6B9224CD2/Text/@EntryValue">internal sealed record $query$ : IStreamRequest&lt;$response$&gt;;&#xD;
+&#xD;
+internal sealed class $query$Handler : IStreamRequestHandler&lt;$query$, $response$&gt;&#xD;
+{&#xD;
+    public IAsyncEnumerable&lt;$response$&gt; Handle($query$ request, [EnumeratorCancellation] CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=37DCA16E02BA4E489B24B6E6B9224CD2/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3510,7 +4643,17 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=96A76B766D1DCF4998E8DB74ADC514B4/Shortcut/@EntryValue">query-responsetype</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=96A76B766D1DCF4998E8DB74ADC514B4/Text/@EntryValue">internal sealed record $query$ : IQuery&lt;$response$&gt;; public sealed record $response$; internal sealed class $query$Handler : IQueryHandler&lt;$query&#xD;                    response=""$&gt; { public Task&lt;$response$&gt; Handle($query$ request, CancellationToken cancellationToken) { throw new NotImplementedException(); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=96A76B766D1DCF4998E8DB74ADC514B4/Text/@EntryValue">internal sealed record $query$ : IQuery&lt;$response$&gt;;&#xD;
+&#xD;
+public sealed record $response$;&#xD;
+&#xD;
+internal sealed class $query$Handler : IQueryHandler&lt;$query$, $response$&gt;&#xD;
+{&#xD;
+    public Task&lt;$response$&gt; Handle($query$ request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=96A76B766D1DCF4998E8DB74ADC514B4/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3536,7 +4679,21 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6D92D2969132854AAF0BAD54B678F95E/Shortcut/@EntryValue">requestvalidator</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6D92D2969132854AAF0BAD54B678F95E/Text/@EntryValue">internal static class $request$ValidatorExtension { internal static void $request$Validator(this IServiceCollection services) { services.AddSingletonIfNotExists&lt;IRequestValidator&lt;$request$&gt;, $request$Validator&gt;(); } } internal sealed class $request$Validator : IRequestValidator&lt;$request$&gt; { public Task ValidateAsync($request$ request) { return Task.CompletedTask; } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6D92D2969132854AAF0BAD54B678F95E/Text/@EntryValue">internal static class $request$ValidatorExtension&#xD;
+{&#xD;
+    internal static void $request$Validator(this IServiceCollection services)&#xD;
+    {&#xD;
+        services.AddSingletonIfNotExists&lt;IRequestValidator&lt;$request$&gt;, $request$Validator&gt;();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+internal sealed class $request$Validator : IRequestValidator&lt;$request$&gt;&#xD;
+{&#xD;
+    public Task ValidateAsync($request$ request)&#xD;
+    {&#xD;
+        return Task.CompletedTask;      &#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=6D92D2969132854AAF0BAD54B678F95E/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3556,7 +4713,133 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4C5BFA5B24818A47B519209EEA99EBD5/Shortcut/@EntryValue">rest-controller-no-authorization</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4C5BFA5B24818A47B519209EEA99EBD5/Text/@EntryValue">[Authorize] [ApiController] [ApiVersion("1.0")] [Route("v{version:apiVersion}/$path$")] [ApiExplorerSettings(GroupName = "$groupName$")] public class $ResourceName$Controller : ControllerBase { private readonly IMediator _mediator; public $ResourceName$Controller(IMediator mediator) { _mediator = mediator; } [HttpPost] [ProducesResponseType(typeof(Add$ResourceName$Response), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] public Task&lt;Add&#xD;                    ResourceName=""$ Response=""&gt; Add$ResourceName$Async($ResourceName$ $resourceName$, CancellationToken cancellationToken = default) { return _mediator.SendAsync(new Add$ResourceName$($resourceName$), cancellationToken); } [HttpGet] [ProducesResponseType(typeof(GetAll$ResourceName$sResponse), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] public Task&lt;GetAll&#xD;                    ResourceName=""$ sResponse=""&gt; GetAll$ResourceName$sAsync(CancellationToken cancellationToken = default) { return _mediator.SendAsync(new GetAll$ResourceName$s(), cancellationToken); } [HttpGet("{id}")] [ProducesResponseType(typeof(Get$ResourceName$ByIdResponse), StatusCodes.Status200OK)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] public Task&lt;Get&#xD;                    ResourceName=""$ ByIdResponse=""&gt; Get$ResourceName$ByIdOrNumber(long id, CancellationToken cancellationToken = default) { return _mediator.SendAsync(new Get$ResourceName$ById(id), cancellationToken); } [HttpDelete] [ProducesResponseType(StatusCodes.Status204NoContent)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] public async Task&lt;IActionResult&gt; DeleteAll$ResourceName$sAsync(CancellationToken cancellationToken = default) { await _mediator.SendAsync(new DeleteAll$ResourceName$s(), cancellationToken).ConfigureAwait(false); return NoContent(); } [HttpDelete("{id}")] [ProducesResponseType(StatusCodes.Status204NoContent)] [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)] public async Task&lt;IActionResult&gt; Delete$ResourceName$ByIdAsync(long id, CancellationToken cancellationToken = default) { await _mediator.SendAsync(new Delete$ResourceName$ById(id), cancellationToken).ConfigureAwait(false); return NoContent(); } } public record $ResourceName$; internal sealed record Add$ResourceName$($ResourceName$ $ResourceName$) : ICommand&lt;Add&#xD;                    ResourceName=""$ Response=""&gt;; public record Add$ResourceName$Response($ResourceName$ $ResourceName$); internal sealed class Add$ResourceName$Handler : ICommandHandler&lt;Add&#xD;                    ResourceName=""$, Add=""$ ResourceName=""$ Response=""&gt; { public Task&lt;Add$ ResourceName=""&#xD;                    Response=""&gt; Handle(Add$ResourceName$ request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } internal sealed record GetAll$ResourceName$s : IQuery&lt;GetAll&#xD;                    ResourceName=""$ sResponse=""&gt;; public record GetAll$ResourceName$sResponse(IImmutableList&lt;$ResourceName$&gt; $ResourceName$s); internal sealed class GetAll$ResourceName$sHandler : IQueryHandler&lt;GetAll&#xD;                    ResourceName=""$ s="", GetAll=""$ ResourceName=""$ sResponse=""&gt; { public Task&lt;GetAll&#xD;                    ResourceName=""$ sResponse=""&gt; Handle(GetAll$ResourceName$s request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } internal sealed record Get$ResourceName$ById(long Id) : IQuery&lt;Get&#xD;                    ResourceName=""$ ByIdResponse=""&gt;; public record Get$ResourceName$ByIdResponse($ResourceName$ $ResourceName$); internal sealed class Get$ResourceName$ByIdHandler : IQueryHandler&lt;Get&#xD;                    ResourceName=""$ ById="", Get=""$ ResourceName=""$ ByIdResponse=""&gt; { public Task&lt;Get&#xD;                    ResourceName=""&#xD;                    ByIdResponse=""&gt; Handle(Get$ResourceName$ById request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } internal sealed record Delete$ResourceName$ById(long Id) : ICommand; internal sealed class Delete$ResourceName$ByIdHandler : ICommandHandler&lt;Delete&#xD;                    ResourceName=""$ ById=""&gt; { public Task Handle(Delete$ResourceName$ById request, CancellationToken cancellationToken) { throw new NotImplementedException(); } } internal sealed record DeleteAll$ResourceName$s : ICommand; internal sealed class DeleteAll$ResourceName$sHandler : ICommandHandler&lt;DeleteAll&#xD;                    ResourceName=""$ s=""&gt; { public Task Handle(DeleteAll$ResourceName$s request, CancellationToken cancellationToken) { throw new NotImplementedException(); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4C5BFA5B24818A47B519209EEA99EBD5/Text/@EntryValue">[Authorize]&#xD;
+[ApiController]&#xD;
+[ApiVersion("1.0")]&#xD;
+[Route("v{version:apiVersion}/$path$")]&#xD;
+[ApiExplorerSettings(GroupName = "$groupName$")]&#xD;
+public class $ResourceName$Controller : ControllerBase&#xD;
+{&#xD;
+    private readonly IMediator _mediator;&#xD;
+&#xD;
+    public $ResourceName$Controller(IMediator mediator)&#xD;
+    {&#xD;
+        _mediator = mediator;&#xD;
+    }&#xD;
+&#xD;
+    [HttpPost]&#xD;
+    [ProducesResponseType(typeof(Add$ResourceName$Response), StatusCodes.Status200OK)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]   &#xD;
+    public Task&lt;Add$ResourceName$Response&gt; Add$ResourceName$Async($ResourceName$ $resourceName$,&#xD;
+																  CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+        return _mediator.SendAsync(new Add$ResourceName$($resourceName$), cancellationToken);&#xD;
+    }&#xD;
+&#xD;
+    [HttpGet]&#xD;
+    [ProducesResponseType(typeof(GetAll$ResourceName$sResponse), StatusCodes.Status200OK)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]&#xD;
+    public Task&lt;GetAll$ResourceName$sResponse&gt; GetAll$ResourceName$sAsync(CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+        return _mediator.SendAsync(new GetAll$ResourceName$s(), cancellationToken);&#xD;
+    }&#xD;
+&#xD;
+    [HttpGet("{id}")]&#xD;
+    [ProducesResponseType(typeof(Get$ResourceName$ByIdResponse), StatusCodes.Status200OK)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]   &#xD;
+    public Task&lt;Get$ResourceName$ByIdResponse&gt; Get$ResourceName$ByIdOrNumber(long id,&#xD;
+																			 CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+        return _mediator.SendAsync(new Get$ResourceName$ById(id), cancellationToken);&#xD;
+    }&#xD;
+&#xD;
+    [HttpDelete]&#xD;
+    [ProducesResponseType(StatusCodes.Status204NoContent)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]  &#xD;
+    public async Task&lt;IActionResult&gt; DeleteAll$ResourceName$sAsync(CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+        await _mediator.SendAsync(new DeleteAll$ResourceName$s(), cancellationToken).ConfigureAwait(false);&#xD;
+        return NoContent();&#xD;
+    }&#xD;
+&#xD;
+    [HttpDelete("{id}")]&#xD;
+    [ProducesResponseType(StatusCodes.Status204NoContent)]&#xD;
+    [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]   &#xD;
+    public async Task&lt;IActionResult&gt; Delete$ResourceName$ByIdAsync(long id,&#xD;
+																   CancellationToken cancellationToken = default)&#xD;
+    {&#xD;
+&#xD;
+        await _mediator.SendAsync(new Delete$ResourceName$ById(id), cancellationToken).ConfigureAwait(false);&#xD;
+        return NoContent();&#xD;
+&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+public record $ResourceName$;&#xD;
+&#xD;
+&#xD;
+internal sealed record Add$ResourceName$($ResourceName$ $ResourceName$) : ICommand&lt;Add$ResourceName$Response&gt;;&#xD;
+&#xD;
+public record Add$ResourceName$Response($ResourceName$ $ResourceName$);&#xD;
+&#xD;
+internal sealed class Add$ResourceName$Handler : ICommandHandler&lt;Add$ResourceName$, Add$ResourceName$Response&gt;&#xD;
+{&#xD;
+    public Task&lt;Add$ResourceName$Response&gt; Handle(Add$ResourceName$ request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+internal sealed record GetAll$ResourceName$s : IQuery&lt;GetAll$ResourceName$sResponse&gt;;&#xD;
+&#xD;
+public record GetAll$ResourceName$sResponse(IImmutableList&lt;$ResourceName$&gt; $ResourceName$s);&#xD;
+&#xD;
+internal sealed class GetAll$ResourceName$sHandler : IQueryHandler&lt;GetAll$ResourceName$s, GetAll$ResourceName$sResponse&gt;&#xD;
+{&#xD;
+    public Task&lt;GetAll$ResourceName$sResponse&gt; Handle(GetAll$ResourceName$s request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+internal sealed record Get$ResourceName$ById(long Id) : IQuery&lt;Get$ResourceName$ByIdResponse&gt;;&#xD;
+&#xD;
+public record Get$ResourceName$ByIdResponse($ResourceName$ $ResourceName$);&#xD;
+&#xD;
+internal sealed class Get$ResourceName$ByIdHandler : IQueryHandler&lt;Get$ResourceName$ById, Get$ResourceName$ByIdResponse&gt;&#xD;
+{&#xD;
+    public Task&lt;Get$ResourceName$ByIdResponse&gt; Handle(Get$ResourceName$ById request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+internal sealed record Delete$ResourceName$ById(long Id) : ICommand;&#xD;
+&#xD;
+internal sealed class Delete$ResourceName$ByIdHandler : ICommandHandler&lt;Delete$ResourceName$ById&gt;&#xD;
+{&#xD;
+    public Task Handle(Delete$ResourceName$ById request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+&#xD;
+&#xD;
+internal sealed record DeleteAll$ResourceName$s : ICommand;&#xD;
+&#xD;
+internal sealed class DeleteAll$ResourceName$sHandler : ICommandHandler&lt;DeleteAll$ResourceName$s&gt;&#xD;
+{&#xD;
+    public Task Handle(DeleteAll$ResourceName$s request, CancellationToken cancellationToken)&#xD;
+    {&#xD;
+        throw new NotImplementedException();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4C5BFA5B24818A47B519209EEA99EBD5/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3592,7 +4875,11 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=815EF179192A0746820F3C7DDB8E7BED/Description/@EntryValue">Iterate an array in inverse order</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=815EF179192A0746820F3C7DDB8E7BED/Text/@EntryValue">for (int $INDEX$ = $ARRAY$.Length - 1; $INDEX$ &gt;= 0; $INDEX$--) { $TYPE$ $VAR$ = $ARRAY$[$INDEX$]; $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=815EF179192A0746820F3C7DDB8E7BED/Text/@EntryValue">for (int $INDEX$ = $ARRAY$.Length - 1; $INDEX$ &gt;= 0; $INDEX$--)
+{
+  $TYPE$ $VAR$ = $ARRAY$[$INDEX$];
+  $END$
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=815EF179192A0746820F3C7DDB8E7BED/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3712,7 +4999,12 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=AB3327059BA5FD42B453685D835444A5/Description/@EntryValue">Safely cast variable</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=AB3327059BA5FD42B453685D835444A5/Text/@EntryValue">$VARTYPE$ $VAR$ = $VAR1$ as $TYPE$; if ($VAR$ != null) { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=AB3327059BA5FD42B453685D835444A5/Text/@EntryValue">$VARTYPE$ $VAR$ = $VAR1$ as $TYPE$;
+
+if ($VAR$ != null)
+{
+  $END$
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=AB3327059BA5FD42B453685D835444A5/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3758,7 +5050,11 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E8E860B5857B4540A15F3F6359802842/Description/@EntryValue">'int Main' method </s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E8E860B5857B4540A15F3F6359802842/Text/@EntryValue">static int Main(string[] args) { $END$ return 0; }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E8E860B5857B4540A15F3F6359802842/Text/@EntryValue">static int Main(string[] args)&#xD;
+{&#xD;
+  $END$&#xD;
+  return 0;&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=E8E860B5857B4540A15F3F6359802842/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3780,7 +5076,54 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=14D96BDE901FCA45A705B5014F666794/Shortcut/@EntryValue">simple-in-memory-db-context</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=14D96BDE901FCA45A705B5014F666794/Text/@EntryValue">internal static class Add$Domain$DbContextExtension { internal static void Add$Domain$DbContext(this IServiceCollection services) { services.AddSingletonIfNotExists&lt;$Domain&#xD;                    DbContext=""&gt;(); } } public class $Domain$DbContext { private readonly List&lt;$Domain$&gt; _$domain$s = new(); internal IImmutableList&lt;$Domain$&gt; GetAll$Domain$s() { return _$domain$s.ToImmutableList(); } public $Domain$ Add$Domain$($Domain$ request$Domain$) { _$domain$s.Add(request$Domain$); return request$Domain$; } public void DeleteById(long requestId) { var $domain$ToDelete = _$domain$s.FirstOrDefault($domain$ =&gt; $domain$.Id == requestId); if ($domain$ToDelete.IsNull()) { throw new ProblemDetailsException("Expected $domain$ does not exist", $"The $domain$ wiht the id: {requestId} was not found or does not exists", ("$Domain$ Id", requestId.ToInvariantString())); } _$domain$s.Remove($domain$ToDelete); } public void DeleteBy(Func&lt;$Domain&#xD;                    bool=""&gt; $domain$ToDelete) { var $domain$s = _$domain$s.Where($domain$ToDelete).ToList(); _$domain$s.RemoveRange($domain$s); } public void DeleteAll() { _$domain$s.Clear(); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=14D96BDE901FCA45A705B5014F666794/Text/@EntryValue">internal static class Add$Domain$DbContextExtension&#xD;
+{&#xD;
+    internal static void Add$Domain$DbContext(this IServiceCollection services)&#xD;
+    {&#xD;
+        services.AddSingletonIfNotExists&lt;$Domain$DbContext&gt;();&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+public class $Domain$DbContext&#xD;
+{&#xD;
+    private readonly List&lt;$Domain$&gt; _$domain$s = new();&#xD;
+&#xD;
+    internal IImmutableList&lt;$Domain$&gt; GetAll$Domain$s()&#xD;
+    {&#xD;
+        return _$domain$s.ToImmutableList();&#xD;
+    }&#xD;
+&#xD;
+    public $Domain$ Add$Domain$($Domain$ request$Domain$)&#xD;
+    {&#xD;
+        _$domain$s.Add(request$Domain$);&#xD;
+        return request$Domain$;&#xD;
+    }&#xD;
+&#xD;
+    public void DeleteById(long requestId)&#xD;
+    {&#xD;
+        var $domain$ToDelete = _$domain$s.FirstOrDefault($domain$ =&gt; $domain$.Id == requestId);&#xD;
+        if ($domain$ToDelete.IsNull())&#xD;
+        {&#xD;
+            throw new ProblemDetailsException("Expected $domain$ does not exist",&#xD;
+                                                $"The $domain$ wiht the id: {requestId} was not found or does not exists",&#xD;
+                                                ("$Domain$ Id", requestId.ToInvariantString()));&#xD;
+&#xD;
+        }&#xD;
+&#xD;
+        _$domain$s.Remove($domain$ToDelete);&#xD;
+    }&#xD;
+&#xD;
+    public void DeleteBy(Func&lt;$Domain$, bool&gt; $domain$ToDelete)&#xD;
+    {&#xD;
+        var $domain$s = _$domain$s.Where($domain$ToDelete).ToList();&#xD;
+        _$domain$s.RemoveRange($domain$s);&#xD;
+    }&#xD;
+&#xD;
+    public void DeleteAll()&#xD;
+    {&#xD;
+        _$domain$s.Clear();&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=14D96BDE901FCA45A705B5014F666794/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3804,7 +5147,14 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4C3C7D0974891B4A811BEEA9B5F167E3/Shortcut/@EntryValue">so-get-all-test-base</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4C3C7D0974891B4A811BEEA9B5F167E3/Text/@EntryValue"> [Dev] [Environments.Test] [Qa] public class GetAll$domain$Test : ApiTestBase { public GetAll$domain$Test(Stage stage) : base(stage) { } } </s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4C3C7D0974891B4A811BEEA9B5F167E3/Text/@EntryValue">    [Dev]&#xD;
+    [Environments.Test]&#xD;
+    [Qa]&#xD;
+    public class GetAll$domain$Test : ApiTestBase&#xD;
+    {&#xD;
+        public GetAll$domain$Test(Stage stage) : base(stage) { }&#xD;
+    }&#xD;
+</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4C3C7D0974891B4A811BEEA9B5F167E3/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3824,7 +5174,18 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=510BBF6BB4CE5541B92C01F47414688E/Shortcut/@EntryValue">so-setup-cleanup</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=510BBF6BB4CE5541B92C01F47414688E/Text/@EntryValue">[SetUp] public Task SetupAsync() { // 1. Cleanup, to go sure all is clean !! return CleanupAsync(); } [TearDown] public Task CleanupAsync() { return Task.CompletedTask; }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=510BBF6BB4CE5541B92C01F47414688E/Text/@EntryValue">[SetUp]&#xD;
+public Task SetupAsync()&#xD;
+{&#xD;
+    // 1. Cleanup, to go sure all is clean !!&#xD;
+    return CleanupAsync();&#xD;
+}&#xD;
+&#xD;
+[TearDown]&#xD;
+public Task CleanupAsync()&#xD;
+{&#xD;
+    return Task.CompletedTask;&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=510BBF6BB4CE5541B92C01F47414688E/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3840,7 +5201,13 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=843B6EA6F37B6B44AACECA8B1E7149D0/Shortcut/@EntryValue">startup</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=843B6EA6F37B6B44AACECA8B1E7149D0/Text/@EntryValue">internal sealed class Startup { internal void ConfigureServices(IServiceCollection services) { } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=843B6EA6F37B6B44AACECA8B1E7149D0/Text/@EntryValue">internal sealed class Startup&#xD;
+{&#xD;
+    internal void ConfigureServices(IServiceCollection services)&#xD;
+    {&#xD;
+&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=843B6EA6F37B6B44AACECA8B1E7149D0/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3860,7 +5227,18 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5F4F384E6E4EC644B465882F6E40ED88/Shortcut/@EntryValue">startup.cs</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5F4F384E6E4EC644B465882F6E40ED88/Text/@EntryValue">namespace $namespace$ { public sealed class Startup : SimpleStartup { public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment) : base(configuration, webHostEnvironment, new PathString("/api/$domain$")) { } } } </s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5F4F384E6E4EC644B465882F6E40ED88/Text/@EntryValue">namespace $namespace$&#xD;
+{&#xD;
+    public sealed class Startup : SimpleStartup&#xD;
+    {&#xD;
+        public Startup(IConfiguration configuration, IWebHostEnvironment webHostEnvironment) :&#xD;
+            base(configuration, webHostEnvironment, new PathString("/api/$domain$"))&#xD;
+        {&#xD;
+        }&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5F4F384E6E4EC644B465882F6E40ED88/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3884,7 +5262,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=520ED668623B004894103358E0628DE4/Shortcut/@EntryValue">struct</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=520ED668623B004894103358E0628DE4/Text/@EntryValue">struct $name$ { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=520ED668623B004894103358E0628DE4/Text/@EntryValue">struct $name$&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=520ED668623B004894103358E0628DE4/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3918,7 +5299,12 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C24E0C258BD329449CDFF84D7431A39F/Shortcut/@EntryValue">surveycontroller</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C24E0C258BD329449CDFF84D7431A39F/Text/@EntryValue">[ApiVersion("2.0")] [Route("v{version:apiVersion}/$route$")] [ApiController] public class $Controller$ : ControllerBase { }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C24E0C258BD329449CDFF84D7431A39F/Text/@EntryValue">[ApiVersion("2.0")]&#xD;
+[Route("v{version:apiVersion}/$route$")]&#xD;
+[ApiController]&#xD;
+public class $Controller$ : ControllerBase&#xD;
+{      &#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C24E0C258BD329449CDFF84D7431A39F/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3946,7 +5332,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7E9BAF3D7CE45140A3FECBB7FE4E05FD/Description/@EntryValue">'void Main' method</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7E9BAF3D7CE45140A3FECBB7FE4E05FD/Text/@EntryValue">static void Main(string[] args) { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7E9BAF3D7CE45140A3FECBB7FE4E05FD/Text/@EntryValue">static void Main(string[] args)&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=7E9BAF3D7CE45140A3FECBB7FE4E05FD/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -3968,7 +5357,17 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BDD48BD8114FB24F85A2D84E696DAEC4/Shortcut/@EntryValue">swaggerinfo</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BDD48BD8114FB24F85A2D84E696DAEC4/Text/@EntryValue">{ "SwaggerInfo": { "Id": "$id$", "Title": "$title$", "Description": "$description$", "ContactName": "$contactname$", "ContactEmail": "$contactemail$", "ContactUrl": "$contacturl$", "Audience": "$audience$" } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BDD48BD8114FB24F85A2D84E696DAEC4/Text/@EntryValue">{&#xD;
+  "SwaggerInfo": {&#xD;
+    "Id": "$id$",&#xD;
+    "Title": "$title$",&#xD;
+    "Description": "$description$",&#xD;
+    "ContactName": "$contactname$",&#xD;
+    "ContactEmail": "$contactemail$",&#xD;
+    "ContactUrl": "$contacturl$",&#xD;
+    "Audience": "$audience$"&#xD;
+  }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BDD48BD8114FB24F85A2D84E696DAEC4/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4012,7 +5411,61 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B8325EB2B52F4E409AE22D6F9C657A0B/Shortcut/@EntryValue">swaggerversionfilter</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B8325EB2B52F4E409AE22D6F9C657A0B/Text/@EntryValue">public class RemoveVersionParameterFilter : IOperationFilter { public void Apply(OpenApiOperation operation, OperationFilterContext context) { var versionParameter = operation.Parameters.Single(p =&gt; p.Name == "version"); operation.Parameters.Remove(versionParameter); } } public class ReplaceVersionWithExactValueInPathFilter : IDocumentFilter { public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context) { swaggerDoc.Paths = GetOpenApiPath(swaggerDoc, context); } private OpenApiPaths GetOpenApiPath(OpenApiDocument swaggerDoc, DocumentFilterContext context) { var paths = new OpenApiPaths(); foreach (var path in swaggerDoc.Paths) { var matchingApi = context.ApiDescriptions.FirstOrDefault(api =&gt; api.RelativePath.EqualsTo(path.Key.TrimStart('/'))); var versionInfo = matchingApi.ActionDescriptor.EndpointMetadata.FirstOfType&lt;ApiVersionAttribute&gt;(); if (versionInfo.IsNull()) { paths.Add(path.Key.Replace("v{version}", swaggerDoc.Info.Version), path.Value); continue; } var apiVersion = Convert(swaggerDoc.Info); if (versionInfo.Versions.Any(v =&gt; v.EqualsTo(apiVersion))) { paths.Add(path.Key.Replace("v{version}", swaggerDoc.Info.Version), path.Value); } } return paths; } private ApiVersion Convert(OpenApiInfo openApiInfo) { var values = openApiInfo.Version.ToLower().Replace("v", string.Empty).Split(".").Select(number =&gt; number.ToInt()).ToArray(); if (values.Length == 1) { return new ApiVersion(values.First(), 0); } if (values.Length == 2) { return new ApiVersion(values.First(), values.ElementAt(1)); } throw new ProblemDetailsException(500, "Unknown version string", $"Could not convert swagger version info: '{openApiInfo.Version}' into AP-Version"); } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B8325EB2B52F4E409AE22D6F9C657A0B/Text/@EntryValue">public class RemoveVersionParameterFilter : IOperationFilter&#xD;
+{&#xD;
+    public void Apply(OpenApiOperation operation, OperationFilterContext context)&#xD;
+    {&#xD;
+        var versionParameter = operation.Parameters.Single(p =&gt; p.Name == "version");&#xD;
+        operation.Parameters.Remove(versionParameter);&#xD;
+    }&#xD;
+}&#xD;
+&#xD;
+public class ReplaceVersionWithExactValueInPathFilter : IDocumentFilter&#xD;
+{&#xD;
+    public void Apply(OpenApiDocument swaggerDoc, DocumentFilterContext context)&#xD;
+    {&#xD;
+        swaggerDoc.Paths = GetOpenApiPath(swaggerDoc, context);&#xD;
+    }&#xD;
+&#xD;
+    private OpenApiPaths GetOpenApiPath(OpenApiDocument swaggerDoc, DocumentFilterContext context)&#xD;
+    {&#xD;
+        var paths = new OpenApiPaths();&#xD;
+        foreach (var path in swaggerDoc.Paths)&#xD;
+        {&#xD;
+            var matchingApi = context.ApiDescriptions.FirstOrDefault(api =&gt; api.RelativePath.EqualsTo(path.Key.TrimStart('/')));&#xD;
+            var versionInfo = matchingApi.ActionDescriptor.EndpointMetadata.FirstOfType&lt;ApiVersionAttribute&gt;();&#xD;
+            if (versionInfo.IsNull())&#xD;
+            {&#xD;
+                paths.Add(path.Key.Replace("v{version}", swaggerDoc.Info.Version), path.Value);&#xD;
+                continue;&#xD;
+            }&#xD;
+&#xD;
+            var apiVersion = Convert(swaggerDoc.Info);&#xD;
+            if (versionInfo.Versions.Any(v =&gt; v.EqualsTo(apiVersion)))&#xD;
+            {&#xD;
+                paths.Add(path.Key.Replace("v{version}", swaggerDoc.Info.Version), path.Value);&#xD;
+            }&#xD;
+        }&#xD;
+&#xD;
+        return paths;&#xD;
+    }&#xD;
+&#xD;
+    private ApiVersion Convert(OpenApiInfo openApiInfo)&#xD;
+    {&#xD;
+        var values = openApiInfo.Version.ToLower().Replace("v", string.Empty).Split(".").Select(number =&gt; number.ToInt()).ToArray();&#xD;
+        if (values.Length == 1)&#xD;
+        {&#xD;
+            return new ApiVersion(values.First(), 0);&#xD;
+        }&#xD;
+&#xD;
+        if (values.Length == 2)&#xD;
+        {&#xD;
+            return new ApiVersion(values.First(), values.ElementAt(1));&#xD;
+        }&#xD;
+&#xD;
+        throw new ProblemDetailsException(500, "Unknown version string", $"Could not convert swagger version info: '{openApiInfo.Version}' into AP-Version");&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=B8325EB2B52F4E409AE22D6F9C657A0B/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4034,7 +5487,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=55E5BFB1C5AD354DB43DBBACA2B1914E/Description/@EntryValue">switch statement</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=55E5BFB1C5AD354DB43DBBACA2B1914E/Text/@EntryValue">switch ($expression$) { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=55E5BFB1C5AD354DB43DBBACA2B1914E/Text/@EntryValue">switch ($expression$)&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=55E5BFB1C5AD354DB43DBBACA2B1914E/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4062,7 +5518,16 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=639B53E36EE21B46A158D962A055FA5B/Shortcut/@EntryValue">swo-test-class</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=639B53E36EE21B46A158D962A055FA5B/Text/@EntryValue">[Dev] [Test] [Qa] [Prod] internal sealed class $name$ : NoSyncProcessTestBase { public $name$(Stage stage) : base(stage) { } }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=639B53E36EE21B46A158D962A055FA5B/Text/@EntryValue">[Dev]&#xD;
+[Test]&#xD;
+[Qa]&#xD;
+[Prod]&#xD;
+internal sealed class $name$ : NoSyncProcessTestBase&#xD;
+{&#xD;
+    public $name$(Stage stage) : base(stage)&#xD;
+    {&#xD;
+    }&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=639B53E36EE21B46A158D962A055FA5B/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4082,7 +5547,9 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BA213BDD6696244FBBD08EAE54F32F4B/Shortcut/@EntryValue">test</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BA213BDD6696244FBBD08EAE54F32F4B/Text/@EntryValue">[Xunit.Fact] public void $METHOD$() {$END$}</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BA213BDD6696244FBBD08EAE54F32F4B/Text/@EntryValue">[Xunit.Fact]&#xD;
+public void $METHOD$()&#xD;
+{$END$}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=BA213BDD6696244FBBD08EAE54F32F4B/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4114,7 +5581,9 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5FCCA601C0052D41816EB829C585A41C/Shortcut/@EntryValue">test</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5FCCA601C0052D41816EB829C585A41C/Text/@EntryValue">[NUnit.Framework.Test] public void $METHOD$() {$END$}</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5FCCA601C0052D41816EB829C585A41C/Text/@EntryValue">[NUnit.Framework.Test]&#xD;
+public void $METHOD$()&#xD;
+{$END$}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=5FCCA601C0052D41816EB829C585A41C/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4148,7 +5617,9 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C4F9AA5F6669A2438DAEE2694E029A99/Shortcut/@EntryValue">test</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C4F9AA5F6669A2438DAEE2694E029A99/Text/@EntryValue">[Microsoft.VisualStudio.TestTools.UnitTesting.TestMethod] public void $METHOD$() {$END$}</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C4F9AA5F6669A2438DAEE2694E029A99/Text/@EntryValue">[Microsoft.VisualStudio.TestTools.UnitTesting.TestMethod]&#xD;
+public void $METHOD$()&#xD;
+{$END$}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C4F9AA5F6669A2438DAEE2694E029A99/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4180,7 +5651,9 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FC8D7941811E074BA41BC7195D0E7D5A/Shortcut/@EntryValue">test</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FC8D7941811E074BA41BC7195D0E7D5A/Text/@EntryValue">[NUnit.Framework.Test] public void $METHOD$() {$END$}</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FC8D7941811E074BA41BC7195D0E7D5A/Text/@EntryValue">[NUnit.Framework.Test]&#xD;
+public void $METHOD$()&#xD;
+{$END$}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FC8D7941811E074BA41BC7195D0E7D5A/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4212,7 +5685,11 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FAC9B62478B294468A2D409B417135A1/Shortcut/@EntryValue">testclass</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FAC9B62478B294468A2D409B417135A1/Text/@EntryValue">[TestClass] [TestCategory("$category$")] public class $testName$ : MsTestBase { }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FAC9B62478B294468A2D409B417135A1/Text/@EntryValue">[TestClass]&#xD;
+[TestCategory("$category$")]&#xD;
+public class $testName$ : MsTestBase&#xD;
+{&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FAC9B62478B294468A2D409B417135A1/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4238,7 +5715,11 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F48CE3838D03444EA69B8C23CB1A07B8/Shortcut/@EntryValue">testmethod</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F48CE3838D03444EA69B8C23CB1A07B8/Text/@EntryValue">[TestMethod] public void $name$() { }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F48CE3838D03444EA69B8C23CB1A07B8/Text/@EntryValue">[TestMethod]&#xD;
+public void $name$()&#xD;
+{&#xD;
+&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=F48CE3838D03444EA69B8C23CB1A07B8/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4280,7 +5761,15 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DED7798D82D02045ABA68FC339C76DFA/Description/@EntryValue">try catch</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DED7798D82D02045ABA68FC339C76DFA/Text/@EntryValue">try { $SELECTION$ } catch ($EXCEPTION$ $EX_NAME$) { $SELSTART$System.Console.WriteLine($EX_NAME$); throw;$SELEND$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DED7798D82D02045ABA68FC339C76DFA/Text/@EntryValue">try &#xD;
+{          &#xD;
+  $SELECTION$&#xD;
+}&#xD;
+catch ($EXCEPTION$ $EX_NAME$)&#xD;
+{&#xD;
+  $SELSTART$System.Console.WriteLine($EX_NAME$);&#xD;
+  throw;$SELEND$&#xD;
+}</s:String>
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=DED7798D82D02045ABA68FC339C76DFA/Mnemonic/@EntryValue">8</s:String>
     <s:Boolean
@@ -4322,7 +5811,14 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FA62801AE9ACA34089E6E38B1F425B1C/Description/@EntryValue">try finally</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FA62801AE9ACA34089E6E38B1F425B1C/Text/@EntryValue">try { $SELECTION$ } finally { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FA62801AE9ACA34089E6E38B1F425B1C/Text/@EntryValue">try &#xD;
+{&#xD;
+  $SELECTION$&#xD;
+}&#xD;
+finally&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=FA62801AE9ACA34089E6E38B1F425B1C/Mnemonic/@EntryValue">9</s:String>
     <s:Boolean
@@ -4386,7 +5882,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C912A7E8A815554C972CE14283AABCAF/Description/@EntryValue">unchecked block</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C912A7E8A815554C972CE14283AABCAF/Text/@EntryValue">unchecked { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C912A7E8A815554C972CE14283AABCAF/Text/@EntryValue">unchecked&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=C912A7E8A815554C972CE14283AABCAF/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4410,7 +5909,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=92DDB1A6C1214147A64B168C8EC58B8B/Description/@EntryValue">unsafe statement</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=92DDB1A6C1214147A64B168C8EC58B8B/Text/@EntryValue">unsafe { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=92DDB1A6C1214147A64B168C8EC58B8B/Text/@EntryValue">unsafe&#xD;
+{&#xD;
+  $END$&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=92DDB1A6C1214147A64B168C8EC58B8B/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4432,7 +5934,11 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2478CE4F188D9D4FBC1AC4657B030EF1/Shortcut/@EntryValue">useswaggerui</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2478CE4F188D9D4FBC1AC4657B030EF1/Text/@EntryValue">app.UseSwagger(); app.UseSwaggerUI(c =&gt; { c.SwaggerEndpoint("/swagger/v1/swagger.json", "$api$"); });</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2478CE4F188D9D4FBC1AC4657B030EF1/Text/@EntryValue">app.UseSwagger();&#xD;
+app.UseSwaggerUI(c =&gt;&#xD;
+{&#xD;
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "$api$");&#xD;
+});</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=2478CE4F188D9D4FBC1AC4657B030EF1/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4458,7 +5964,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3029EBA05131A140933D5EBBA69ED48C/Description/@EntryValue">using statement</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3029EBA05131A140933D5EBBA69ED48C/Text/@EntryValue">using($resource$) { $SELECTION$$END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3029EBA05131A140933D5EBBA69ED48C/Text/@EntryValue">using($resource$)&#xD;
+{&#xD;
+  $SELECTION$$END$&#xD;
+}</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=3029EBA05131A140933D5EBBA69ED48C/IsBlessed/@EntryValue">True</s:Boolean>
     <s:Boolean
@@ -4492,7 +6001,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=69AA0FB53ED5F246B1F1D65DB6A708B8/Description/@EntryValue">while loop</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=69AA0FB53ED5F246B1F1D65DB6A708B8/Text/@EntryValue">while ($expression$) { $SELECTION$$END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=69AA0FB53ED5F246B1F1D65DB6A708B8/Text/@EntryValue">while ($expression$)&#xD;
+{&#xD;
+  $SELECTION$$END$&#xD;
+}</s:String>
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=69AA0FB53ED5F246B1F1D65DB6A708B8/Mnemonic/@EntryValue">2</s:String>
     <s:Boolean
@@ -4528,7 +6040,10 @@
     <s:String
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4B9F55AAF68AAD48871D232092C882A9/Description/@EntryValue">Destructor</s:String>
     <s:String
-                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4B9F55AAF68AAD48871D232092C882A9/Text/@EntryValue">~$classname$() { $END$ }</s:String>
+                x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4B9F55AAF68AAD48871D232092C882A9/Text/@EntryValue">~$classname$()&#xD;
+  {&#xD;
+    $END$&#xD;
+  }</s:String>
     <s:Boolean
                 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=4B9F55AAF68AAD48871D232092C882A9/Reformat/@EntryValue">True</s:Boolean>
     <s:Boolean

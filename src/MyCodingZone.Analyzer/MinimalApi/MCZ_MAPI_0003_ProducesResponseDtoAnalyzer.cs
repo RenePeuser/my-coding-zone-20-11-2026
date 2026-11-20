@@ -20,7 +20,7 @@ namespace MyCodingZone.Analyzer.MinimalApi
                                                                                   description: "Minimal API endpoints returning a concrete response DTO should declare the success response type for OpenAPI accuracy.",
                                                                                   category: "MinimalApi.Design",
                                                                                   defaultSeverity: DiagnosticSeverity.Info,
-                                                                                  isEnabledByDefault: false);
+                                                                                  isEnabledByDefault: true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(MissingProducesDtoRule);
 

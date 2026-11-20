@@ -249,8 +249,11 @@ dotnet_diagnostic.cs1591.severity = silent
 dotnet_diagnostic.cs1998.severity = error
 # Own analyzers: explicit, otherwise dotnet_analyzer_diagnostic.severity = warning wins.
 dotnet_diagnostic.MCZ_ASYNC_0001.severity = error
+dotnet_diagnostic.MCZ_ASYNC_0002.severity = warning
 
-# Minimal API conventions (disabled by default in the analyzer, switched on here).
+# Minimal API conventions (Info by default in the analyzer, raised to error here).
+# 0001-0004, 0010, 0011 are enabled by default: Visual Studio does not run analyzers that are disabled by default
+# in live analysis, even if the .editorconfig switches them on (build and Rider do). No squiggles without it.
 # MCZ_MAPI_0012-0014 stay off: this API uses no MapToApiVersion and no WithDescriptionFromFile / WithSummaryFromFile.
 dotnet_diagnostic.MCZ_MAPI_0001.severity = error
 dotnet_diagnostic.MCZ_MAPI_0002.severity = error

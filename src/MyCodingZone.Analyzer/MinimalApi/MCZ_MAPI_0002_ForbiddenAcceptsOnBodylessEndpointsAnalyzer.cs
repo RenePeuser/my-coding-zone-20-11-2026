@@ -22,7 +22,7 @@ namespace MyCodingZone.Analyzer.MinimalApi
                 "GET/DELETE Minimal API endpoints must not declare request bodies via Accepts<T>.",
                 category: "MinimalApi.Design",
                 defaultSeverity: DiagnosticSeverity.Info,
-                isEnabledByDefault: false);
+                isEnabledByDefault: true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

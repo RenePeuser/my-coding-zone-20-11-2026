@@ -22,7 +22,7 @@ namespace MyCodingZone.Analyzer.MinimalApi
                 "POST/PUT/PATCH Minimal API endpoints with a request body must explicitly declare the request body and media type.",
                 category: "MinimalApi.Design",
                 defaultSeverity: DiagnosticSeverity.Info,
-                isEnabledByDefault: false);
+                isEnabledByDefault: true);
 
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics => ImmutableArray.Create(Rule);
 

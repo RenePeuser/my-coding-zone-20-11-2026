@@ -99,7 +99,7 @@ Eine Regel muss nicht als Analyzer geboren werden:
 | `MCZ_MAPI_0015` | Endpoint-Handler nicht als `static` lokale Funktion | ✅ | Warning |
 | `MCZ_INLINE_0001`–`0004` | kein inline `await`, Object Initializer als Argument, `return [..]`, `return new X(..)` | ✅ | Warning |
 
-Die MAPI-Regeln sind im Analyzer `Disabled` und werden pro Repository in der `.editorconfig` eingeschaltet. Analyzer und CodeFixes hängen über `Directory.Build.props` als
+Die MAPI-Regeln melden im Analyzer nur `Info` und werden pro Repository in der `.editorconfig` scharf geschaltet (`MCZ_MAPI_0012`–`0014` sind im Analyzer `Disabled`). Standardmäßig ganz aus wäre schlecht: Visual Studio führt Analyzer, die per Default deaktiviert sind, in der Live-Analyse nicht aus, auch wenn die `.editorconfig` sie einschaltet. Build und Rider melden sie, aber im Editor fehlen die Squiggles. Analyzer und CodeFixes hängen über `Directory.Build.props` als
 `ProjectReference` mit `OutputItemType="Analyzer"` an **jedem** Projekt (außer an sich selbst): `MCZ_*` läuft in Build und IDE überall, die Code Fixes erscheinen als Quick Actions. Eine Regeländerung wirkt mit dem nächsten Build.
 
 ## Stufe 5 im Detail: Siemens Code Rule Engine

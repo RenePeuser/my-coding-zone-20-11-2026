@@ -13,7 +13,7 @@ namespace MyCodingZone.HowTo
         // Property Declaration
         public required int Age { get; init; }
 
-        public required string City { get; set; }
+        public required string City { get; init; }
     }
 
     [TestClass]
@@ -54,7 +54,13 @@ namespace MyCodingZone.HowTo
                                   because: "Age property must have accessor list ({ get; init; })",
                                   fix: "Add accessor list to Age property");
 
-            var hasSet = ageProp.AccessorList.Accessors.Any(a => a.Keyword.Text == "set");
+            // SyntaxKind instead of comparing strings: typo-safe and the compiler knows every kind.
+            var hasSet = ageProp.AccessorList.Accessors.Any(a => a.IsKind(SyntaxKind.SetAccessorDeclaration));
+            var hasInit = ageProp.AccessorList.Accessors.Any(a => a.IsKind(SyntaxKind.InitAccessorDeclaration));
+
+            Assert.That.IsTrue(hasInit,
+                               because: "Age property is defined with { get; init; }",
+                               fix: "Change Age to { get; init; } in the source code");
 
             Assert.That.IsFalse(hasSet,
                                 because: "Age property is defined with { get; init; } accessor, making it readonly",
@@ -78,11 +84,89 @@ namespace MyCodingZone.HowTo
 
             // IsReadOnly = hat KEINEN 'set' accessor (init zählt nicht als set)
             var hasSet = cityProp.AccessorList.Accessors
-                                 .Any(a => a.Keyword.Text == "set");
+                                 .Any(a => a.IsKind(SyntaxKind.SetAccessorDeclaration));
 
             Assert.That.IsTrue(hasSet,
                                because: "City property is defined with { get; set; } accessor, making it mutable",
                                fix: "Change City to { get; init; } in the source code to make it readonly");
+        }
+
+        [TestMethod]
+        public void How_To_Check_Modifiers_Like_Required()
+        {
+            var properties = _root.DescendantNodes()
+                                  .OfType<PropertyDeclarationSyntax>()
+                                  .ToList();
+
+            // Modifiers is a SyntaxTokenList, Any(SyntaxKind) checks for a keyword without string compare.
+            var notRequired = properties.Where(p => !p.Modifiers.Any(SyntaxKind.RequiredKeyword))
+                                        .Select(p => p.Identifier.Text)
+                                        .ToList();
+
+            Assert.That.IsEmpty(notRequired,
+                                because: "All properties of Person are declared as 'required'",
+                                fix: "Add the 'required' modifier to the property");
+
+            var publicProperties = properties.Count(p => p.Modifiers.Any(SyntaxKind.PublicKeyword));
+
+            Assert.That.AreEqual(2, publicProperties,
+                                 because: "Age and City are both public",
+                                 fix: "Check the modifiers of the properties in the source code");
+        }
+
+        [TestMethod]
+        public void How_To_Get_File_And_Line_Of_A_Finding()
+        {
+            // The path is only metadata of the tree, here a virtual file name.
+            // For real files: CSharpSyntaxTree.ParseText(File.ReadAllText(path), path: path)
+            var tree = CSharpSyntaxTree.ParseText(Code, path: "Person.cs");
+
+            var ageProp = tree.GetRoot()
+                              .DescendantNodes()
+                              .OfType<PropertyDeclarationSyntax>()
+                              .First(p => p.Identifier.Text == nameof(Person.Age));
+
+            // Location of the identifier, not of the whole declaration: the finding points exactly at 'Age'.
+            var lineSpan = ageProp.Identifier.GetLocation().GetLineSpan();
+
+            // Roslyn counts lines and columns zero-based, IDEs and compiler messages one-based.
+            var line = lineSpan.StartLinePosition.Line + 1;
+            var column = lineSpan.StartLinePosition.Character + 1;
+            var where = $"{lineSpan.Path}({line},{column})";
+
+            Assert.That.AreEqual("Person.cs(3,25)", where,
+                                 because: "The finding names the exact position in the compiler format file(line,column), IDEs make it clickable",
+                                 fix: "Add 1 to Line and Character of the LinePosition, they are zero-based");
+
+            // Exactly the source at the location, the 'Current' of a finding.
+            Assert.That.AreEqual("public required int Age { get; init; }", ageProp.ToString(),
+                                 because: "ToString() returns the source without leading and trailing trivia",
+                                 fix: "Use ToFullString() to include whitespace and comments");
+        }
+
+        [TestMethod]
+        public void How_To_Parse_Broken_Code()
+        {
+            // Roslyn is error tolerant: broken code still produces a tree, plus diagnostics.
+            var tree = CSharpSyntaxTree.ParseText("public record Person { public int Age { get; init; }");
+
+            var errors = tree.GetDiagnostics()
+                             .Where(d => d.Severity == DiagnosticSeverity.Error)
+                             .Select(d => d.Id)
+                             .ToList();
+
+            Assert.That.Contains(errors, "CS1513",
+                                 because: "The closing brace is missing (CS1513: } expected)",
+                                 fix: "Check tree.GetDiagnostics() before trusting the tree of unknown code");
+
+            var age = tree.GetRoot()
+                          .DescendantNodes()
+                          .OfType<PropertyDeclarationSyntax>()
+                          .SingleOrDefault();
+
+            Assert.That.IsNotNull(age,
+                                  because: "The property is still part of the tree, even if the record is incomplete",
+                                  fix: "Roslyn always returns a tree, missing tokens are added as IsMissing");
         }
     }
 }
