@@ -1,5 +1,3 @@
-using System.Collections.Immutable;
-using System.Diagnostics;
 using AspNetCore.Simple.MsTest.Sdk;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
