@@ -12,7 +12,8 @@ namespace MyCodingZone.CodeRules.Test
     // This is just for demo purposes. In a real project, you would use the SDK's TestSdkSettings.OutputMode instead of this static property.
     public static class CodeRuleSettings
     {
-        public const string DocumentationDomain = "https://github.com/RenePeuser/my-coding-zone-20-11-2026";
+        /// <summary>One markdown page per rule in docs/code-rules, the same template as stage 5 (CodeRuleSetup).</summary>
+        public const string DocumentationUrlTemplate = "https://github.com/RenePeuser/my-coding-zone-20-11-2026/blob/main/docs/code-rules/{Id}.md";
 
         // Hint: This is just for DEMO purposes. In a real project, you would use the SDK's TestSdkSettings.OutputMode instead of this static property.
         /// <summary>

@@ -10,6 +10,7 @@ Correctness and stability are more important than minimal code.
 Analyzers MUST be organized by domain:
 
 - ArgumentCheck
+- Async
 - Inline
 - MinimalApi
 - (future domains follow the same pattern)

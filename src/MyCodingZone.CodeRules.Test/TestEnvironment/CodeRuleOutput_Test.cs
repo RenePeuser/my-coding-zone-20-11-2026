@@ -183,7 +183,7 @@ namespace MyCodingZone.CodeRules.Test
                                                   Group: "Records",
                                                   Why: "Records are value objects.",
                                                   HowToFix: "Replace 'set;' with 'init;'.",
-                                                  DocumentationUrl: $"{CodeRuleSettings.DocumentationDomain}#TEST_RULE_001",
+                                                  DocumentationUrl: CodeRuleSettings.DocumentationUrlTemplate.Replace("{Id}", "TEST_RULE_001", StringComparison.Ordinal),
                                                   ReadMoreUrl: ReadMoreUrl,
                                                   RuleSource: new FindingLocation("src/MyCodingZone.CodeRules.Test/Records/TEST_RULE_001.cs", 1),
                                                   Findings: findings);

@@ -45,7 +45,7 @@ namespace MyCodingZone.CodeRules.Test
                                                   Group: Path.GetFileName(Path.GetDirectoryName(callerFilePath)) ?? "-",
                                                   Why: why,
                                                   HowToFix: howToFix,
-                                                  DocumentationUrl: $"{CodeRuleSettings.DocumentationDomain}#{id}",
+                                                  DocumentationUrl: CodeRuleSettings.DocumentationUrlTemplate.Replace("{Id}", id, StringComparison.Ordinal),
                                                   ReadMoreUrl: readMoreUrl,
                                                   RuleSource: new FindingLocation(RepositoryRoot.RelativePath(callerFilePath), callerLineNumber),
                                                   Findings: sortedFindings);

@@ -1,6 +1,6 @@
 ---
 name: new-code-rule
-description: Build a new CodeRule (MSTest) in src/MyCodingZone.CodeRules.Test with the Solution.Parser API - solution, project and C# rules with findings that name what, where, why and how to fix
+description: Build a new CodeRule (MSTest) in src/MyCodingZone.CodeRules.Test with the Solution.Parser API - solution, project and C# rules with findings that name what, where, why and how to fix - plus its stage 5 counterpart, rule tests and docs/code-rules page
 ---
 
 # New CodeRule - with Solution.Parser
@@ -40,14 +40,14 @@ All data is loaded once in `CodeRuleTestBase` (`[AssemblyInitialize]`). Use it, 
 | Solution | which projects exist, naming, test vs productive | `Solution.Projects`, `Solution.ProductionProjects`, `Solution.UnitTestProjects` |
 | Project | csproj content: references, packages, properties | `project.ProjectReferences`, `project.PackageReferences`, `project.Document` (XDocument) |
 | C# file | types, members, attributes, usings, namespaces | `ProductiveSyntaxTrees`, `TestSyntaxTrees`, `AllSyntaxTrees`, `Records`, `Classes`, `Enums`, `Interfaces`, `Structs` |
-| Test data | request/response snapshot JSON | `RequestsJsonFiles`, `ResponseJsonFiles` |
 
 Only reach for raw Roslyn when the Solution.Parser model does not carry what you need
 (see "Model gaps" in [API.md](API.md)). If you add something to `CodeRuleTestBase`, keep it lazy or cheap.
 
 ### 3. Create the file
 
-CodeRules live only in `src/MyCodingZone.CodeRules.Test/`. `src/MyCodingZone.HowTo` holds examples, not rules.
+Stage 2 rules live in `src/MyCodingZone.CodeRules.Test/`, their stage 5 counterparts in `src/MyCodingZone.CodeRules/`
+(step 6). `src/MyCodingZone.HowTo` holds examples, not rules.
 
 - Id: `<TOPIC>_RULE_<NNN>`, e.g. `RECORDS_RULE_001`, `PROJECTS_RULE_001`. Reuse the topic of an existing
   rule when it fits and take the next free number (look at `src/MyCodingZone.CodeRules.Test/**/*_RULE_*.cs`);
@@ -89,7 +89,7 @@ namespace MyCodingZone.CodeRules.Test
     public class RECORDS_RULE_001 : CodeRuleTestBase
     {
         [TestMethod]
-        public void Record_Properties_Have_To_Be_Be_Immutable()
+        public void Record_Properties_Have_To_Be_Immutable()
         {
             var findings = from record in Records
                            from property in record.Properties
@@ -106,8 +106,8 @@ namespace MyCodingZone.CodeRules.Test
             Assert.That.CodeRuleHasNoFindings(findings,
                                               id: "RECORDS_RULE_001",
                                               title: "Record properties must be immutable",
-                                              why: "Records are value objects. Mutable properties break value equality and make instances unsafe to share.",
-                                              howToFix: "Replace 'set;' with 'init;'.",
+                                              why: "A record is a snapshot of a state, e.g. data loaded from the database. It must not change while it is being processed. A setter lets any code modify the same instance, so other parts that hold a reference suddenly see different data. A change must produce a new instance instead.",
+                                              howToFix: "Replace 'set;' with 'init;' and create a modified copy with a 'with' expression, e.g. 'order with { Status = OrderStatus.Shipped }'.",
                                               readMoreUrl: "https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/record#init-only-properties");
         }
     }
@@ -171,7 +171,25 @@ default is the framed Human output. Fixtures can catch `CodeRuleViolationExcepti
 - **Parse errors:** a file with `tree.HasParseErrors` yields an incomplete model; do not trust a green rule on it.
 - **Determinism:** no time, no network, no ordering assumptions. Sort findings if the output order matters.
 
-### 6. Verify - green AND red
+### 6. Stage 5 counterpart and documentation page
+
+Stage 2 and stage 5 share the rule IDs (see AGENTS.md). A new stage 2 rule is complete only with:
+
+- **Stage 5 rule:** `src/MyCodingZone.CodeRules/<Group>/<RuleClass>.cs`, a `sealed` class implementing `ICodeRule`,
+  `ISolutionRule` or `IRule<TContext>`, named after what it checks (e.g. `RecordPropertiesMustBeImmutable`), with the
+  same `Id`, `Title`, `Why`, `HowToFix` and `ReadMoreUrl` as the stage 2 assert. `Finding.Current` must be exactly the
+  source at `Finding.Where`.
+- **Registration:** add it to `MyCodingZoneRulePack`, otherwise no test is generated and the guard test fails.
+- **Rule tests:** `src/MyCodingZone.CodeRules.Engine.Test/<Group>/<RuleClass>_Tests.cs` with
+  `Should_Report_..._When_...` (`Assert.That.CodeRule.ViolatesAsync<TRule>`, findings marked with `[|...|]`) and
+  `Should_Accept_..._When_...` (`CompliesAsync<TRule>`, variants as `[DataRow]`). See AGENTS.md for the details.
+- **Documentation page:** `docs/code-rules/<ID>.md` (copy an existing page: Why, How to fix, an example that violates
+  and one that complies) plus a line in `docs/code-rules/README.md`. Every finding links to this page; without it
+  the `Docs` link of the new rule is a 404.
+
+Ask the user first if they explicitly want only the stage 2 rule (e.g. for a quick demo).
+
+### 7. Verify - green AND red
 
 1. Run only the new rule:
    `dotnet test src/MyCodingZone.CodeRules.Test --filter "FullyQualifiedName~RECORDS_RULE_001"`
@@ -180,9 +198,10 @@ default is the framed Human output. Fixtures can catch `CodeRuleViolationExcepti
 3. **Negative check:** temporarily introduce one violation (e.g. add a forbidden `<ProjectReference>`,
    a mutable property), run the rule, confirm the finding reads well, then **restore the file** and
    confirm with `git status` / `git diff` that nothing is left behind.
-4. Run the whole category: `dotnet test src/MyCodingZone.CodeRules.Test --filter "TestCategory=CodeRules"`.
+4. Run the whole category, both stages: `dotnet test code-rules.slnx --filter "TestCategory~CodeRules"`
+   (includes the generated stage 5 tests and `src/MyCodingZone.CodeRules.Engine.Test`).
 
-### 7. Report
+### 8. Report
 
 Tell the user: rule id and file, what it checks, green on the current code (or the findings), how the
 negative check looked (paste the finding), and any known blind spots (e.g. projects outside the slnx).

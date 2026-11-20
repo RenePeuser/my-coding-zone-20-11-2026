@@ -8,7 +8,7 @@ namespace MyCodingZone.CodeRules.Test
     public class RECORDS_RULE_001 : CodeRuleTestBase
     {
         [TestMethod]
-        public void Record_Properties_Have_To_Be_Be_Immutable()
+        public void Record_Properties_Have_To_Be_Immutable()
         {
             var findings = from record in Records
                            from property in record.Properties

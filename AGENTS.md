@@ -3,10 +3,10 @@
 Companion repository for the talk "CodeRules & Analyzer – Self-Defending Codebases" (MyCoding Zone, 20.11.2026).
 The goal: project knowledge lives in executable CodeRules. When a rule fails, the finding tells you what, where, why and how to fix it.
 
-The repository tells the story in five stages: 01 solution parsing (`src/MyCodingZone.HowTo`), 02 CodeRules as tests with an own
-infrastructure (`src/MyCodingZone.CodeRules.Test`), 03 Roslyn analyzer (`src/MyCodingZone.Analyzer`), 04 Roslyn code fixes (`src/MyCodingZone.CodeFixes`) and 05 the same rules as stage 2
-on the Siemens Code Rule Engine (`src/MyCodingZone.CodeRules`). Stage 2 and stage 5 share the rule IDs; a rule changed in one
-stage has to be changed in the other one as well. Use the `/new-code-rule` skill to add a stage 2 rule.
+The repository tells the story in six stages: 01 solution parsing (`src/MyCodingZone.HowTo`), 02 CodeRules as tests with an own
+infrastructure (`src/MyCodingZone.CodeRules.Test`), 03 Roslyn analyzer (`src/MyCodingZone.Analyzer`), 04 Roslyn code fixes (`src/MyCodingZone.CodeFixes`), 05 the same rules as stage 2
+on the Siemens Code Rule Engine (`src/MyCodingZone.CodeRules`) and 06 the sample Minimal API with snapshot API tests (`src/MyCodingZone.WebApi`). Stage 2 and stage 5 share the rule IDs; a rule changed in one
+stage has to be changed in the other one as well, including its page in `docs/code-rules/<ID>.md`. Use the `/new-code-rule` skill to add a rule.
 
 ## Commands
 
@@ -46,6 +46,7 @@ The SDK version is pinned in `global.json` (`rollForward: disable`). `Microsoft.
 | `src/MyCodingZone.CodeRules.Engine.Test` | Functional tests of the stage 5 rules with `Assert.That.CodeRule`. Mirrors the rule project: `<Group>/<RuleClass>_Tests.cs` for every `<Group>/<RuleClass>.cs`. |
 | `src/MyCodingZone.WebApi` | Sample Minimal API the rules run against, errors via `Siemens.AspNet.ErrorHandling` (`AddErrorHandling` / `UseErrorHandling`) |
 | `src/MyCodingZone.WebApi.Test` | Snapshot-based API tests (`Requests/` + `Responses/` JSON), success cases with the classic and the fluent SDK API, error cases in `InvalidRequests/`, see `SNAPSHOT_TESTING.md`. |
+| `docs/code-rules` | One page per rule (`<ID>.md`), the target of the `Docs` link in every finding of stage 2 and stage 5. |
 
 ## Working with CodeRules
 

@@ -18,7 +18,7 @@ namespace MyCodingZone.CodeRules
             services.AddCodeRuleEngine("code-rules.slnx",
                                        options => options.AddRulePack<MyCodingZoneRulePack>()
                                                          .UseOutputMode(CodeRuleOutputMode.Human)
-                                                         .UseDocumentationUrlTemplate("https://github.com/RenePeuser/my-coding-zone-20-11-2026#{Id}"));
+                                                         .UseDocumentationUrlTemplate("https://github.com/RenePeuser/my-coding-zone-20-11-2026/blob/main/docs/code-rules/{Id}.md"));
         }
     }
 }

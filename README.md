@@ -3,7 +3,7 @@
 ![Eine Codebase im Karate-Gi wehrt fehlerhafte Changes eines Entwicklers und eines AI Agents ab (AI-generiertes Bild)](self-defending-code-base.jpg)
 
 > Für Menschen und AI Agents.
-> Begleit-Repository zum Vortrag in der **MyCoding Zone** am 20.11.2026 von Rene Peuser.
+> Begleit-Repository zum Vortrag in der **MyCoding Zone** am 20.11.2026 von Rene Peuser und Philip Pregler.
 
 Ein AI Agent kennt eure ungeschriebenen Regeln genauso wenig wie ein neuer Entwickler – er erzeugt Code nur wesentlich schneller.
 Dieses Repository zeigt, wie aus einer einmal entdeckten Fehlerquelle eine **ausführbare Regel** wird, die jeden neuen Verstoß deterministisch erkennt –
@@ -17,7 +17,7 @@ vom ersten Parsen der Solution bis zur Code Rule Engine, die dieselben Regeln in
 | **02 CodeRule als Test** | `src/MyCodingZone.CodeRules.Test` | Regeln als MSTest-Tests mit [Solution.Parser](https://www.nuget.org/packages/Solution.Parser), eigene Test-Infrastruktur (Base Class, Assert, Human-/AI-Output) |
 | **03 Roslyn Analyzer** | `src/MyCodingZone.Analyzer` (+ `.Test`) | Roslyn Analyzer: Feedback direkt in IDE und Build – Async (`MCZ_ASYNC_*`), Minimal-API-Konventionen (`MCZ_MAPI_*`), Inline-Regeln (`MCZ_INLINE_*`) |
 | **04 Roslyn CodeFixes** | `src/MyCodingZone.CodeFixes` (+ `.Test`) | Code Fixes zu den Analyzern: der Verstoß wird per Quick Action repariert, z. B. fehlendes `.WithTags(...)` ergänzen oder `return new X(...)` in eine lokale Variable ziehen |
-| **05 Code Rule Engine** | `src/MyCodingZone.CodeRules` (+ `.Test`) | Dieselben Regeln wie Stufe 2 auf der [Siemens Code Rule Engine](https://www.nuget.org/packages/Siemens.AspNet.CodeRules.MSTest): eine Setup-Klasse, ein Test pro Regel wird generiert, Rule Pack, `RuleTester` |
+| **05 Code Rule Engine** | `src/MyCodingZone.CodeRules` (+ `.Engine.Test`) | Dieselben Regeln wie Stufe 2 auf der [Siemens Code Rule Engine](https://www.nuget.org/packages/Siemens.AspNet.CodeRules.MSTest): eine Setup-Klasse, ein Test pro Regel wird generiert, Rule Pack, `RuleTester` |
 | **06 API-Tests** | `src/MyCodingZone.WebApi` (+ `.Test`) | Beispiel-API mit Siemens Error Handler, Snapshot-Tests mit AspNetCore.Simple.MsTest.Sdk: typisierte Request-/Response-Validierung, Endpoint-Validierung |
 
 Stufe 2 und Stufe 5 enthalten **dieselben zehn Regeln** mit denselben IDs. Der direkte Vergleich zeigt, was die Engine abnimmt:
@@ -216,6 +216,8 @@ src/
 ├── MyCodingZone.CodeRules.Engine.Test/   05 Funktionale Tests der Regeln mit Assert.That.CodeRule, gleiche Ordner wie die Regeln (<Regel>_Tests.cs)
 ├── MyCodingZone.WebApi/           06 Beispiel-API (Minimal API) mit Siemens Error Handler
 └── MyCodingZone.WebApi.Test/     06 Snapshot-basierte API-Tests, inkl. Fehlerfälle
+docs/
+└── code-rules/                    Eine Seite pro Regel (<ID>.md), Ziel des Docs-Links in jedem Finding
 ```
 
 ## Voraussetzungen
@@ -288,7 +290,7 @@ Entwickler und AI Agents ändern den Code. CodeRules prüfen deterministisch. Be
 ## AI Agents
 
 [`AGENTS.md`](AGENTS.md) beschreibt Befehle, Struktur und Regeln für AI Agents (Codex, Copilot, Cursor u. a.).
-[`CLAUDE.md`](CLAUDE.md) importiert sie für Claude Code. Die Testprojekte des Analyzers haben eigene `AGENTS.md` mit ihren Spezifikationsregeln.
+[`CLAUDE.md`](CLAUDE.md) importiert sie für Claude Code. Analyzer, CodeFixes und ihre Testprojekte haben eigene `AGENTS.md` mit ihren Regeln.
 
 ## Folien
 
